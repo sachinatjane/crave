@@ -64,6 +64,10 @@ function injectHeadTags(html, { title, desc, canonical, ogType, ogImage, jsonLd,
   if (depthPrefix !== './') {
     out = out
       .replace(/href="\.\/manifest\.webmanifest"/g, `href="${depthPrefix}manifest.webmanifest"`)
+      .replace(/href="\.\/favicon\.svg"/g, `href="${depthPrefix}favicon.svg"`)
+      .replace(/href="\.\/favicon-32x32\.png"/g, `href="${depthPrefix}favicon-32x32.png"`)
+      .replace(/href="\.\/favicon\.ico"/g, `href="${depthPrefix}favicon.ico"`)
+      .replace(/href="\.\/apple-touch-icon\.png"/g, `href="${depthPrefix}apple-touch-icon.png"`)
       .replace(/src="\.\/assets\//g, `src="${depthPrefix}assets/`)
       .replace(/href="\.\/assets\//g, `href="${depthPrefix}assets/`);
   }

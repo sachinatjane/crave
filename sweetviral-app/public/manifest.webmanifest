@@ -1,10 +1,29 @@
 {
-  "name": "Crave — Viral Dessert Recipes",
+  "name": "Crave — Healthy & Viral Dessert Recipes",
   "short_name": "Crave",
-  "description": "Zero-login, mobile-first viral dessert recipes from TikTok, Instagram Reels, Pinterest, YouTube Shorts & Facebook.",
+  "description": "Zero-login, mobile-first healthy & viral dessert recipes from TikTok, Instagram Reels, Pinterest, YouTube Shorts & Facebook.",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#fff8f6",
   "theme_color": "#e11d48",
-  "orientation": "portrait-primary"
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
 }
