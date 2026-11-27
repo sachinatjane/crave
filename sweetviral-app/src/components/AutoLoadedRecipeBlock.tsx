@@ -293,7 +293,7 @@ export const AutoLoadedRecipeBlock: React.FC<AutoLoadedRecipeBlockProps> = ({
 
       {/* High-RPM In-Feed Ad Slot */}
       <div className="px-gutter mt-space-md">
-        <AdUnit />
+        <AdUnit placementId={`infinite-recipe-${recipe.id}`} />
       </div>
     </section>
   );
