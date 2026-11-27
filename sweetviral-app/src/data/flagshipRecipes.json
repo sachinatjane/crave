@@ -34,9 +34,9 @@
     "badgeChip": "TikTok #1 Viral",
     "creatorHandle": "@sweetcraver",
     "hookLine": "Crispy toasted kataifi, emerald pistachio cream & molten dark chocolate fudge.",
-    "heroImage": "./ai-images/dubai-brownie-hero.jpg",
-    "thumbImage": "./ai-images/dubai-brownie-hero.jpg",
-    "pinterestImage": "./ai-images/dubai-brownie-hero.jpg",
+    "heroImage": "./ai-images/dubai-pistachio-brownies.jpg",
+    "thumbImage": "./ai-images/dubai-pistachio-brownies.jpg",
+    "pinterestImage": "./ai-images/dubai-pistachio-brownies.jpg",
     "hashtags": [
       "#DubaiChocolate",
       "#DubaiBrownieRemake",
@@ -192,7 +192,7 @@
       {
         "id": "u1",
         "handle": "@foodie_maya",
-        "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDiWn8HqJgYJW4zmkFwZYqi9VIyNs2uD6qMbvBseGQ8rbykgmmvmcsEGV0IhtR1qynHfg_1WlgXHQIg5Wurla71JcqJ56kgzxHDCzvkVE6On8z3A09fcs8TBuaQa53HymAGT-6UmLNvu11zccjwkEnjFlKK2JCK0zD31IsS_SEG2YMSInEwV2lWLGVsSLyL_fpeF4L5I4wm3o9HaPzz5TXMYNaZM-61jKxIU8F-emg",
+        "image": "./ai-images/dubai-pistachio-brownies.jpg",
         "quote": "Tasted 10x better than the viral chocolate bar! The crunch is absolutely insane.",
         "rating": 5
       },
@@ -240,9 +240,9 @@
     "badgeChip": "IG Reels Hot",
     "creatorHandle": "@mochibites",
     "hookLine": "Bouncy gluten-free sweet rice bubbles dipped in glossy freeze-dried strawberry glaze.",
-    "heroImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuAkLkRROOfFeh_-zzFFJwD1gM_7GtUU1xzIEnk-EqfylEIlLOGa7sM6MHAqLkUXfZU0jxXk6sF4Ff0WUSTDKGGtVtpba93vEm3zBYJhl30Rsb951Jfk45ovvYrCHvUEg-KGOAhBwM5cH4IG5PU2Vz2U0nRrF9ZNGU7vB0_xwnOW7S4PMwWqzz4I3pLf1s313KjPI52nnaw2lAnCWYLnlqQSHR5u-wO0RDUVuVgOv3Y",
-    "thumbImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuAkLkRROOfFeh_-zzFFJwD1gM_7GtUU1xzIEnk-EqfylEIlLOGa7sM6MHAqLkUXfZU0jxXk6sF4Ff0WUSTDKGGtVtpba93vEm3zBYJhl30Rsb951Jfk45ovvYrCHvUEg-KGOAhBwM5cH4IG5PU2Vz2U0nRrF9ZNGU7vB0_xwnOW7S4PMwWqzz4I3pLf1s313KjPI52nnaw2lAnCWYLnlqQSHR5u-wO0RDUVuVgOv3Y",
-    "pinterestImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuAkLkRROOfFeh_-zzFFJwD1gM_7GtUU1xzIEnk-EqfylEIlLOGa7sM6MHAqLkUXfZU0jxXk6sF4Ff0WUSTDKGGtVtpba93vEm3zBYJhl30Rsb951Jfk45ovvYrCHvUEg-KGOAhBwM5cH4IG5PU2Vz2U0nRrF9ZNGU7vB0_xwnOW7S4PMwWqzz4I3pLf1s313KjPI52nnaw2lAnCWYLnlqQSHR5u-wO0RDUVuVgOv3Y",
+    "heroImage": "./ai-images/strawberry-glazed-mochi-donuts.jpg",
+    "thumbImage": "./ai-images/strawberry-glazed-mochi-donuts.jpg",
+    "pinterestImage": "./ai-images/strawberry-glazed-mochi-donuts.jpg",
     "hashtags": [
       "#MochiDonuts",
       "#PonDeRing",
@@ -355,7 +355,7 @@
       {
         "id": "um1",
         "handle": "@pastelkitchen",
-        "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAkLkRROOfFeh_-zzFFJwD1gM_7GtUU1xzIEnk-EqfylEIlLOGa7sM6MHAqLkUXfZU0jxXk6sF4Ff0WUSTDKGGtVtpba93vEm3zBYJhl30Rsb951Jfk45ovvYrCHvUEg-KGOAhBwM5cH4IG5PU2Vz2U0nRrF9ZNGU7vB0_xwnOW7S4PMwWqzz4I3pLf1s313KjPI52nnaw2lAnCWYLnlqQSHR5u-wO0RDUVuVgOv3Y",
+        "image": "./ai-images/strawberry-glazed-mochi-donuts.jpg",
         "quote": "So chewy inside and genuinely took 20 mins in my air fryer!",
         "rating": 5
       }
@@ -397,9 +397,9 @@
     "badgeChip": "5.0 ★ Crowd Hit",
     "creatorHandle": "@skilletbae",
     "hookLine": "1-bowl brown-butter cookie dough hiding a frozen molten Nutella core in 15 mins.",
-    "heroImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuA4JgxIaxwGhr1Mqdr-CPxA2lQDf9ZwcZh8pSzv-Ke8RjY4igDoSfwl4UyM77BIdr7EYuJDX2Kb8ktHvud6P82EAGVulcep1No4-Tfb6fdnI6TH_DCNOPNgWkLmnJMSdT6Q7hL_YOL5xaCJWweQ1kzdp2SPpyTVnwc8pKZBUhjtrMpdQ38aD896PJZT_lhE94dfJEz6MagxvlWkMSWVaYx3yaJTd7jKKAanJDgXQbY",
-    "thumbImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuCpiJy6GMiVyARoo-pC3q7AMmu4aCKJKp0QwG82rwNlys9g1b6wWU4agLoTgg96bgzWQ9MBN8tX_4ESEUyNW_ZtqIM4apfZS9s1a7itJ8JSBQR5AvWQNt30w6pPc5vmDpeD9YJAlTRuzukzkwkv-DeBTA5upCRHY0EBuerC8J1NH_7Wl3xg2anYAZAXk0HrttaJjDh0y-Y4HVHNcfCmq8XxAJciugfeYmYrhoggUiY",
-    "pinterestImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuA4JgxIaxwGhr1Mqdr-CPxA2lQDf9ZwcZh8pSzv-Ke8RjY4igDoSfwl4UyM77BIdr7EYuJDX2Kb8ktHvud6P82EAGVulcep1No4-Tfb6fdnI6TH_DCNOPNgWkLmnJMSdT6Q7hL_YOL5xaCJWweQ1kzdp2SPpyTVnwc8pKZBUhjtrMpdQ38aD896PJZT_lhE94dfJEz6MagxvlWkMSWVaYx3yaJTd7jKKAanJDgXQbY",
+    "heroImage": "./ai-images/molten-nutella-lava-cookie-skillet.jpg",
+    "thumbImage": "./ai-images/molten-nutella-lava-cookie-skillet.jpg",
+    "pinterestImage": "./ai-images/molten-nutella-lava-cookie-skillet.jpg",
     "hashtags": [
       "#NutellaSkillet",
       "#15MinDessert",
@@ -487,7 +487,7 @@
       {
         "id": "un1",
         "handle": "@midnight_crave",
-        "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuA4JgxIaxwGhr1Mqdr-CPxA2lQDf9ZwcZh8pSzv-Ke8RjY4igDoSfwl4UyM77BIdr7EYuJDX2Kb8ktHvud6P82EAGVulcep1No4-Tfb6fdnI6TH_DCNOPNgWkLmnJMSdT6Q7hL_YOL5xaCJWweQ1kzdp2SPpyTVnwc8pKZBUhjtrMpdQ38aD896PJZT_lhE94dfJEz6MagxvlWkMSWVaYx3yaJTd7jKKAanJDgXQbY",
+        "image": "./ai-images/molten-nutella-lava-cookie-skillet.jpg",
         "quote": "Literally 15 mins from craving to spooning hot Nutella + cold vanilla ice cream.",
         "rating": 5
       }
@@ -528,9 +528,9 @@
     "badgeChip": "8 Min Crunch",
     "creatorHandle": "@seoulcafevibes",
     "hookLine": "Only 3 ingredients! Shattering amber caramelized sugar shell around flaky croissant layers.",
-    "heroImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuAhzuJSsNEfRnkTplBhs4Zz8pJsExT80MGGCgmLOtIlYRttyPlSoy5z2YhXvRxZ7aXlM8glxlQUsBs0jwZImlhmq4o9l0WU4B6hvrYbJFusyMs9M2jSyBXUo4x8G8GRPnUPZUJF1BqXAgmGe3Gb5LyZ8OR6YI4rq3BznHwUdOejZlezHqHAFkYUDiQj7tu5z9Pq8849-Go6CJr9TkNiyYHmoGRhximwntmAI76oLBc",
-    "thumbImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuDglXu6kUAZHXePaYsYagsI81NlsuyqTZtaYGo1kf-WJAbtSyZVc3KI4iPuGafi8gYeGlfCTofG1luDdVwQthZwFdg2DySMCJvBGLpLqDnBUhxWhwpGjUzKYHZ3roIZH5cBpadNGr0SK5LBhLrJ8Pn4oD2iYJ3AXmv7LEfiQDuxaqxwoGD6R506yv9kFcUlG8neW3xg2qzlEsgg2KJGcgNOns2eRVSp2Et0WoGlqiE",
-    "pinterestImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuDBAVBJ7DitXi2oersBlJ6MGsFd17dWgIb7mH145l8pXSpl-DvXdrKFCeOIPnHJ6a2q0lrRdIWpvqh-bzXHxcJxjeqjvh2RVdxfW2etZcEoWpFoIUzeZ5gTii1IMz4b_XnK7P28KeT7vUep1Q7ALmk3GKZGbblAUawj7JvAg_li7iXWTdX-kBcbeWESYnrM6_1L1legKezQvrlyhzhKMeokp-oWG1oMfQVCkld3v1w",
+    "heroImage": "./ai-images/crispy-caramel-croffle.jpg",
+    "thumbImage": "./ai-images/crispy-caramel-croffle.jpg",
+    "pinterestImage": "./ai-images/crispy-caramel-croffle.jpg",
     "hashtags": [
       "#Croffle",
       "#3IngredientDessert",
@@ -606,7 +606,7 @@
       {
         "id": "uc1",
         "handle": "@foodie_dan",
-        "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAtLbHaWsOS9y8b9SY_YASH6Lsne4Q-lNDCeuYqCFtpYGFfpicVITHGBJ6ETwub5p71X_ceLD2WKxvxMUDRpbMbW2xPZ2dAVWSvHWOrEyPLT9DKlSIc8hSYWvUJ80qSTYOWPqpl8EkZcv33sqcn1etJcjsJ9eS1xLFfkfWU1s42NtBYPUb7DElMVkRo-7NZz5Z3WqQjwqKeMBKnyhEXGu0x_gsN_Nwje4m3WTmpcfY",
+        "image": "./ai-images/crispy-caramel-croffle.jpg",
         "quote": "Game changer breakfast. Crispy exterior, airy layers inside!",
         "rating": 5
       }
@@ -647,9 +647,9 @@
     "badgeChip": "2 Min Microwave",
     "creatorHandle": "@mugmagic",
     "hookLine": "Warm fluffy bakery cinnamon roll in a coffee mug in literally 90 seconds of microwave time.",
-    "heroImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuDZyHVnozv23AlpKcIr4c-MKbclHyWZ9rUAxdI3a2YG7XdY3AFdTyAT5rTWqWXwtwPD5s9rWdZuTqJMCWosX3lB2iwgcXhXD-z8_p9HviJnNBVnRThUhFMV0iPRWUYxNWWNpgsW7zgedBenY2sJOwS7HrVyOR879N_mTXwv09VkZ0Yl93QjbOP3reT0PuotI3QmTMTz7zp3Y6XjOjuNI9M3EJaCqjPpXBTNTblHV6Q",
-    "thumbImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuDZyHVnozv23AlpKcIr4c-MKbclHyWZ9rUAxdI3a2YG7XdY3AFdTyAT5rTWqWXwtwPD5s9rWdZuTqJMCWosX3lB2iwgcXhXD-z8_p9HviJnNBVnRThUhFMV0iPRWUYxNWWNpgsW7zgedBenY2sJOwS7HrVyOR879N_mTXwv09VkZ0Yl93QjbOP3reT0PuotI3QmTMTz7zp3Y6XjOjuNI9M3EJaCqjPpXBTNTblHV6Q",
-    "pinterestImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuDZyHVnozv23AlpKcIr4c-MKbclHyWZ9rUAxdI3a2YG7XdY3AFdTyAT5rTWqWXwtwPD5s9rWdZuTqJMCWosX3lB2iwgcXhXD-z8_p9HviJnNBVnRThUhFMV0iPRWUYxNWWNpgsW7zgedBenY2sJOwS7HrVyOR879N_mTXwv09VkZ0Yl93QjbOP3reT0PuotI3QmTMTz7zp3Y6XjOjuNI9M3EJaCqjPpXBTNTblHV6Q",
+    "heroImage": "./ai-images/microwave-cinnamon-roll-mug-cake.jpg",
+    "thumbImage": "./ai-images/microwave-cinnamon-roll-mug-cake.jpg",
+    "pinterestImage": "./ai-images/microwave-cinnamon-roll-mug-cake.jpg",
     "hashtags": [
       "#MugCake",
       "#2MinDessert",
@@ -727,7 +727,7 @@
       {
         "id": "umg1",
         "handle": "@dormchef",
-        "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDZyHVnozv23AlpKcIr4c-MKbclHyWZ9rUAxdI3a2YG7XdY3AFdTyAT5rTWqWXwtwPD5s9rWdZuTqJMCWosX3lB2iwgcXhXD-z8_p9HviJnNBVnRThUhFMV0iPRWUYxNWWNpgsW7zgedBenY2sJOwS7HrVyOR879N_mTXwv09VkZ0Yl93QjbOP3reT0PuotI3QmTMTz7zp3Y6XjOjuNI9M3EJaCqjPpXBTNTblHV6Q",
+        "image": "./ai-images/microwave-cinnamon-roll-mug-cake.jpg",
         "quote": "Late night study savior. Took 2 mins and tasted like Cinnabon.",
         "rating": 5
       }
@@ -771,9 +771,9 @@
     "badgeChip": "3-Ingred ASMR",
     "creatorHandle": "@sweettoothsam",
     "hookLine": "No thermometer needed! Ice-bath method creates a thin shattering glass candy shell.",
-    "heroImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuDxeFso8tBoMkY8Zl0qZOXbSZ0k-5qogj6GQedtWEL3cyub51YNvaj2HPEGDlnsfhMqUBkpesKh08afj-0_fpzQeLbN97A3B0hI6ABRTzzGE4qSCQ7BWO9C50ZZa9ALZntVsz4vpkPDRSFvn0Rix7KfZmcyVTc6pu0jXhE1FQ76ni2sBPubk4TSvXmetDs0GswueRmnugBZ2XTX_gWWWLC5E--B21WCNqdtJB99z4U",
-    "thumbImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuDxeFso8tBoMkY8Zl0qZOXbSZ0k-5qogj6GQedtWEL3cyub51YNvaj2HPEGDlnsfhMqUBkpesKh08afj-0_fpzQeLbN97A3B0hI6ABRTzzGE4qSCQ7BWO9C50ZZa9ALZntVsz4vpkPDRSFvn0Rix7KfZmcyVTc6pu0jXhE1FQ76ni2sBPubk4TSvXmetDs0GswueRmnugBZ2XTX_gWWWLC5E--B21WCNqdtJB99z4U",
-    "pinterestImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuA_xN_STLdPDQ5-cD7rP08N6Z-jdyxjz9l66dHlvXsWOHIjD0odZsWUskvN2KX_o-O0ADBPqdTQbLnXoKsDyKZuisUHszPizUoChC0mvrVdtrGTYI40F6GKtLV2LTjrTLAv6TXYwtZQjFlwKaMoSJHrhmNyRSB50biBZNC7gzu4h6P2FVqO0FtC4tFJk8Bt-MZef55X_5PYYARwTST09059EkOZqW7jF-SG2hoJBaw",
+    "heroImage": "./ai-images/glass-crunch-ice-bath-tanghulu.jpg",
+    "thumbImage": "./ai-images/glass-crunch-ice-bath-tanghulu.jpg",
+    "pinterestImage": "./ai-images/glass-crunch-ice-bath-tanghulu.jpg",
     "hashtags": [
       "#Tanghulu",
       "#GlassFruit",
@@ -848,7 +848,7 @@
       {
         "id": "ut1",
         "handle": "@sweettoothsam",
-        "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDYqi0tojA8SoFikq8dGDgui93c3OGmoBZ0bHG7DhX7MuGj9TdzR-z1Me8i__9Ffi5NkUGL6FWnTcbr6XxiFuP27G34xY1SFzyn1mq6OZuAqHqYyPcUkKDOYspat9VyiqPcfJEwg4z0KjklIWrhNqgTlcAmn1ndsJ43pPMTgN2puRsV1JrUL_KS9JVvaveYxG8EdIboFfMbZlwfWRt68CA2nBnHsHGl-MZUd7PyTLo",
+        "image": "./ai-images/glass-crunch-ice-bath-tanghulu.jpg",
         "quote": "The ice bath trick worked! No burnt sugar finally 😭🙌",
         "rating": 5
       }
