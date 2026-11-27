@@ -171,6 +171,13 @@ export function App() {
       }
     }
     window.history.replaceState({}, '', url.toString());
+    // GA4 SPA page_view on every screen / recipe navigation
+    if (typeof (window as unknown as Record<string, unknown>).gtag === 'function') {
+      (window as unknown as { gtag: (...args: unknown[]) => void }).gtag('event', 'page_view', {
+        page_title: document.title,
+        page_path: url.pathname + url.search,
+      });
+    }
   }, [screen, activeRecipe, activeServings, unit, initialCategory]);
 
   // Browser back button support
