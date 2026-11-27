@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useLayoutEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { BrandHeader } from './components/BrandHeader';
 import { BottomNav } from './components/BottomNav';
 import { CommunityRemakesView } from './components/CommunityRemakesView';
@@ -144,11 +144,21 @@ export function App() {
     return null;
   }, [screen]);
 
+  const lastTabRef = useRef<AppTab>('trending');
+  const isPopStateRef = useRef(false);
+  const hasMountedRef = useRef(false);
+
   const activeServings = activeRecipe
     ? servingsByRecipe[activeRecipe.id] ?? activeRecipe.baseServings
     : 8;
 
-  // Sync SEO Schema.org + clean canonical URL
+  useEffect(() => {
+    if (screen.type === 'tab') {
+      lastTabRef.current = screen.tab;
+    }
+  }, [screen]);
+
+  // Sync SEO Schema.org + clean canonical URL + browser history stack
   useEffect(() => {
     updateRecipeMetadata(activeRecipe, activeServings, unit);
 
@@ -170,7 +180,16 @@ export function App() {
         url.searchParams.set('mode', 'cook');
       }
     }
-    window.history.replaceState({}, '', url.toString());
+
+    const pathChanged = url.pathname !== window.location.pathname;
+    if (hasMountedRef.current && !isPopStateRef.current && pathChanged) {
+      window.history.pushState({}, '', url.toString());
+    } else {
+      window.history.replaceState({}, '', url.toString());
+    }
+    hasMountedRef.current = true;
+    isPopStateRef.current = false;
+
     // GA4 SPA page_view on every screen / recipe navigation
     if (typeof (window as unknown as Record<string, unknown>).gtag === 'function') {
       (window as unknown as { gtag: (...args: unknown[]) => void }).gtag('event', 'page_view', {
@@ -180,15 +199,31 @@ export function App() {
     }
   }, [screen, activeRecipe, activeServings, unit, initialCategory]);
 
-  // Browser back button support
+  // Browser back/forward button support
   useEffect(() => {
     const onPopState = () => {
+      isPopStateRef.current = true;
       const params = new URLSearchParams(window.location.search);
       const pathMatch = window.location.pathname.match(/\/recipes\/([a-z0-9-]+)\/?$/i);
       const slug = pathMatch?.[1] || params.get('r');
-      if (!slug) {
-        setScreen({ type: 'tab', tab: 'trending' });
+      if (slug) {
+        const found = RECIPES.find((r) => r.slug === slug);
+        if (found) {
+          setScreen(
+            params.get('mode') === 'cook'
+              ? { type: 'cook', recipeId: found.id, stepIndex: 0 }
+              : { type: 'recipe', recipeId: found.id }
+          );
+          return;
+        }
       }
+      const catMatch = window.location.pathname.match(/\/category\/([a-z0-9-]+)\/?$/i);
+      if (catMatch?.[1]) {
+        setInitialCategory(catMatch[1] as DessertCategory);
+      } else {
+        setInitialCategory('all');
+      }
+      setScreen({ type: 'tab', tab: lastTabRef.current });
     };
     window.addEventListener('popstate', onPopState);
     return () => window.removeEventListener('popstate', onPopState);
@@ -254,7 +289,7 @@ export function App() {
     if (screen.type === 'cook') {
       setScreen({ type: 'recipe', recipeId: screen.recipeId });
     } else {
-      setScreen({ type: 'tab', tab: 'trending' });
+      setScreen({ type: 'tab', tab: lastTabRef.current });
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
