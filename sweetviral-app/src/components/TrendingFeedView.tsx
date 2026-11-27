@@ -37,8 +37,17 @@ const PLATFORM_CHIPS: Array<{ id: 'all' | SocialPlatform; label: string }> = [
   { id: 'facebook', label: 'Facebook' }
 ];
 
-type SortOption = 'healthy' | 'viral' | 'fastest' | 'rating' | 'calories';
+type SortOption = 'shuffled' | 'healthy' | 'viral' | 'fastest' | 'rating' | 'calories';
 type RegionFilter = 'all' | 'usa' | 'europe';
+
+function shuffleRecipes(list: Recipe[]): Recipe[] {
+  const arr = [...list];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
 
 const EUROPEAN_CUISINES = new Set([
   'French',
@@ -75,15 +84,25 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
   onOpenShare,
   onOpenRemakes
 }) => {
+  const [shuffledRecipes, setShuffledRecipes] = useState<Recipe[]>(() => shuffleRecipes(RECIPES));
   const [activeCategory, setActiveCategory] = useState<DessertCategory>(initialCategory);
   const [activeFilter, setActiveFilter] = useState<CategoryTag>('all');
   const [activePlatform, setActivePlatform] = useState<'all' | SocialPlatform>('all');
   const [activeRegion, setActiveRegion] = useState<RegionFilter>('all');
-  const [sortBy, setSortBy] = useState<SortOption>('healthy');
+  const [sortBy, setSortBy] = useState<SortOption>('shuffled');
   const [heroMode, setHeroMode] = useState<'healthy' | 'classic'>('healthy');
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
-  const [rouletteIndex, setRouletteIndex] = useState(0);
+  const [rouletteIndex, setRouletteIndex] = useState(() =>
+    Math.floor(Math.random() * RECIPES.length)
+  );
   const [isSpinning, setIsSpinning] = useState(false);
+
+  const handleManualShuffle = () => {
+    triggerHaptic(20);
+    setShuffledRecipes(shuffleRecipes(RECIPES));
+    setSortBy('shuffled');
+    setVisibleCount(PAGE_SIZE);
+  };
 
   useEffect(() => {
     setActiveCategory(initialCategory);
@@ -97,16 +116,20 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
   };
 
   const healthySpotlight = useMemo(
-    () => RECIPES.find((r) => r.zeroRefinedSugar) || RECIPES[0],
-    []
+    () => shuffledRecipes.find((r) => r.zeroRefinedSugar) || shuffledRecipes[0],
+    [shuffledRecipes]
   );
-  const heroRecipe = heroMode === 'healthy' ? healthySpotlight : RECIPES[0];
+  const classicSpotlight = useMemo(
+    () => shuffledRecipes.find((r) => !r.zeroRefinedSugar) || shuffledRecipes[0],
+    [shuffledRecipes]
+  );
+  const heroRecipe = heroMode === 'healthy' ? healthySpotlight : classicSpotlight;
 
   const storyRadarRecipes = useMemo(() => {
-    const healthyFirst = RECIPES.filter((r) => r.zeroRefinedSugar || r.isHealthy);
-    const others = RECIPES.filter((r) => !r.zeroRefinedSugar && !r.isHealthy);
-    return [...healthyFirst, ...others].slice(0, 18);
-  }, []);
+    const healthyFirst = shuffledRecipes.filter((r) => r.zeroRefinedSugar || r.isHealthy);
+    const others = shuffledRecipes.filter((r) => !r.zeroRefinedSugar && !r.isHealthy);
+    return [...healthyFirst.slice(0, 10), ...others.slice(0, 8)];
+  }, [shuffledRecipes]);
 
   const categoryCounts = useMemo(() => {
     const map: Record<string, number> = { all: RECIPES.length };
@@ -117,7 +140,7 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
   }, []);
 
   const filteredRecipes = useMemo(() => {
-    const list = RECIPES.filter((r) => {
+    const list = shuffledRecipes.filter((r) => {
       const catMainOk = activeCategory === 'all' || r.dessertCategory === activeCategory;
       const attrOk = activeFilter === 'all' || r.categories.includes(activeFilter);
       const platOk = activePlatform === 'all' || r.platforms.includes(activePlatform);
@@ -131,6 +154,9 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
       return catMainOk && attrOk && platOk && regionOk;
     });
 
+    if (sortBy === 'shuffled') {
+      return list;
+    }
     if (sortBy === 'healthy') {
       return [...list].sort((a, b) => {
         const aScore = (a.zeroRefinedSugar ? 3 : 0) + (a.isHealthy ? 2 : 0) + (a.kcal <= 250 ? 1 : 0);
@@ -149,7 +175,7 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
       return [...list].sort((a, b) => a.kcal - b.kcal);
     }
     return [...list].sort((a, b) => b.viewsNumeric - a.viewsNumeric);
-  }, [activeCategory, activeFilter, activePlatform, activeRegion, sortBy]);
+  }, [shuffledRecipes, activeCategory, activeFilter, activePlatform, activeRegion, sortBy]);
 
   const displayedRecipes = useMemo(
     () => filteredRecipes.slice(0, visibleCount),
@@ -487,12 +513,22 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
               onChange={(e) => setSortBy(e.target.value as SortOption)}
               className="bg-surface-container-low text-on-surface font-label-sm text-label-sm px-2.5 py-1 rounded-full outline-none"
             >
+              <option value="shuffled">🎲 Fresh Shuffle</option>
               <option value="healthy">🌿 Healthy First</option>
               <option value="viral">🔥 Most Viral</option>
               <option value="calories">🪶 Lowest Cal</option>
               <option value="fastest">⚡ Fastest</option>
               <option value="rating">⭐ Top Rated</option>
             </select>
+            <button
+              type="button"
+              onClick={handleManualShuffle}
+              aria-label="Shuffle recipes"
+              title="Shuffle recipes"
+              className="bg-surface-container-low hover:bg-surface-container text-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full flex items-center gap-1 active:scale-95 transition-transform"
+            >
+              <span className="material-symbols-outlined text-[15px]">shuffle</span>
+            </button>
           </div>
         </div>
       </section>
