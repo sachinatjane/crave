@@ -159,12 +159,12 @@ export async function generateShareCardDataUrl(
   const pad = 72;
 
   // Top Brand Pill
-  drawRoundedRect(ctx, pad, 88, 360, 64, 32);
+  drawRoundedRect(ctx, pad, 88, 300, 64, 32);
   ctx.fillStyle = 'rgba(255, 248, 246, 0.92)';
   ctx.fill();
   ctx.fillStyle = '#e11d48';
-  ctx.font = '800 26px "Plus Jakarta Sans", system-ui, sans-serif';
-  ctx.fillText('🔥 SWEETVIRAL', pad + 32, 130);
+  ctx.font = '800 28px "Plus Jakarta Sans", system-ui, sans-serif';
+  ctx.fillText('🔥 CRAVE', pad + 34, 130);
 
   // Views / Made Badge on top-right
   const badgeLabel = madeBadge ? '✓ I MADE THIS!' : recipe.viewsLabel.toUpperCase();

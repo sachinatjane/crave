@@ -636,7 +636,7 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
                 </div>
               ))}
               <div className="inline-flex h-8 w-8 rounded-full bg-primary-container text-on-primary-container ring-2 ring-surface-container-lowest items-center justify-center font-label-sm text-label-sm font-extrabold">
-                +120k
+                +4.8k
               </div>
             </div>
             <div className="min-w-0 flex-1">
@@ -644,13 +644,13 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
                 Community Baked
               </p>
               <p className="font-body-sm text-body-sm text-on-surface font-semibold truncate">
-                124,800+ Remakes this week
+                4,820+ Remakes this month
               </p>
             </div>
           </div>
           <p className="font-body-md text-body-md text-secondary leading-relaxed">
             Tag your creations with{' '}
-            <span className="font-bold text-primary">#SweetViralMadeMeDoIt</span> on TikTok, IG,
+            <span className="font-bold text-primary">#CraveMadeMeDoIt</span> on TikTok, IG,
             FB &amp; Shorts to unlock the weekly showcase!
           </p>
           <button

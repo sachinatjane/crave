@@ -84,7 +84,7 @@ export const BrandHeader: React.FC<BrandHeaderProps> = ({
               <circle cx="18" cy="20.2" r="2.2" fill="#ffb95f" />
             </svg>
             <span className="font-headline-sm text-headline-sm text-on-surface tracking-tight truncate font-extrabold">
-              {mode === 'stack' && title ? title : 'SweetViral'}
+              {mode === 'stack' && title ? title : 'Crave'}
             </span>
           </button>
         </div>
@@ -95,7 +95,7 @@ export const BrandHeader: React.FC<BrandHeaderProps> = ({
             <div className="hidden xs:inline-flex items-center gap-1 bg-surface-container-high px-2.5 py-1 rounded-full shadow-[0_2px_8px_rgba(39,24,17,0.05)]">
               <span className="text-xs leading-none">🔥</span>
               <span className="font-label-sm text-label-sm text-primary font-extrabold uppercase tracking-wider">
-                2.4M Live
+                3.2K Baking
               </span>
             </div>
           )}

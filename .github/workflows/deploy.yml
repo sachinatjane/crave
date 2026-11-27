@@ -1,4 +1,4 @@
-name: Deploy SweetViral to GitHub Pages
+name: Deploy Crave to GitHub Pages
 
 on:
   push:

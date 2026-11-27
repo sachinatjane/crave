@@ -53,7 +53,7 @@ export const CommunityRemakesView: React.FC<CommunityRemakesViewProps> = ({
 
   const handleCopyChallengeTags = async () => {
     const recipe = RECIPES.find((r) => r.slug === selectedSlug) || RECIPES[0];
-    const text = `My #DubaiBrownieRemake attempt! Made using @SweetViral zero-login Cook Mode 🔥\n${recipe.hashtags.join(
+    const text = `My #DubaiBrownieRemake attempt! Made using @Crave zero-login Cook Mode 🔥\n${recipe.hashtags.join(
       ' '
     )}`;
     try {
@@ -113,7 +113,7 @@ export const CommunityRemakesView: React.FC<CommunityRemakesViewProps> = ({
                 Weekly Creator Spotlight Feature
               </span>
               <span className="font-body-sm text-body-sm text-secondary truncate">
-                1.4K Bakers entered • Tag #SweetViralMadeMeDoIt
+                340 Bakers entered • Tag #CraveMadeMeDoIt
               </span>
             </div>
           </div>
@@ -346,7 +346,7 @@ export const CommunityRemakesView: React.FC<CommunityRemakesViewProps> = ({
                 Zero-Signup Trend Radar
               </span>
               <h2 className="font-headline-sm text-headline-sm font-bold leading-snug">
-                Keep SweetViral 1 Tap Away
+                Keep Crave 1 Tap Away
               </h2>
             </div>
           </div>

@@ -19,17 +19,17 @@ export function updateRecipeMetadata(
   if (typeof document === 'undefined') return;
 
   if (!recipe) {
-    document.title = 'SweetViral — Viral Dessert Recipes (Zero Fluff, Instant Cook Mode)';
+    document.title = 'Crave — Viral Dessert Recipes (Zero Fluff, Instant Cook Mode)';
     return;
   }
 
   const activeServings = servings || recipe.baseServings;
-  document.title = `${recipe.title} (${recipe.totalMin}m) — SweetViral`;
+  document.title = `${recipe.title} (${recipe.totalMin}m) — Crave`;
   upsertMeta('property', 'og:title', `${recipe.title} — ${recipe.viewsLabel}`);
   upsertMeta('property', 'og:description', recipe.hookLine);
   upsertMeta('property', 'og:image', recipe.heroImage);
 
-  const schemaId = 'sweetviral-recipe-jsonld';
+  const schemaId = 'crave-recipe-jsonld';
   let script = document.getElementById(schemaId) as HTMLScriptElement | null;
   if (!script) {
     script = document.createElement('script');

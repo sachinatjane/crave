@@ -1,4 +1,4 @@
-# Crave / SweetViral — Viral Mobile Dessert Recipe Hub
+# Crave — Viral Mobile Dessert Recipe Hub
 
 Zero-login, mobile-first viral dessert web app built for social media traffic (TikTok, Instagram Reels, Pinterest, YouTube Shorts, and Facebook), featuring **400+ curated recipes** across all dessert categories with a focus on American and European classics.
 

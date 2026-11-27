@@ -39,19 +39,24 @@ type ScreenState =
 
 export function App() {
   const [savedIds, setSavedIds] = useState<string[]>(() =>
-    readStorage<string[]>('sweetviral_saved', ['dubai-brownies'])
+    readStorage<string[]>('crave_saved', readStorage<string[]>('sweetviral_saved', ['dubai-brownies']))
   );
   const [madeIds, setMadeIds] = useState<string[]>(() =>
-    readStorage<string[]>('sweetviral_made', [])
+    readStorage<string[]>('crave_made', readStorage<string[]>('sweetviral_made', []))
   );
   const [likedStitches, setLikedStitches] = useState<string[]>(() =>
-    readStorage<string[]>('sweetviral_likes', ['cs1', 'cs3'])
+    readStorage<string[]>('crave_likes', readStorage<string[]>('sweetviral_likes', ['cs1', 'cs3']))
   );
   const [checkedByRecipe, setCheckedByRecipe] = useState<
     Record<string, Record<string, boolean>>
-  >(() => readStorage<Record<string, Record<string, boolean>>>('sweetviral_checked', {}));
+  >(() =>
+    readStorage<Record<string, Record<string, boolean>>>(
+      'crave_checked',
+      readStorage<Record<string, Record<string, boolean>>>('sweetviral_checked', {})
+    )
+  );
   const [unit, setUnit] = useState<UnitSystem>(() =>
-    readStorage<UnitSystem>('sweetviral_unit', 'us')
+    readStorage<UnitSystem>('crave_unit', readStorage<UnitSystem>('sweetviral_unit', 'us'))
   );
   const [servingsByRecipe, setServingsByRecipe] = useState<Record<string, number>>({});
 
@@ -111,11 +116,11 @@ export function App() {
   }, [toast]);
 
   // Persist zero-login local preferences
-  useEffect(() => writeStorage('sweetviral_saved', savedIds), [savedIds]);
-  useEffect(() => writeStorage('sweetviral_made', madeIds), [madeIds]);
-  useEffect(() => writeStorage('sweetviral_likes', likedStitches), [likedStitches]);
-  useEffect(() => writeStorage('sweetviral_checked', checkedByRecipe), [checkedByRecipe]);
-  useEffect(() => writeStorage('sweetviral_unit', unit), [unit]);
+  useEffect(() => writeStorage('crave_saved', savedIds), [savedIds]);
+  useEffect(() => writeStorage('crave_made', madeIds), [madeIds]);
+  useEffect(() => writeStorage('crave_likes', likedStitches), [likedStitches]);
+  useEffect(() => writeStorage('crave_checked', checkedByRecipe), [checkedByRecipe]);
+  useEffect(() => writeStorage('crave_unit', unit), [unit]);
 
   const activeRecipe = useMemo(() => {
     if (screen.type === 'recipe' || screen.type === 'cook') {
