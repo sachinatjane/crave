@@ -172,7 +172,7 @@ export const AutoLoadedRecipeBlock: React.FC<AutoLoadedRecipeBlockProps> = ({
               <ul className="flex flex-col gap-2">
                 {group.items.map((item) => {
                   const isChecked = Boolean(checked[item.id]);
-                  const swap = healthyMode ? getHealthyIngredientSwap(item) : null;
+                  const swap = healthyMode ? getHealthyIngredientSwap(item.name) : null;
                   const amount = formatScaledIngredient(
                     item,
                     servings,
@@ -205,10 +205,10 @@ export const AutoLoadedRecipeBlock: React.FC<AutoLoadedRecipeBlockProps> = ({
                           }`}
                         >
                           <strong className="text-primary">{amount}</strong>{' '}
-                          {swap ? swap.swappedName : item.name}
-                          {swap && (
+                          {swap?.swapped ? swap.text : item.name}
+                          {swap?.swapped && (
                             <span className="ml-1.5 text-[10px] font-bold text-[#059669] bg-[#e8f8f2] px-1.5 py-0.5 rounded">
-                              {swap.badge}
+                              🌿 Healthy Swap
                             </span>
                           )}
                         </span>
@@ -293,7 +293,7 @@ export const AutoLoadedRecipeBlock: React.FC<AutoLoadedRecipeBlockProps> = ({
 
       {/* High-RPM In-Feed Ad Slot */}
       <div className="px-gutter mt-space-md">
-        <AdUnit format="auto" />
+        <AdUnit />
       </div>
     </section>
   );
