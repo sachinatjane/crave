@@ -2,6 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { COMMUNITY_STITCHES, RECIPES } from '../data/recipes';
 import { Recipe } from '../types/recipe';
 import { triggerHaptic } from '../utils/audioHaptics';
+import { copyTextToClipboard } from '../utils/shareEngine';
 import { AdUnit } from './AdUnit';
 import { EbookPromoCard } from './EbookPromoCard';
 import { SafeImage } from './SafeImage';
@@ -58,11 +59,11 @@ export const CommunityRemakesView: React.FC<CommunityRemakesViewProps> = ({
     const text = `My #DubaiBrownieRemake attempt! Made using @Crave zero-login Cook Mode 🔥\n${recipe.hashtags.join(
       ' '
     )}`;
-    try {
-      await navigator.clipboard.writeText(text);
+    const copied = await copyTextToClipboard(text);
+    if (copied) {
       onToast('Remake caption + hashtags copied!', 'content_copy');
-    } catch {
-      onToast('Ready to paste on TikTok, IG, FB & Shorts!', 'content_copy');
+    } else {
+      onToast('Could not access clipboard — long press to copy', 'content_copy');
     }
   };
 

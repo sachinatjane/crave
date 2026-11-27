@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Recipe, UnitSystem } from '../types/recipe';
+import { resolveAssetUrl } from '../utils/assetUrl';
 import {
   buildDeepRecipeUrl,
   buildPlatformCaption,
+  copyTextToClipboard,
   generateShareCardDataUrl
 } from '../utils/shareEngine';
 import { triggerHaptic } from '../utils/audioHaptics';
@@ -58,40 +60,54 @@ export const ShareModal: React.FC<ShareModalProps> = ({
     };
   }, [recipe, format, servings, unit, madeBadge]);
 
+  useEffect(() => {
+    if (!recipe) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [recipe, onClose]);
+
   if (!recipe) return null;
 
   const deepUrl = buildDeepRecipeUrl(recipe.slug, servings, unit);
   const captionText = buildPlatformCaption(recipe);
+  const absolutePinterestImage = resolveAssetUrl(recipe.pinterestImage);
 
   const handleCopyLink = async () => {
     triggerHaptic(25);
-    try {
-      await navigator.clipboard.writeText(deepUrl);
+    const copied = await copyTextToClipboard(deepUrl);
+    if (copied) {
       onToast('Scaled recipe link copied!', 'link');
-    } catch {
+    } else {
       onToast('Copy this URL from your address bar', 'link');
     }
   };
 
   const handleCopyCaption = async () => {
     triggerHaptic(25);
-    try {
-      await navigator.clipboard.writeText(`${captionText}\n\nRecipe: ${deepUrl}`);
+    const copied = await copyTextToClipboard(`${captionText}\n\nRecipe: ${deepUrl}`);
+    if (copied) {
       onToast('TikTok/IG caption & hashtags copied!', 'content_copy');
-    } catch {
-      onToast('Copied hashtags!', 'content_copy');
+    } else {
+      onToast('Could not access clipboard — long press to copy', 'content_copy');
     }
   };
 
   const handleDownloadCard = () => {
-    if (!previewUrl) return;
+    if (!previewUrl && !cardBlob) return;
     triggerHaptic([30, 20, 30]);
+    const objectUrl = cardBlob ? URL.createObjectURL(cardBlob) : null;
     const a = document.createElement('a');
-    a.href = previewUrl;
+    a.href = objectUrl || previewUrl || '';
     a.download = `${recipe.slug}-${format}.png`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
+    if (objectUrl) {
+      window.setTimeout(() => URL.revokeObjectURL(objectUrl), 1500);
+    }
     onToast(
       format === 'story' ? '9:16 Story Card downloaded!' : '2:3 Pinterest Card downloaded!',
       'download_done'
@@ -107,26 +123,32 @@ export const ShareModal: React.FC<ShareModalProps> = ({
     };
 
     try {
-      if (cardBlob && navigator.canShare) {
+      if (cardBlob && typeof navigator.canShare === 'function') {
         const file = new File([cardBlob], `${recipe.slug}-${format}.png`, {
           type: 'image/png'
         });
         if (navigator.canShare({ files: [file] })) {
-          await navigator.share({
-            ...shareData,
-            files: [file]
-          });
-          onToast('Shared card + recipe link!', 'send');
-          return;
+          try {
+            await navigator.share({
+              ...shareData,
+              files: [file]
+            });
+            onToast('Shared card + recipe link!', 'send');
+            return;
+          } catch (fileErr) {
+            if (fileErr instanceof Error && fileErr.name === 'AbortError') return;
+            // Fallback to link-only native share if file share is rejected by WebView
+          }
         }
       }
-      if (navigator.share) {
+      if (typeof navigator.share === 'function') {
         await navigator.share(shareData);
         onToast('Shared recipe!', 'send');
         return;
       }
-    } catch {
-      // User dismissed share sheet or WebView blocked native share
+    } catch (err) {
+      if (err instanceof Error && err.name === 'AbortError') return;
+      // WebView blocked native share — fall through to copy link
     }
     await handleCopyLink();
   };
@@ -137,7 +159,7 @@ export const ShareModal: React.FC<ShareModalProps> = ({
 
   const pinterestHref = `https://www.pinterest.com/pin/create/button/?url=${encodeURIComponent(
     deepUrl
-  )}&media=${encodeURIComponent(recipe.pinterestImage)}&description=${encodeURIComponent(
+  )}&media=${encodeURIComponent(absolutePinterestImage)}&description=${encodeURIComponent(
     `${recipe.title} — Ready in ${recipe.totalMin} mins • ${recipe.viewsLabel} • No-fluff viral recipe!`
   )}`;
 
