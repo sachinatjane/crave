@@ -1,5 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Recipe, UnitSystem } from '../types/recipe';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { DESSERT_CATEGORIES, RECIPES } from '../data/recipes';
+import { DessertCategory, Recipe, UnitSystem } from '../types/recipe';
+import { getSiteRootPath } from '../utils/assetUrl';
 import {
   buildShoppingListText,
   formatScaledIngredient,
@@ -23,6 +25,8 @@ interface RecipeDetailViewProps {
   onMarkMade: () => void;
   onStartCookMode: (startStepIndex?: number) => void;
   onOpenShare: (format?: 'story' | 'pinterest', madeBadge?: boolean) => void;
+  onSelectCategory?: (cat: DessertCategory) => void;
+  onOpenRecipe?: (recipe: Recipe) => void;
   onToast: (msg: string, icon?: string) => void;
 }
 
@@ -40,12 +44,24 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
   onMarkMade,
   onStartCookMode,
   onOpenShare,
+  onSelectCategory,
+  onOpenRecipe,
   onToast
 }) => {
   const [showDemoModal, setShowDemoModal] = useState(false);
   const [demoSlide, setDemoSlide] = useState(0);
   const [showConfetti, setShowConfetti] = useState(false);
   const ingredientsRef = useRef<HTMLDivElement>(null);
+
+  const rootPath = getSiteRootPath();
+  const catMeta = DESSERT_CATEGORIES.find((c) => c.id === recipe.dessertCategory);
+  const relatedRecipes = useMemo(
+    () =>
+      RECIPES.filter(
+        (r) => r.id !== recipe.id && r.dessertCategory === recipe.dessertCategory
+      ).slice(0, 4),
+    [recipe.id, recipe.dessertCategory]
+  );
 
   useEffect(() => {
     if (!showDemoModal) return;
@@ -89,7 +105,43 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
   const minServings = recipe.baseServings <= 2 ? 1 : 2;
 
   return (
-    <div className="flex flex-col w-full pb-28 max-w-3xl mx-auto">
+    <article className="flex flex-col w-full pb-28 max-w-3xl mx-auto">
+      {/* Semantic Breadcrumb Trail */}
+      <nav
+        aria-label="Breadcrumb"
+        className="px-gutter py-2 flex items-center gap-1.5 text-[11px] font-semibold text-secondary overflow-x-auto no-scrollbar whitespace-nowrap"
+      >
+        <a
+          href={rootPath}
+          onClick={(e) => {
+            if (onSelectCategory) {
+              e.preventDefault();
+              onSelectCategory('all');
+            }
+          }}
+          className="hover:text-primary transition-colors"
+        >
+          Home
+        </a>
+        <span aria-hidden="true">›</span>
+        <a
+          href={`${rootPath}category/${recipe.dessertCategory}/`}
+          onClick={(e) => {
+            if (onSelectCategory) {
+              e.preventDefault();
+              onSelectCategory(recipe.dessertCategory);
+            }
+          }}
+          className="hover:text-primary transition-colors"
+        >
+          {catMeta?.label || 'Desserts'}
+        </a>
+        <span aria-hidden="true">›</span>
+        <span className="text-on-surface truncate max-w-[180px]" aria-current="page">
+          {recipe.title}
+        </span>
+      </nav>
+
       {/* Confetti Burst */}
       {showConfetti && (
         <div className="fixed inset-x-0 top-20 z-50 pointer-events-none flex justify-center gap-3 overflow-hidden h-36">
@@ -458,7 +510,8 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
           return (
             <div
               key={step.stepNumber}
-              className="flex flex-col bg-surface-container-lowest rounded-lg p-space-md shadow-sm gap-space-sm"
+              id={`step-${step.stepNumber}`}
+              className="flex flex-col bg-surface-container-lowest rounded-lg p-space-md shadow-sm gap-space-sm scroll-mt-20"
             >
               <div className="flex items-center justify-between gap-2">
                 <div className="flex items-center gap-2 min-w-0">
@@ -609,6 +662,56 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
         </div>
       )}
 
+      {/* Related Recipes Internal Linking (SEO + Discovery) */}
+      {relatedRecipes.length > 0 && (
+        <section className="px-gutter mt-space-lg flex flex-col gap-space-sm">
+          <div className="flex items-center justify-between">
+            <h3 className="font-headline-sm text-headline-sm text-on-surface font-bold">
+              More {catMeta?.label || 'Dessert'} Recipes
+            </h3>
+            <a
+              href={`${rootPath}category/${recipe.dessertCategory}/`}
+              onClick={(e) => {
+                if (onSelectCategory) {
+                  e.preventDefault();
+                  onSelectCategory(recipe.dessertCategory);
+                }
+              }}
+              className="font-label-sm text-label-sm text-primary uppercase font-bold"
+            >
+              View All →
+            </a>
+          </div>
+          <div className="grid grid-cols-2 gap-space-sm">
+            {relatedRecipes.map((rel) => (
+              <a
+                key={rel.id}
+                href={`${rootPath}recipes/${rel.slug}/`}
+                onClick={(e) => {
+                  if (onOpenRecipe) {
+                    e.preventDefault();
+                    onOpenRecipe(rel);
+                  }
+                }}
+                className="flex items-center gap-2.5 p-2 rounded-lg bg-surface-container-lowest shadow-sm hover:bg-surface-container-low transition-colors"
+              >
+                <SafeImage
+                  src={rel.thumbImage}
+                  alt={rel.title}
+                  className="w-14 h-14 rounded-DEFAULT object-cover shrink-0"
+                />
+                <div className="min-w-0 flex-1">
+                  <p className="font-label-sm text-label-sm text-primary">{rel.totalMin}m • {rel.viewsLabel}</p>
+                  <p className="font-body-sm text-body-sm text-on-surface font-bold line-clamp-2">
+                    {rel.title}
+                  </p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Sticky Bottom Social Action HUD */}
       <div className="fixed bottom-3 left-4 right-4 z-40 max-w-[480px] mx-auto pb-safe flex items-center gap-2">
         <button
@@ -757,6 +860,6 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
           </div>
         </div>
       )}
-    </div>
+    </article>
   );
 };

@@ -9,8 +9,9 @@ import { SavedView } from './components/SavedView';
 import { SearchPantryModal } from './components/SearchPantryModal';
 import { ShareModal } from './components/ShareModal';
 import { TrendingFeedView } from './components/TrendingFeedView';
-import { RECIPES } from './data/recipes';
-import { AppTab, Recipe, UnitSystem } from './types/recipe';
+import { RECIPES, DESSERT_CATEGORIES } from './data/recipes';
+import { AppTab, DessertCategory, Recipe, UnitSystem } from './types/recipe';
+import { getSiteRootPath } from './utils/assetUrl';
 import { detectInAppBrowser } from './utils/shareEngine';
 import { updateRecipeMetadata } from './utils/seoSchema';
 import { triggerHaptic } from './utils/audioHaptics';
@@ -60,10 +61,20 @@ export function App() {
   );
   const [servingsByRecipe, setServingsByRecipe] = useState<Record<string, number>>({});
 
-  // Hydrate initial route from URL query params (?r=slug&s=8&u=metric&mode=cook)
+  const [initialCategory, setInitialCategory] = useState<DessertCategory>(() => {
+    const m = window.location.pathname.match(/\/category\/([a-z0-9-]+)\/?$/i);
+    if (m) {
+      const foundCat = DESSERT_CATEGORIES.find((c) => c.id === m[1]);
+      if (foundCat) return foundCat.id;
+    }
+    return 'all';
+  });
+
+  // Hydrate initial route from /recipes/<slug>/ OR URL query params (?r=slug&s=8&u=metric&mode=cook)
   const [screen, setScreen] = useState<ScreenState>(() => {
     const params = new URLSearchParams(window.location.search);
-    const slug = params.get('r');
+    const pathMatch = window.location.pathname.match(/\/recipes\/([a-z0-9-]+)\/?$/i);
+    const slug = pathMatch?.[1] || params.get('r');
     const mode = params.get('mode');
     if (slug) {
       const found = RECIPES.find((r) => r.slug === slug || r.id === slug);
@@ -80,7 +91,8 @@ export function App() {
   // Hydrate deep-linked servings & unit from URL
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const slug = params.get('r');
+    const pathMatch = window.location.pathname.match(/\/recipes\/([a-z0-9-]+)\/?$/i);
+    const slug = pathMatch?.[1] || params.get('r');
     const sParam = Number(params.get('s'));
     const uParam = params.get('u');
     if (slug) {
@@ -91,6 +103,9 @@ export function App() {
     }
     if (uParam === 'metric' || uParam === 'us') {
       setUnit(uParam);
+    }
+    if (params.get('q')) {
+      setSearchOpen(true);
     }
   }, []);
 
@@ -133,30 +148,37 @@ export function App() {
     ? servingsByRecipe[activeRecipe.id] ?? activeRecipe.baseServings
     : 8;
 
-  // Sync SEO Schema.org + URL query string
+  // Sync SEO Schema.org + clean canonical URL
   useEffect(() => {
     updateRecipeMetadata(activeRecipe, activeServings, unit);
 
-    const url = new URL(window.location.href);
+    const rootPath = getSiteRootPath();
+    const url = new URL(window.location.origin + rootPath);
     if (screen.type === 'tab') {
-      url.searchParams.delete('r');
-      url.searchParams.delete('s');
-      url.searchParams.delete('mode');
+      if (screen.tab === 'trending' && initialCategory !== 'all') {
+        url.pathname = `${rootPath}category/${initialCategory}/`;
+      }
     } else if (activeRecipe) {
-      url.searchParams.set('r', activeRecipe.slug);
-      url.searchParams.set('s', String(activeServings));
-      url.searchParams.set('u', unit);
-      if (screen.type === 'cook') url.searchParams.set('mode', 'cook');
-      else url.searchParams.delete('mode');
+      url.pathname = `${rootPath}recipes/${activeRecipe.slug}/`;
+      if (activeServings !== activeRecipe.baseServings) {
+        url.searchParams.set('s', String(activeServings));
+      }
+      if (unit !== 'us') {
+        url.searchParams.set('u', unit);
+      }
+      if (screen.type === 'cook') {
+        url.searchParams.set('mode', 'cook');
+      }
     }
     window.history.replaceState({}, '', url.toString());
-  }, [screen, activeRecipe, activeServings, unit]);
+  }, [screen, activeRecipe, activeServings, unit, initialCategory]);
 
   // Browser back button support
   useEffect(() => {
     const onPopState = () => {
       const params = new URLSearchParams(window.location.search);
-      const slug = params.get('r');
+      const pathMatch = window.location.pathname.match(/\/recipes\/([a-z0-9-]+)\/?$/i);
+      const slug = pathMatch?.[1] || params.get('r');
       if (!slug) {
         setScreen({ type: 'tab', tab: 'trending' });
       }
@@ -257,6 +279,8 @@ export function App() {
         {screen.type === 'tab' && screen.tab === 'trending' && (
           <TrendingFeedView
             savedIds={savedIds}
+            initialCategory={initialCategory}
+            onCategoryChange={setInitialCategory}
             onToggleSave={handleToggleSave}
             onOpenRecipe={navigateToRecipe}
             onStartCookMode={(r) => navigateToCookMode(r, 0)}
@@ -332,6 +356,12 @@ export function App() {
             onOpenShare={(format = 'story', madeBadge = false) =>
               setShareState({ recipe: activeRecipe, format, madeBadge })
             }
+            onSelectCategory={(cat) => {
+              setInitialCategory(cat);
+              setScreen({ type: 'tab', tab: 'trending' });
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            onOpenRecipe={navigateToRecipe}
             onToast={showToast}
           />
         )}

@@ -1,11 +1,14 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { DESSERT_CATEGORIES, RECIPES } from '../data/recipes';
 import { CategoryTag, DessertCategory, Recipe, SocialPlatform } from '../types/recipe';
+import { getSiteRootPath } from '../utils/assetUrl';
 import { SafeImage } from './SafeImage';
 import { triggerHaptic } from '../utils/audioHaptics';
 
 interface TrendingFeedViewProps {
   savedIds: string[];
+  initialCategory?: DessertCategory;
+  onCategoryChange?: (cat: DessertCategory) => void;
   onToggleSave: (recipe: Recipe) => void;
   onOpenRecipe: (recipe: Recipe) => void;
   onStartCookMode: (recipe: Recipe) => void;
@@ -61,13 +64,15 @@ const PAGE_SIZE = 24;
 
 export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
   savedIds,
+  initialCategory = 'all',
+  onCategoryChange,
   onToggleSave,
   onOpenRecipe,
   onStartCookMode,
   onOpenShare,
   onOpenRemakes
 }) => {
-  const [activeCategory, setActiveCategory] = useState<DessertCategory>('all');
+  const [activeCategory, setActiveCategory] = useState<DessertCategory>(initialCategory);
   const [activeFilter, setActiveFilter] = useState<CategoryTag>('all');
   const [activePlatform, setActivePlatform] = useState<'all' | SocialPlatform>('all');
   const [activeRegion, setActiveRegion] = useState<RegionFilter>('all');
@@ -75,6 +80,17 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const [rouletteIndex, setRouletteIndex] = useState(0);
   const [isSpinning, setIsSpinning] = useState(false);
+
+  useEffect(() => {
+    setActiveCategory(initialCategory);
+    setVisibleCount(PAGE_SIZE);
+  }, [initialCategory]);
+
+  const selectCategory = (cat: DessertCategory) => {
+    setActiveCategory(cat);
+    setVisibleCount(PAGE_SIZE);
+    onCategoryChange?.(cat);
+  };
 
   const heroRecipe = RECIPES[0];
   const storyRadarRecipes = useMemo(() => RECIPES.slice(0, 16), []);
@@ -330,8 +346,7 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
                 type="button"
                 onClick={() => {
                   triggerHaptic(15);
-                  setActiveCategory(cat.id);
-                  setVisibleCount(PAGE_SIZE);
+                  selectCategory(cat.id);
                 }}
                 className={`shrink-0 px-3.5 py-2 rounded-full font-label-md text-label-md flex items-center gap-1.5 transition-all active:scale-95 ${
                   active
@@ -458,7 +473,7 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
             <button
               type="button"
               onClick={() => {
-                setActiveCategory('all');
+                selectCategory('all');
                 setActiveFilter('all');
                 setActivePlatform('all');
                 setActiveRegion('all');
@@ -663,6 +678,54 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
           </button>
         </div>
       </section>
+
+      {/* Crawlable Semantic SEO Footer */}
+      <footer className="px-gutter pb-space-md text-secondary">
+        <div className="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-3">
+          <div className="flex items-center justify-between flex-wrap gap-2">
+            <span className="font-title-md text-title-md text-on-surface font-extrabold">
+              Crave — {RECIPES.length}+ Viral Dessert Recipes
+            </span>
+            <span className="font-label-sm text-label-sm text-primary uppercase">
+              Zero Login • Mobile First
+            </span>
+          </div>
+          <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Browse trending American, European &amp; global desserts with instant US/Metric scaling, hands-free Cook Mode timers, and 1-tap Story &amp; Pinterest card sharing.
+          </p>
+          <div className="flex flex-wrap gap-2 pt-1">
+            {DESSERT_CATEGORIES.filter((c) => c.id !== 'all').map((c) => (
+              <a
+                key={c.id}
+                href={`${getSiteRootPath()}category/${c.id}/`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  selectCategory(c.id);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-sm text-label-sm hover:text-primary transition-colors"
+              >
+                {c.emoji} {c.label}
+              </a>
+            ))}
+          </div>
+          <div className="flex flex-wrap gap-x-3 gap-y-1 pt-1 border-t border-outline-variant/40">
+            {RECIPES.slice(0, 8).map((r) => (
+              <a
+                key={r.id}
+                href={`${getSiteRootPath()}recipes/${r.slug}/`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onOpenRecipe(r);
+                }}
+                className="font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline decoration-outline-variant"
+              >
+                {r.title}
+              </a>
+            ))}
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };

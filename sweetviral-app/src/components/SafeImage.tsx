@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { resolveAssetUrl } from '../utils/assetUrl';
 
 interface SafeImageProps {
   src: string;
@@ -31,9 +32,10 @@ export const SafeImage: React.FC<SafeImageProps> = ({
 
   return (
     <img
-      src={src}
+      src={resolveAssetUrl(src)}
       alt={alt}
       loading={eager ? 'eager' : 'lazy'}
+      fetchPriority={eager ? 'high' : 'auto'}
       decoding="async"
       onError={() => setFailed(true)}
       className={className}

@@ -1,4 +1,5 @@
 import { Recipe, SocialPlatform, UnitSystem } from '../types/recipe';
+import { getSiteRootPath, resolveAssetUrl } from './assetUrl';
 import { formatScaledIngredient } from './scaler';
 
 export interface InAppBrowserInfo {
@@ -39,8 +40,7 @@ export function buildDeepRecipeUrl(
   source?: SocialPlatform
 ): string {
   if (typeof window === 'undefined') return '';
-  const url = new URL(window.location.origin + window.location.pathname);
-  url.searchParams.set('r', slug);
+  const url = new URL(`${window.location.origin}${getSiteRootPath()}recipes/${slug}/`);
   if (servings) url.searchParams.set('s', String(servings));
   if (unit) url.searchParams.set('u', unit);
   if (source) url.searchParams.set('utm_source', source);
@@ -126,7 +126,9 @@ export async function generateShareCardDataUrl(
 
   // Draw cover-fit dessert image
   try {
-    const imgUrl = format === 'pinterest' ? recipe.pinterestImage : recipe.heroImage;
+    const imgUrl = resolveAssetUrl(
+      format === 'pinterest' ? recipe.pinterestImage : recipe.heroImage
+    );
     const img = await loadImage(imgUrl);
     const scale = Math.max(width / img.width, height / img.height);
     const dw = img.width * scale;
