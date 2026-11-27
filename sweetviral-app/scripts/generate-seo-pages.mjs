@@ -100,7 +100,7 @@ function injectHeadTags(html, { title, desc, canonical, ogType, ogImage, jsonLd,
     )
     .replace(
       /<meta\s+property="og:image"\s+content="[^"]*"\s*\/?>/,
-      `<meta property="og:image" content="${escapeHtml(ogImage)}" />`
+      `<meta property="og:image" content="${escapeHtml(ogImage)}" />\n    <meta property="og:image:alt" content="${escapeHtml(title)}" />`
     )
     .replace(
       /<meta\s+name="twitter:title"\s+content="[^"]*"\s*\/?>/,
@@ -127,10 +127,21 @@ const homeJsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
+      '@type': 'Organization',
+      name: 'Crave Recipes',
+      url: `${SITE_ORIGIN}/`,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE_ORIGIN}/icon-512.png`,
+        width: 512,
+        height: 512
+      }
+    },
+    {
       '@type': 'WebSite',
       name: 'Crave Recipes',
       url: `${SITE_ORIGIN}/`,
-      description: `Explore ${ALL_RECIPES.length}+ trending American, European & global viral dessert recipes with instant scaling and Cook Mode.`,
+      description: `Explore ${ALL_RECIPES.length}+ healthy & viral dessert recipes with zero-refined-sugar swaps, instant US/Metric scaling, and hands-free Cook Mode.`,
       potentialAction: {
         '@type': 'SearchAction',
         target: `${SITE_ORIGIN}/?q={search_term_string}`,
@@ -139,7 +150,7 @@ const homeJsonLd = {
     },
     {
       '@type': 'ItemList',
-      name: 'Top Viral Dessert Recipes on Crave Recipes',
+      name: 'Top Viral & Healthy Dessert Recipes on Crave Recipes',
       numberOfItems: 12,
       itemListElement: ALL_RECIPES.slice(0, 12).map((r, i) => ({
         '@type': 'ListItem',
@@ -147,13 +158,34 @@ const homeJsonLd = {
         name: r.title,
         url: `${SITE_ORIGIN}/recipes/${r.slug}/`
       }))
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Are Crave Recipes desserts healthy or refined-sugar-free?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes! Crave Recipes includes dedicated Zero-Refined-Sugar recipes plus a 1-tap Healthy Swap mode on every recipe page that converts refined sugars and flours into wholesome alternatives.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Can I scale servings and switch between US and Metric units?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Every recipe on Crave Recipes has an instant serving scaler and a US/Metric unit converter that updates all ingredients and step-by-step instructions live.'
+          }
+        }
+      ]
     }
   ]
 };
 
-const homeFallback = `<main style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><h1>Crave Recipes — ${ALL_RECIPES.length}+ Viral Dessert Recipes</h1><nav>${CATEGORIES.map(
+const homeFallback = `<main><h1>Crave Recipes — ${ALL_RECIPES.length}+ Healthy &amp; Viral Dessert Recipes</h1><p>Explore ${ALL_RECIPES.length}+ healthy &amp; viral dessert recipes with zero-refined-sugar swaps, under-250-cal treats, instant US/Metric scaling &amp; hands-free Cook Mode.</p><nav aria-label="Dessert Categories">${CATEGORIES.map(
   (c) => `<a href="./category/${c.id}/">${escapeHtml(c.label)}</a>`
-).join(' ')}</nav><ul>${ALL_RECIPES.slice(0, 40)
+).join(' · ')}</nav><ul>${ALL_RECIPES.slice(0, 60)
   .map((r) => `<li><a href="./recipes/${r.slug}/">${escapeHtml(r.title)}</a></li>`)
   .join('')}</ul></main>`;
 
@@ -196,9 +228,9 @@ for (const cat of CATEGORIES) {
     }
   };
 
-  const catFallback = `<main style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><h1>${escapeHtml(
+  const catFallback = `<main><h1>${escapeHtml(
     cat.label
-  )} Recipes</h1><p>${escapeHtml(catDesc)}</p><ul>${catRecipes
+  )} Recipes</h1><p>${escapeHtml(catDesc)}</p><nav><a href="../../">All Crave Recipes</a></nav><ul>${catRecipes
     .map((r) => `<li><a href="../../recipes/${r.slug}/">${escapeHtml(r.title)}</a></li>`)
     .join('')}</ul></main>`;
 
@@ -238,6 +270,10 @@ for (const recipe of ALL_RECIPES) {
     ) || 120
   );
 
+  const relatedRecipes = ALL_RECIPES.filter(
+    (r) => r.dessertCategory === recipe.dessertCategory && r.slug !== recipe.slug
+  ).slice(0, 6);
+
   const recipeJsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -246,8 +282,19 @@ for (const recipe of ALL_RECIPES) {
         mainEntityOfPage: recipeUrl,
         name: recipe.title,
         image: [absImg, toAbsoluteUrl(recipe.pinterestImage)],
+        datePublished: '2026-11-01',
         author: { '@type': 'Person', name: recipe.creatorHandle || '@crave_kitchen' },
-        publisher: { '@type': 'Organization', name: 'Crave Recipes', url: `${SITE_ORIGIN}/` },
+        publisher: {
+          '@type': 'Organization',
+          name: 'Crave Recipes',
+          url: `${SITE_ORIGIN}/`,
+          logo: {
+            '@type': 'ImageObject',
+            url: `${SITE_ORIGIN}/icon-512.png`,
+            width: 512,
+            height: 512
+          }
+        },
         description: desc,
         prepTime: `PT${recipe.prepMin}M`,
         cookTime: `PT${recipe.bakeMin}M`,
@@ -282,17 +329,44 @@ for (const recipe of ALL_RECIPES) {
           },
           { '@type': 'ListItem', position: 3, name: recipe.title, item: recipeUrl }
         ]
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: `How long does it take to make ${recipe.title}?`,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: `${recipe.title} takes ${recipe.totalMin} minutes total (${recipe.prepMin} minutes prep) and yields ${recipe.baseServings} servings at ${recipe.kcal} calories per serving.`
+            }
+          },
+          {
+            '@type': 'Question',
+            name: `Can I make ${recipe.title} healthier or with zero refined sugar?`,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: `Yes! Toggle the Healthy Swap mode on this ${recipe.title} recipe page to convert ingredients into lower-sugar, higher-protein, or wholesome alternatives automatically.`
+            }
+          }
+        ]
       }
     ]
   };
 
-  const recipeFallback = `<article style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><h1>${escapeHtml(
+  const recipeFallback = `<article><h1>${escapeHtml(
     recipe.title
   )}</h1><p>${escapeHtml(desc)}</p><h2>Ingredients</h2><ul>${ingredients
     .map((ing) => `<li>${escapeHtml(ing)}</li>`)
-    .join('')}</ul><h2>Instructions</h2><ol>${(recipe.steps || [])
+    .join('')}</ul><h2>Step-by-Step Instructions</h2><ol>${(recipe.steps || [])
     .map((s) => `<li><h3>${escapeHtml(s.title)}</h3><p>${escapeHtml(resolveStepText(s.instructionTemplate, recipe))}</p></li>`)
-    .join('')}</ol><nav><a href="../../">Home</a> <a href="../../category/${
+    .join('')}</ol>${
+    relatedRecipes.length > 0
+      ? `<h2>Related ${escapeHtml(catLabel)} Recipes</h2><ul>${relatedRecipes
+          .map((rel) => `<li><a href="../../recipes/${rel.slug}/">${escapeHtml(rel.title)}</a></li>`)
+          .join('')}</ul>`
+      : ''
+  }<nav><a href="../../">Home</a> · <a href="../../category/${
     recipe.dessertCategory
   }/">${escapeHtml(catLabel)}</a></nav></article>`;
 

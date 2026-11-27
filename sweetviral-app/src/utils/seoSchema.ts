@@ -134,6 +134,7 @@ export function updateRecipeMetadata(
         mainEntityOfPage: canonicalUrl,
         name: recipe.title,
         image: [absImg, toAbsoluteUrl(recipe.pinterestImage)],
+        datePublished: '2026-11-01',
         author: {
           '@type': 'Person',
           name: recipe.creatorHandle
@@ -141,7 +142,13 @@ export function updateRecipeMetadata(
         publisher: {
           '@type': 'Organization',
           name: 'Crave Recipes',
-          url: `${SITE_ORIGIN}/`
+          url: `${SITE_ORIGIN}/`,
+          logo: {
+            '@type': 'ImageObject',
+            url: `${SITE_ORIGIN}/icon-512.png`,
+            width: 512,
+            height: 512
+          }
         },
         description: metaDesc,
         prepTime: `PT${recipe.prepMin}M`,
