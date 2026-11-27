@@ -27,10 +27,7 @@ function detectMethod(recipe) {
   if (/\bfreeze|\bfrozen|\bice cream|\bsorbet|\bgelato|\bbark\b|\bnice cream/.test(hay) && recipe.bakeMin === 0) {
     return 'freeze';
   }
-  if (
-    recipe.bakeMin === 0 &&
-    !/\bbake\b|\boven\b|\bpreheat\b/.test(hay)
-  ) {
+  if (recipe.bakeMin === 0 && !/\bbake\b|\boven\b|\bpreheat\b/.test(hay)) {
     if (/\bboil|\bsimmer|\bsyrup|\btanghulu|\bcompote|\bcurd|\bcustard|\bpudding/.test(hay)) return 'stovetop';
     return 'no-bake';
   }
@@ -50,12 +47,47 @@ function getAllItems(recipe) {
   return (recipe.ingredientGroups || []).flatMap((g) => g.items || []);
 }
 
-function cleanStepTitle(title) {
-  return (title || '')
-    .replace(/^Build the Build /i, 'Build the ')
-    .replace(/\bLayer Layer\b/gi, 'Layer')
-    .replace(/\s+/g, ' ')
-    .trim();
+function smartStepTitle(rawTitle, instructionText, method, stepIdx, totalSteps) {
+  const title = (rawTitle || '').replace(/\s+/g, ' ').trim();
+  const isAwkward =
+    /^(Build the |Mix the Prep|Finish & Serve)/i.test(title) ||
+    /\bLayer Layer\b/i.test(title) ||
+    title.length < 6;
+
+  if (!isAwkward) return title;
+
+  const lower = `${title} ${instructionText}`.toLowerCase();
+
+  if (/\bheat oil\b/.test(lower)) return 'Heat Oil to 350°F (175°C)';
+  if (/\bhot oil\b|\bfry\b/.test(lower) && !/\bdrain\b|\bserve\b/.test(lower)) {
+    return 'Fry Until Golden & Crisp';
+  }
+  if (/\bdip\b|\bcoat\b|\bpanko\b|\bbreadcrumb|\bdredge\b/.test(lower)) return 'Dip & Coat Evenly';
+  if (/\bsift\b|\bdry ingredients\b/.test(lower)) return 'Sift & Whisk Dry Ingredients';
+  if (/\bcream\b|\bbutter\b.*sugar/.test(lower)) return 'Cream Butter & Sugar Fluffy';
+  if (/\bwhip\b|\bsoft peaks\b|\bstiff peaks\b|\bmeringue\b/.test(lower)) return 'Whip Until Airy & Glossy';
+  if (/\bmelt\b|\bchocolate\b.*butter|\bganache\b/.test(lower)) return 'Melt & Whisk Smooth';
+  if (/\bdissolve\b|\bsimmer\b|\bboil\b|\bcaramel\b/.test(lower)) return 'Simmer & Dissolve Smoothly';
+  if (/\bknead\b|\bdough\b|\broll\b|\bpress\b.*crust/.test(lower)) return 'Shape & Press Dough Evenly';
+  if (/\bwaffle\b|\biron\b|\bgriddle\b/.test(lower)) return 'Cook on Hot Iron Until Crisp';
+  if (/\bpreheat\b|\bline\b.*pan/.test(lower)) return 'Preheat & Prep Your Pan';
+  if (/\bbake\b|\btoothpick\b/.test(lower) && stepIdx < totalSteps - 1) return 'Bake Until Golden & Set';
+  if (/\bchill\b|\brefrigerate\b|\bfreeze\b/.test(lower) && stepIdx < totalSteps - 1) {
+    return 'Chill Until Firmly Set';
+  }
+  if (/^Finish & Serve/i.test(title) || stepIdx === totalSteps - 1) {
+    if (method === 'fry') return 'Drain Crisp, Garnish & Serve Warm';
+    if (method === 'freeze') return 'Freeze Solid, Slice & Serve';
+    if (method === 'no-bake') return 'Chill Firm, Slice & Serve';
+    return 'Cool, Garnish & Serve';
+  }
+  if (/Mix the Prep/i.test(title) || stepIdx === 0) return 'Whisk & Combine Base Ingredients';
+  if (/Build the Flavor/i.test(title)) return 'Fold In Flavorings & Mix-Ins';
+  if (/Build the Shape/i.test(title)) return 'Portion, Shape & Layer Evenly';
+  if (/Build the Bake/i.test(title)) {
+    return method === 'no-bake' || method === 'freeze' ? 'Chill & Set Structure' : 'Bake & Check Doneness';
+  }
+  return title.replace(/^Build the /i, '').trim() || 'Prepare Mixture';
 }
 
 function defaultProTip(recipe, method) {
@@ -80,254 +112,65 @@ function defaultProTip(recipe, method) {
   }
 }
 
-function enrichExistingStep(step, recipe, method, allItems, stepIndex, totalSteps) {
-  let text = (step.instructionTemplate || '').trim();
-  const cleanTitle = cleanStepTitle(step.title);
-  const stepItems = allItems.filter((i) => i.stepRef === step.stepNumber);
-  const ingRef = stepItems.length > 0 ? formatIngList(stepItems) : formatIngList(allItems.slice(0, 2));
+function ensureAllIngredientsReferenced(steps, allItems) {
+  const fullText = steps.map((s) => s.instructionTemplate || '').join(' ');
+  const unused = allItems.filter((item) => !fullText.includes(`{${item.id}}`));
+  if (unused.length === 0) return steps;
 
-  if (text && !/[.!?]$/.test(text)) {
-    text += '.';
+  const updated = steps.map((s) => ({ ...s }));
+  // Distribute unused ingredients to their stepRef step (or step 1 / middle step)
+  const buckets = new Map();
+  for (const item of unused) {
+    const targetIdx = Math.min(
+      updated.length - 1,
+      Math.max(0, (item.stepRef || 1) - 1)
+    );
+    if (!buckets.has(targetIdx)) buckets.set(targetIdx, []);
+    buckets.get(targetIdx).push(item);
   }
 
-  if (text.length >= 130) {
-    return {
-      ...step,
-      title: cleanTitle,
-      instructionTemplate: text
-    };
+  for (const [idx, items] of buckets.entries()) {
+    const ingStr = formatIngList(items);
+    const step = updated[idx];
+    const isLast = idx === updated.length - 1;
+    const phrase = isLast
+      ? ` Finish with ${ingStr} right before serving.`
+      : ` Incorporate ${ingStr} smoothly until evenly distributed.`;
+    step.instructionTemplate = `${(step.instructionTemplate || '').trim()}${phrase}`;
   }
 
-  const lower = `${cleanTitle} ${text}`.toLowerCase();
-  const isFirst = stepIndex === 0;
-  const isLast = stepIndex === totalSteps - 1;
-  let addition = '';
-
-  if (/\bheat oil\b|\bhot oil\b|\bdeep[\s-]?fry\b|\bfry\b/.test(lower) && !isLast) {
-    if (/\bheat oil\b/.test(lower)) {
-      addition = ` Bring the oil to 350°F (175°C) over medium heat—you can test readiness by dipping the handle of a wooden spoon and looking for steady, gentle bubbles.`;
-    } else {
-      addition = ` Work in small batches so the oil temperature stays steady, frying for 2–3 minutes per side until deeply golden and crisp all around.`;
-    }
-  } else if (/\bdip\b|\bcoat\b|\bpanko\b|\bbreadcrumb\b|\bdredge\b/.test(lower)) {
-    addition = ` Gently press the coating onto every side so it adheres evenly, then let excess drip off before transferring to a clean tray.`;
-  } else if (/\bsift\b|\bdry ingredients\b|\bflour\b/.test(lower)) {
-    addition = ` Sifting aerates the dry ingredients and removes any stubborn cocoa or flour lumps so the finished crumb bakes up light and even.`;
-  } else if (/\bdissolve\b|\bmelt\b|\bsimmer\b|\bboil\b/.test(lower)) {
-    addition = ` Stir gently over low to medium-low heat until completely dissolved and glossy, scraping the sides so nothing crystallizes or scorches.`;
-  } else if (/\bwaffle\b|\biron\b|\bgriddle\b/.test(lower)) {
-    addition = ` Close the lid and cook until deeply golden brown and steam slows down, then lift carefully onto a wire rack so the crust stays crisp.`;
-  } else if (/\bserve\b|\bdecorate\b|\bgarnish\b|\bice cream\b|\bberries\b|\bicing sugar\b/.test(lower) || isLast) {
-    if (method === 'fry') {
-      addition = ` Drain briefly on a wire cooling rack lined with paper towels for 1–2 minutes so the outside stays shatteringly crisp, then plate into ${recipe.baseServings} servings and enjoy warm.`;
-    } else if (method === 'freeze' || method === 'no-bake') {
-      addition = ` Chill or freeze until completely firm and set, then portion into ${recipe.baseServings} servings and store leftovers in an airtight container.`;
-    } else if (method === 'bake') {
-      addition = ` Let ${recipe.title} cool for 10–15 minutes so the crumb sets cleanly before slicing into ${recipe.baseServings} portions, then garnish and serve.`;
-    } else {
-      addition = ` Plate into ${recipe.baseServings} generous servings while the flavors and textures are at their peak, and store any leftovers covered.`;
-    }
-  } else if (isFirst) {
-    if (method === 'bake') {
-      addition = ` Line your baking pan with parchment paper or grease lightly, and make sure ${ingRef} are measured and at room temperature so they blend smoothly.`;
-    } else if (method === 'no-bake' || method === 'freeze') {
-      addition = ` Line your chilling pan or tray with parchment paper for easy lifting, and keep ${ingRef} measured and ready to combine.`;
-    } else {
-      addition = ` Keep ${ingRef} prepped and measured within reach so each step comes together smoothly and evenly.`;
-    }
-  } else if (method === 'bake') {
-    addition = ` Mix gently until just combined with no dry streaks remaining, then bake until the edges are golden and a toothpick comes out with moist crumbs.`;
-  } else if (method === 'stovetop') {
-    addition = ` Whisk steadily around the bottom and corners of the pan until glossy, thickened, and smooth enough to coat the back of a spoon.`;
-  } else {
-    addition = ` Combine until completely smooth, uniform, and free of lumps before moving to the next stage.`;
-  }
-
-  return {
-    ...step,
-    title: cleanTitle,
-    instructionTemplate: `${text}${addition}`.trim()
-  };
+  return updated;
 }
 
-function buildExpandedSteps(recipe, method, allItems) {
-  const existing = (recipe.steps || []).map((s, idx) =>
-    enrichExistingStep(s, recipe, method, allItems, idx, (recipe.steps || []).length)
-  );
-
+function buildFinalSteps(recipe) {
+  const allItems = getAllItems(recipe);
+  const method = detectMethod(recipe);
   const firstHalf = allItems.slice(0, Math.max(1, Math.ceil(allItems.length / 2)));
   const secondHalf = allItems.slice(Math.max(1, Math.ceil(allItems.length / 2)));
   const firstRef = formatIngList(firstHalf);
   const secondRef = secondHalf.length > 0 ? formatIngList(secondHalf) : formatIngList(allItems.slice(-2));
-
   const prepTime = Math.max(2, Math.round((recipe.prepMin || 10) * 0.4));
   const cookTime = Math.max(2, recipe.bakeMin || Math.round((recipe.totalMin || 15) * 0.5));
 
-  const prepStepByMethod = {
-    bake: {
-      phaseLabel: 'Prep & Preheat',
-      title: 'Preheat Oven & Prep Your Pan',
-      instructionTemplate: `Preheat your oven to 350°F (175°C) and line your baking pan with parchment paper, leaving a slight overhang for effortless lifting. Measure out ${firstRef} so everything is ready and at room temperature for a silky, lump-free batter.`,
-      durationMin: prepTime,
-      timerSeconds: prepTime * 60,
-      activeMeasureSummary: '350°F (175°C) • Line Pan'
-    },
-    'air-fryer': {
-      phaseLabel: 'Prep Basket',
-      title: 'Preheat Air Fryer & Measure Ingredients',
-      instructionTemplate: `Preheat your air fryer to 330°F (165°C) for 3 minutes and line the basket with perforated parchment or a light oil mist. Measure out ${firstRef} in a mixing bowl so they combine evenly.`,
-      durationMin: prepTime,
-      timerSeconds: prepTime * 60,
-      activeMeasureSummary: '330°F (165°C) • Prep Basket'
-    },
-    microwave: {
-      phaseLabel: 'Prep Mug',
-      title: 'Grease Mug & Measure Base',
-      instructionTemplate: `Lightly coat a wide, microwave-safe mug or ramekin with a thin swipe of oil or butter so the cake releases cleanly. Measure ${firstRef} right into the mug and whisk with a fork until completely smooth.`,
-      durationMin: 2,
-      timerSeconds: 120,
-      activeMeasureSummary: 'Wide Microwave Mug • Smooth Base'
-    },
-    'no-bake': {
-      phaseLabel: 'Prep & Line',
-      title: 'Line Pan & Prep Base Ingredients',
-      instructionTemplate: `Line a loaf pan, baking dish, or serving glasses with parchment paper or chill them in the fridge for 5 minutes. Measure out ${firstRef} so your base whips up thick, creamy, and clump-free.`,
-      durationMin: prepTime,
-      timerSeconds: prepTime * 60,
-      activeMeasureSummary: 'Parchment-Lined • Zero Oven'
-    },
-    freeze: {
-      phaseLabel: 'Prep Tray',
-      title: 'Line Freezer Tray & Prep Mix-Ins',
-      instructionTemplate: `Line a rimmed baking sheet or loaf pan with parchment paper so your frozen treat lifts out cleanly. Measure out ${firstRef} and keep toppings like ${secondRef} prepped within reach.`,
-      durationMin: prepTime,
-      timerSeconds: prepTime * 60,
-      activeMeasureSummary: 'Parchment Tray • Ready to Chill'
-    },
-    stovetop: {
-      phaseLabel: 'Mise en Place',
-      title: 'Set Up Heavy Saucepan & Ingredients',
-      instructionTemplate: `Place a heavy-bottomed saucepan over medium-low heat and have a heatproof silicone whisk ready. Measure out ${firstRef} and ${secondRef} in advance—stovetop desserts move fast once they start bubbling.`,
-      durationMin: prepTime,
-      timerSeconds: prepTime * 60,
-      activeMeasureSummary: 'Heavy Pan • Medium-Low Heat'
-    },
-    fry: {
-      phaseLabel: 'Heat Oil',
-      title: 'Heat Oil & Prep Cooling Rack',
-      instructionTemplate: `Pour neutral frying oil into a heavy pot to 2 inches deep and heat steadily to 350°F (175°C). Set a wire cooling rack over paper towels nearby and measure out ${firstRef} so everything is ready to fry cleanly.`,
-      durationMin: Math.max(4, prepTime),
-      timerSeconds: Math.max(4, prepTime) * 60,
-      activeMeasureSummary: '350°F (175°C) Oil • Wire Rack'
-    },
-    griddle: {
-      phaseLabel: 'Preheat Iron',
-      title: 'Preheat Waffle Iron & Prep Batter',
-      instructionTemplate: `Preheat your waffle iron or griddle to medium-high heat and brush lightly with butter or neutral oil. Measure out ${firstRef} in a mixing bowl so the batter or dough is ready as soon as the iron is hot.`,
-      durationMin: prepTime,
-      timerSeconds: prepTime * 60,
-      activeMeasureSummary: 'Medium-High Heat • Lightly Greased'
-    }
-  };
+  let steps = (recipe.steps || []).map((s) => ({ ...s }));
 
-  const finishStepByMethod = {
-    bake: {
-      phaseLabel: 'Cool & Slice',
-      title: 'Cool Completely, Garnish & Serve',
-      instructionTemplate: `Transfer ${recipe.title} to a wire cooling rack and let it cool for 15–20 minutes so the interior sets cleanly without crumbling. Lift out using the parchment overhang, garnish as desired, and slice into ${recipe.baseServings} portions.`,
-      durationMin: 15,
-      timerSeconds: 900,
-      activeMeasureSummary: `Cool 15m • ${recipe.baseServings} Servings`
-    },
-    'air-fryer': {
-      phaseLabel: 'Rest & Serve',
-      title: 'Rest 5 Minutes & Serve Warm',
-      instructionTemplate: `Carefully lift ${recipe.title} out of the air-fryer basket and rest 5 minutes on a cooling rack so the crust crisps up. Plate into ${recipe.baseServings} servings and enjoy warm.`,
-      durationMin: 5,
-      timerSeconds: 300,
-      activeMeasureSummary: `Crisp Rest • ${recipe.baseServings} Servings`
-    },
-    microwave: {
-      phaseLabel: 'Rest & Top',
-      title: 'Rest 1 Minute & Add Toppings',
-      instructionTemplate: `Let the mug rest 60 seconds after microwaving so the steam settles and the center finishes setting into a tender, spoonable crumb. Top with ${secondRef} and enjoy warm right from the mug.`,
-      durationMin: 1,
-      timerSeconds: 60,
-      activeMeasureSummary: 'Rest 60s • Eat Warm'
-    },
-    'no-bake': {
-      phaseLabel: 'Chill & Set',
-      title: 'Chill Until Firm, Slice & Store',
-      instructionTemplate: `Cover and refrigerate ${recipe.title} until completely firm and sliceable. Portion into ${recipe.baseServings} servings, add any crisp toppings right before serving, and keep leftovers chilled in an airtight container for up to 5 days.`,
-      durationMin: 10,
-      timerSeconds: 600,
-      activeMeasureSummary: `Chill Firm • ${recipe.baseServings} Servings`
-    },
-    freeze: {
-      phaseLabel: 'Freeze & Snap',
-      title: 'Freeze Solid, Portion & Enjoy',
-      instructionTemplate: `Freeze ${recipe.title} flat until completely solid, then let sit 3 minutes at room temperature before slicing, snapping, or scooping into ${recipe.baseServings} servings. Store leftovers in a freezer-safe container.`,
-      durationMin: 10,
-      timerSeconds: 600,
-      activeMeasureSummary: `Freeze Solid • ${recipe.baseServings} Servings`
-    },
-    stovetop: {
-      phaseLabel: 'Cool & Plate',
-      title: 'Remove from Heat, Cool & Serve',
-      instructionTemplate: `Pull the pan off the heat as soon as ${recipe.title} coats the spoon thickly. Let cool slightly so the glaze or custard thickens even more, then spoon into ${recipe.baseServings} bowls and garnish before serving.`,
-      durationMin: 5,
-      timerSeconds: 300,
-      activeMeasureSummary: `Glossy Set • ${recipe.baseServings} Servings`
-    },
-    fry: {
-      phaseLabel: 'Drain & Coat',
-      title: 'Drain Crisp, Toss & Serve Fresh',
-      instructionTemplate: `Transfer to the wire rack to drain excess oil for 1–2 minutes while still piping hot, then finish with ${secondRef}. Serve ${recipe.title} fresh while the exterior is shatteringly crisp.`,
-      durationMin: 3,
-      timerSeconds: 180,
-      activeMeasureSummary: `Crisp Drain • ${recipe.baseServings} Servings`
-    },
-    griddle: {
-      phaseLabel: 'Crisp & Serve',
-      title: 'Cool 1 Minute on Rack & Plate',
-      instructionTemplate: `Transfer ${recipe.title} onto a wire rack for 60 seconds so steam escapes and the outside stays crisp. Top with ${secondRef} and serve immediately into ${recipe.baseServings} portions.`,
-      durationMin: 2,
-      timerSeconds: 120,
-      activeMeasureSummary: `Crisp Rack • ${recipe.baseServings} Servings`
-    }
-  };
+  // Deduplicate identical instructions if any exist
+  const seenText = new Set();
+  steps = steps.filter((s) => {
+    const key = (s.instructionTemplate || '').trim();
+    if (seenText.has(key)) return false;
+    seenText.add(key);
+    return true;
+  });
 
-  let result = [...existing];
-
-  if (result.length < 4) {
-    const firstTitle = (result[0]?.title || '').toLowerCase();
-    const hasPrep = /preheat|prep|line|mise|heat oil|grease/.test(firstTitle);
-    if (!hasPrep) {
-      result.unshift({
-        stepNumber: 1,
-        ...prepStepByMethod[method]
-      });
-    }
-  }
-
-  if (result.length < 4) {
-    const lastTitle = (result[result.length - 1]?.title || '').toLowerCase();
-    const hasFinish = /cool|chill|freeze|serve|slice|garnish|plate|drain|rest/.test(lastTitle);
-    if (!hasFinish) {
-      result.push({
-        stepNumber: result.length + 1,
-        ...finishStepByMethod[method]
-      });
-    }
-  }
-
-  if (result.length < 4) {
-    const insertAt = Math.max(1, result.length - 1);
+  // If < 4 steps, add a distinct middle assembly/texture step so we never duplicate finish steps
+  if (steps.length < 4) {
+    const insertAt = Math.max(1, steps.length - 1);
     const middleStep =
       method === 'bake' || method === 'air-fryer'
         ? {
             phaseLabel: 'Bake & Check',
-            title: `Bake ${recipe.title} & Check Doneness`,
+            title: 'Bake Until Golden & Check Doneness',
             instructionTemplate: `Bake for ${cookTime} minutes until the edges turn golden and set while the center remains tender. Test with a toothpick—if it comes out with a few moist crumbs rather than wet batter, it is ready.`,
             durationMin: cookTime,
             timerSeconds: cookTime * 60,
@@ -336,7 +179,7 @@ function buildExpandedSteps(recipe, method, allItems) {
         : method === 'no-bake' || method === 'freeze'
           ? {
               phaseLabel: 'Layer & Smooth',
-              title: 'Transfer, Smooth Top & Add Garnish',
+              title: 'Transfer, Smooth Top & Garnish',
               instructionTemplate: `Pour or press the mixture evenly into your prepared dish, smoothing the surface with a spatula. Scatter ${secondRef} evenly across the top and press gently so it adheres cleanly.`,
               durationMin: 3,
               timerSeconds: 180,
@@ -350,63 +193,54 @@ function buildExpandedSteps(recipe, method, allItems) {
               timerSeconds: 180,
               activeMeasureSummary: 'Glossy Batter • Zero Lumps'
             };
+    steps.splice(insertAt, 0, { stepNumber: insertAt + 1, ...middleStep });
+  }
 
-    result.splice(insertAt, 0, {
-      stepNumber: insertAt + 1,
-      ...middleStep
+  // If still < 4, add a Prep step at the start
+  if (steps.length < 4) {
+    steps.unshift({
+      stepNumber: 1,
+      phaseLabel: 'Prep & Measure',
+      title: 'Prep Equipment & Measure Ingredients',
+      instructionTemplate: `Prepare your pan, dish, or heat source and measure out ${firstRef} in advance so every stage comes together smoothly without lumps or scorching.`,
+      durationMin: prepTime,
+      timerSeconds: prepTime * 60,
+      activeMeasureSummary: 'Mise en Place • Ready'
     });
   }
 
-  if (result.length < 4) {
-    result.push({
-      stepNumber: result.length + 1,
-      ...finishStepByMethod[method]
-    });
-  }
-
-  result = result.map((s, idx) => ({
+  // Clean all step titles and ensure all ingredients are referenced
+  steps = steps.map((s, idx) => ({
     ...s,
-    stepNumber: idx + 1
+    stepNumber: idx + 1,
+    title: smartStepTitle(s.title, s.instructionTemplate || '', method, idx, steps.length)
   }));
 
-  const hasSecret = result.some((s) => s.creatorSecret && s.creatorSecret.trim().length > 10);
-  if (!hasSecret && result.length > 0) {
-    const secretIdx = Math.min(1, result.length - 1);
-    result[secretIdx] = {
-      ...result[secretIdx],
+  steps = ensureAllIngredientsReferenced(steps, allItems);
+
+  // Ensure every step has a valid pro tip on at least one key step
+  const hasSecret = steps.some((s) => s.creatorSecret && s.creatorSecret.trim().length > 10);
+  if (!hasSecret && steps.length > 0) {
+    const secretIdx = Math.min(1, steps.length - 1);
+    steps[secretIdx] = {
+      ...steps[secretIdx],
       creatorSecret: defaultProTip(recipe, method)
     };
   }
 
-  return result;
+  return steps;
 }
 
 function processFile(filePath) {
   const recipes = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-  let updatedCount = 0;
-
-  const enriched = recipes.map((recipe) => {
-    const allItems = getAllItems(recipe);
-    const method = detectMethod(recipe);
-    const nextSteps = buildExpandedSteps(recipe, method, allItems);
-
-    if (
-      nextSteps.length !== (recipe.steps || []).length ||
-      JSON.stringify(nextSteps) !== JSON.stringify(recipe.steps)
-    ) {
-      updatedCount++;
-    }
-
-    return {
-      ...recipe,
-      steps: nextSteps
-    };
-  });
-
+  const enriched = recipes.map((recipe) => ({
+    ...recipe,
+    steps: buildFinalSteps(recipe)
+  }));
   fs.writeFileSync(filePath, JSON.stringify(enriched, null, 2) + '\n', 'utf8');
-  return { total: enriched.length, updatedCount };
+  return enriched.length;
 }
 
-const r1 = processFile(FLAGSHIP_PATH);
-const r2 = processFile(GENERATED_PATH);
-console.log('Enrichment complete:', { flagship: r1, generated: r2 });
+const c1 = processFile(FLAGSHIP_PATH);
+const c2 = processFile(GENERATED_PATH);
+console.log('Polished all recipes:', { flagship: c1, generated: c2, total: c1 + c2 });
