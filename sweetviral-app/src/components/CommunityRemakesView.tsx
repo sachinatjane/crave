@@ -2,6 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { COMMUNITY_STITCHES, RECIPES } from '../data/recipes';
 import { Recipe } from '../types/recipe';
 import { triggerHaptic } from '../utils/audioHaptics';
+import { AdUnit } from './AdUnit';
 import { EbookPromoCard } from './EbookPromoCard';
 import { SafeImage } from './SafeImage';
 
@@ -333,6 +334,9 @@ export const CommunityRemakesView: React.FC<CommunityRemakesViewProps> = ({
       <div className="px-gutter pt-space-sm">
         <EbookPromoCard variant="inline" />
       </div>
+
+      {/* Mid-Page High-RPM Ad Slot */}
+      <AdUnit placementId="remakes-mid" minHeightClass="min-h-[250px]" />
 
       {/* Zero-Login Add To Home Screen / Weekly Radar Reminder */}
       <div className="px-gutter pt-space-md">

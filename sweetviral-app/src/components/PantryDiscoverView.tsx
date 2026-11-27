@@ -2,6 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { PANTRY_INGREDIENTS, RECIPES } from '../data/recipes';
 import { Recipe, SocialPlatform } from '../types/recipe';
 import { triggerHaptic } from '../utils/audioHaptics';
+import { AdUnit } from './AdUnit';
 import { EbookPromoCard } from './EbookPromoCard';
 import { SafeImage } from './SafeImage';
 
@@ -187,6 +188,8 @@ export const PantryDiscoverView: React.FC<PantryDiscoverViewProps> = ({
           </div>
         )}
       </section>
+
+      <AdUnit placementId="pantry-mid" className="px-0" minHeightClass="min-h-[120px]" />
 
       <section className="flex flex-col gap-space-xs pt-2">
         <span className="font-label-sm text-label-sm text-primary uppercase tracking-wider">

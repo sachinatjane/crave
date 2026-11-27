@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { DESSERT_CATEGORIES, RECIPES } from '../data/recipes';
 import { CategoryTag, DessertCategory, Recipe, SocialPlatform } from '../types/recipe';
 import { getSiteRootPath } from '../utils/assetUrl';
+import { AdUnit } from './AdUnit';
 import { EBOOK_URL, EbookPromoCard } from './EbookPromoCard';
 import { SafeImage } from './SafeImage';
 import { triggerHaptic } from '../utils/audioHaptics';
@@ -531,90 +532,101 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
         ) : (
           <>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-space-sm w-full">
-              {displayedRecipes.map((recipe) => {
+              {displayedRecipes.map((recipe, idx) => {
                 const isSaved = savedIds.includes(recipe.id);
                 return (
-                  <article
-                    key={recipe.id}
-                    onClick={() => onOpenRecipe(recipe)}
-                    className="flex flex-col rounded-lg overflow-hidden bg-surface-container-lowest shadow-[0_4px_16px_rgba(30,19,14,0.06)] group cursor-pointer active:scale-[0.98] transition-transform"
-                  >
-                    <div className="relative w-full aspect-[4/5] overflow-hidden bg-surface-container">
-                      <SafeImage
-                        src={recipe.thumbImage}
-                        alt={recipe.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                      <div className="absolute top-2 left-2 flex items-center gap-1 bg-inverse-surface/80 backdrop-blur-md px-2 py-0.5 rounded-full text-inverse-on-surface">
-                        <span
-                          className="material-symbols-outlined text-[13px] text-primary-fixed"
-                          style={{ fontVariationSettings: "'FILL' 1" }}
-                        >
-                          play_circle
-                        </span>
-                        <span className="font-label-sm text-label-sm font-bold text-white">
-                          {recipe.storyViews}
-                        </span>
-                      </div>
-
-                      <div
-                        className={`absolute bottom-2 left-2 flex items-center gap-1 backdrop-blur-md px-2 py-0.5 rounded-full shadow-sm max-w-[78%] ${
-                          recipe.zeroRefinedSugar
-                            ? 'bg-[#e8f8f2]/95 text-pistachio-dark'
-                            : 'bg-surface-container-lowest/90 text-on-surface'
-                        }`}
-                      >
-                        <span className="material-symbols-outlined text-[13px] shrink-0">
-                          {recipe.zeroRefinedSugar ? 'eco' : 'local_fire_department'}
-                        </span>
-                        <span className="font-label-sm text-label-sm font-bold truncate">
-                          {recipe.zeroRefinedSugar ? `Zero Sugar • ${recipe.kcal} cal` : `${recipe.kcal} cal`}
-                        </span>
-                      </div>
-
-                      <button
-                        type="button"
-                        aria-label={`Bookmark ${recipe.title}`}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          onToggleSave(recipe);
-                        }}
-                        className={`absolute top-2 right-2 w-8 h-8 rounded-full backdrop-blur-sm flex items-center justify-center active:scale-90 transition-transform ${
-                          isSaved
-                            ? 'bg-primary text-on-primary'
-                            : 'bg-surface-container-lowest/85 text-on-surface'
-                        }`}
-                      >
-                        <span
-                          className="material-symbols-outlined text-[18px]"
-                          style={{ fontVariationSettings: isSaved ? "'FILL' 1" : "'FILL' 0" }}
-                        >
-                          bookmark
-                        </span>
-                      </button>
-                    </div>
-
-                    <div className="p-space-xs flex flex-col justify-between flex-1 gap-space-2xs">
-                      <h3 className="font-title-md text-title-md text-on-surface font-bold leading-snug line-clamp-2">
-                        {recipe.title}
-                      </h3>
-                      <div className="flex items-center justify-between mt-1 text-secondary font-label-sm text-label-sm">
-                        <div className="flex items-center gap-1 text-primary font-bold">
-                          <span className="material-symbols-outlined text-[14px]">schedule</span>
-                          <span>{recipe.totalMin}m</span>
-                        </div>
-                        <div className="flex items-center gap-0.5 font-bold text-on-surface">
+                  <React.Fragment key={recipe.id}>
+                    <article
+                      onClick={() => onOpenRecipe(recipe)}
+                      className="flex flex-col rounded-lg overflow-hidden bg-surface-container-lowest shadow-[0_4px_16px_rgba(30,19,14,0.06)] group cursor-pointer active:scale-[0.98] transition-transform"
+                    >
+                      <div className="relative w-full aspect-[4/5] overflow-hidden bg-surface-container">
+                        <SafeImage
+                          src={recipe.thumbImage}
+                          alt={recipe.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                        <div className="absolute top-2 left-2 flex items-center gap-1 bg-inverse-surface/80 backdrop-blur-md px-2 py-0.5 rounded-full text-inverse-on-surface">
                           <span
-                            className="material-symbols-outlined text-[14px] text-amber-500"
+                            className="material-symbols-outlined text-[13px] text-primary-fixed"
                             style={{ fontVariationSettings: "'FILL' 1" }}
                           >
-                            star
+                            play_circle
                           </span>
-                          <span>{recipe.rating.toFixed(1)}</span>
+                          <span className="font-label-sm text-label-sm font-bold text-white">
+                            {recipe.storyViews}
+                          </span>
+                        </div>
+
+                        <div
+                          className={`absolute bottom-2 left-2 flex items-center gap-1 backdrop-blur-md px-2 py-0.5 rounded-full shadow-sm max-w-[78%] ${
+                            recipe.zeroRefinedSugar
+                              ? 'bg-[#e8f8f2]/95 text-pistachio-dark'
+                              : 'bg-surface-container-lowest/90 text-on-surface'
+                          }`}
+                        >
+                          <span className="material-symbols-outlined text-[13px] shrink-0">
+                            {recipe.zeroRefinedSugar ? 'eco' : 'local_fire_department'}
+                          </span>
+                          <span className="font-label-sm text-label-sm font-bold truncate">
+                            {recipe.zeroRefinedSugar ? `Zero Sugar • ${recipe.kcal} cal` : `${recipe.kcal} cal`}
+                          </span>
+                        </div>
+
+                        <button
+                          type="button"
+                          aria-label={`Bookmark ${recipe.title}`}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            onToggleSave(recipe);
+                          }}
+                          className={`absolute top-2 right-2 w-8 h-8 rounded-full backdrop-blur-sm flex items-center justify-center active:scale-90 transition-transform ${
+                            isSaved
+                              ? 'bg-primary text-on-primary'
+                              : 'bg-surface-container-lowest/85 text-on-surface'
+                          }`}
+                        >
+                          <span
+                            className="material-symbols-outlined text-[18px]"
+                            style={{ fontVariationSettings: isSaved ? "'FILL' 1" : "'FILL' 0" }}
+                          >
+                            bookmark
+                          </span>
+                        </button>
+                      </div>
+
+                      <div className="p-space-xs flex flex-col justify-between flex-1 gap-space-2xs">
+                        <h3 className="font-title-md text-title-md text-on-surface font-bold leading-snug line-clamp-2">
+                          {recipe.title}
+                        </h3>
+                        <div className="flex items-center justify-between mt-1 text-secondary font-label-sm text-label-sm">
+                          <div className="flex items-center gap-1 text-primary font-bold">
+                            <span className="material-symbols-outlined text-[14px]">schedule</span>
+                            <span>{recipe.totalMin}m</span>
+                          </div>
+                          <div className="flex items-center gap-0.5 font-bold text-on-surface">
+                            <span
+                              className="material-symbols-outlined text-[14px] text-amber-500"
+                              style={{ fontVariationSettings: "'FILL' 1" }}
+                            >
+                              star
+                            </span>
+                            <span>{recipe.rating.toFixed(1)}</span>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </article>
+                    </article>
+
+                    {idx === 7 && (
+                      <div className="col-span-2 md:col-span-3 lg:col-span-4">
+                        <AdUnit
+                          placementId={`feed-mid-${activeCategory}-${activeFilter}`}
+                          className="px-0"
+                          minHeightClass="min-h-[120px]"
+                        />
+                      </div>
+                    )}
+                  </React.Fragment>
                 );
               })}
             </div>
@@ -734,6 +746,9 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
           </button>
         </div>
       </section>
+
+      {/* Bottom Feed Ad Slot */}
+      <AdUnit placementId="feed-bottom" minHeightClass="min-h-[250px]" />
 
       {/* Crawlable Semantic SEO Footer */}
       <footer className="px-gutter pb-space-md text-secondary">

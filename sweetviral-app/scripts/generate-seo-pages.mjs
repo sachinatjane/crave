@@ -326,9 +326,12 @@ const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http:
 
 fs.writeFileSync(path.join(DIST, 'sitemap.xml'), sitemapXml, 'utf8');
 
-// 5. Generate robots.txt
+// 5. Generate robots.txt and ads.txt
 const robotsTxt = `User-agent: *\nAllow: /\n\nSitemap: ${SITE_ORIGIN}/sitemap.xml\n`;
 fs.writeFileSync(path.join(DIST, 'robots.txt'), robotsTxt, 'utf8');
+
+const adsTxt = `google.com, pub-6889606875840958, DIRECT, f08c47fec0942fa0\n`;
+fs.writeFileSync(path.join(DIST, 'ads.txt'), adsTxt, 'utf8');
 
 console.log(
   `SEO generation complete: 1 home + ${CATEGORIES.length} categories + ${ALL_RECIPES.length} recipes = ${

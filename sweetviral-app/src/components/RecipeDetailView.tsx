@@ -10,6 +10,7 @@ import {
 } from '../utils/scaler';
 import { buildDeepRecipeUrl } from '../utils/shareEngine';
 import { triggerHaptic } from '../utils/audioHaptics';
+import { AdUnit } from './AdUnit';
 import { EbookPromoCard } from './EbookPromoCard';
 import { SafeImage } from './SafeImage';
 
@@ -316,6 +317,14 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
           contextLabel="Want Zero Refined Sugar & <250 Cal Swaps?"
         />
 
+        {/* High-RPM Upper-Mid Ad Slot */}
+        <AdUnit
+          key={`${recipe.id}-top`}
+          placementId={`${recipe.id}-top`}
+          className="px-0"
+          minHeightClass="min-h-[100px]"
+        />
+
         {/* Servings Stepper + Unit System */}
         <div className="p-space-md bg-surface-container-lowest rounded-lg shadow-sm flex flex-col gap-3">
           <div className="flex items-center justify-between">
@@ -554,6 +563,13 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
         ))}
       </div>
 
+      {/* High-RPM Middle-Post Ad Slot (Between Ingredients & Steps) */}
+      <AdUnit
+        key={`${recipe.id}-mid`}
+        placementId={`${recipe.id}-mid`}
+        minHeightClass="min-h-[250px]"
+      />
+
       {/* Step-by-Step Instructions */}
       <div className="px-gutter mt-space-lg flex flex-col gap-space-md">
         <div className="flex items-center justify-between">
@@ -648,6 +664,48 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
           );
         })}
       </div>
+
+      {/* Editorial Nutrition, Storage & Meal-Prep Guide (Boosts AdSense Contextual RPM & Time-on-Page) */}
+      <section className="px-gutter mt-space-lg">
+        <div className="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-3">
+          <h2 className="font-headline-sm text-headline-sm text-on-surface font-bold">
+            Nutrition, Storage &amp; Healthy Prep Notes
+          </h2>
+          <div className="grid grid-cols-3 gap-2 text-center">
+            <div className="p-2.5 rounded-DEFAULT bg-surface-container-lowest">
+              <span className="block font-label-sm text-label-sm text-secondary">CALORIES</span>
+              <span className="font-title-md text-title-md text-primary font-extrabold">
+                {displayKcal} kcal
+              </span>
+            </div>
+            <div className="p-2.5 rounded-DEFAULT bg-surface-container-lowest">
+              <span className="block font-label-sm text-label-sm text-secondary">SERVINGS</span>
+              <span className="font-title-md text-title-md text-on-surface font-extrabold">
+                {servings}
+              </span>
+            </div>
+            <div className="p-2.5 rounded-DEFAULT bg-surface-container-lowest">
+              <span className="block font-label-sm text-label-sm text-secondary">SUGAR MODE</span>
+              <span className="font-title-md text-title-md text-pistachio-dark font-extrabold">
+                {healthyMode || recipe.zeroRefinedSugar ? 'Zero Refined' : 'Classic'}
+              </span>
+            </div>
+          </div>
+          <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            <strong>Make-Ahead &amp; Storage:</strong> Keep {recipe.title.toLowerCase()} in an airtight glass container in the refrigerator for up to 4 days (or freeze individual portions up to 1 month). Pair with unsweetened Greek yogurt, fresh berries, or espresso for a balanced treat.
+          </p>
+          <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            <strong>Keto &amp; Low-Sugar Tip:</strong> Toggle <em>Healthy Swap</em> above to substitute refined sugar with monk fruit or coconut sugar and white flour with oat or almond flour.
+          </p>
+        </div>
+      </section>
+
+      {/* High-RPM Post-Recipe Ad Slot */}
+      <AdUnit
+        key={`${recipe.id}-bottom`}
+        placementId={`${recipe.id}-bottom`}
+        minHeightClass="min-h-[250px]"
+      />
 
       {/* 1-Tap "I Made This!" Viral Trigger */}
       <div className="px-gutter mt-space-lg">
