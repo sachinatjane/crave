@@ -396,6 +396,7 @@ export function App() {
             unit={unit}
             isSaved={savedIds.includes(activeRecipe.id)}
             isMade={madeIds.includes(activeRecipe.id)}
+            savedIds={savedIds}
             checkedItems={checkedByRecipe[activeRecipe.id] || {}}
             onChangeServings={(next) =>
               setServingsByRecipe((prev) => ({ ...prev, [activeRecipe.id]: next }))
@@ -403,14 +404,19 @@ export function App() {
             onChangeUnit={setUnit}
             onToggleIngredient={(itemId) => handleToggleIngredient(activeRecipe.id, itemId)}
             onToggleSave={() => handleToggleSave(activeRecipe)}
+            onToggleSaveRecipe={handleToggleSave}
             onMarkMade={() =>
               setMadeIds((prev) =>
                 prev.includes(activeRecipe.id) ? prev : [...prev, activeRecipe.id]
               )
             }
             onStartCookMode={(stepIdx = 0) => navigateToCookMode(activeRecipe, stepIdx)}
+            onStartCookModeRecipe={(r, stepIdx = 0) => navigateToCookMode(r, stepIdx)}
             onOpenShare={(format = 'story', madeBadge = false) =>
               setShareState({ recipe: activeRecipe, format, madeBadge })
+            }
+            onOpenShareRecipe={(r, format = 'story') =>
+              setShareState({ recipe: r, format, madeBadge: madeIds.includes(r.id) })
             }
             onSelectCategory={(cat) => {
               setInitialCategory(cat);

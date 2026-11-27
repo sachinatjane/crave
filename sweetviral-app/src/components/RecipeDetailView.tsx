@@ -11,6 +11,7 @@ import {
 import { buildDeepRecipeUrl } from '../utils/shareEngine';
 import { triggerHaptic } from '../utils/audioHaptics';
 import { AdUnit } from './AdUnit';
+import { AutoLoadedRecipeBlock } from './AutoLoadedRecipeBlock';
 import { EbookPromoCard } from './EbookPromoCard';
 import { SafeImage } from './SafeImage';
 
@@ -20,14 +21,18 @@ interface RecipeDetailViewProps {
   unit: UnitSystem;
   isSaved: boolean;
   isMade: boolean;
+  savedIds?: string[];
   checkedItems: Record<string, boolean>;
   onChangeServings: (next: number) => void;
   onChangeUnit: (next: UnitSystem) => void;
   onToggleIngredient: (ingredientId: string) => void;
   onToggleSave: () => void;
+  onToggleSaveRecipe?: (recipe: Recipe) => void;
   onMarkMade: () => void;
   onStartCookMode: (startStepIndex?: number) => void;
+  onStartCookModeRecipe?: (recipe: Recipe, startStepIndex?: number) => void;
   onOpenShare: (format?: 'story' | 'pinterest', madeBadge?: boolean) => void;
+  onOpenShareRecipe?: (recipe: Recipe, format?: 'story' | 'pinterest') => void;
   onSelectCategory?: (cat: DessertCategory) => void;
   onOpenRecipe?: (recipe: Recipe) => void;
   onToast: (msg: string, icon?: string) => void;
@@ -39,14 +44,18 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
   unit,
   isSaved,
   isMade,
+  savedIds = [],
   checkedItems,
   onChangeServings,
   onChangeUnit,
   onToggleIngredient,
   onToggleSave,
+  onToggleSaveRecipe,
   onMarkMade,
   onStartCookMode,
+  onStartCookModeRecipe,
   onOpenShare,
+  onOpenShareRecipe,
   onSelectCategory,
   onOpenRecipe,
   onToast
@@ -55,7 +64,40 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
   const [demoSlide, setDemoSlide] = useState(0);
   const [showConfetti, setShowConfetti] = useState(false);
   const [healthyMode, setHealthyMode] = useState(Boolean(recipe.zeroRefinedSugar));
+  const [infiniteRecipes, setInfiniteRecipes] = useState<Recipe[]>([]);
   const ingredientsRef = useRef<HTMLDivElement>(null);
+  const sentinelRef = useRef<HTMLDivElement>(null);
+
+  // Reset infinite queue when primary recipe changes
+  useEffect(() => {
+    setInfiniteRecipes([]);
+  }, [recipe.id]);
+
+  // Infinite scroll: auto-load next recipe when approaching bottom
+  useEffect(() => {
+    const el = sentinelRef.current;
+    if (!el || typeof IntersectionObserver === 'undefined') return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (!entries.some((e) => e.isIntersecting)) return;
+        setInfiniteRecipes((prev) => {
+          const loadedIds = new Set([recipe.id, ...prev.map((r) => r.id)]);
+          // Prioritize same category first, then healthy/viral recipes
+          const sameCat = RECIPES.find(
+            (r) => !loadedIds.has(r.id) && r.dessertCategory === recipe.dessertCategory
+          );
+          const next = sameCat || RECIPES.find((r) => !loadedIds.has(r.id));
+          if (!next) return prev;
+          return [...prev, next];
+        });
+      },
+      { rootMargin: '500px 0px' }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [recipe.id, recipe.dessertCategory, infiniteRecipes.length]);
 
   const displayKcal =
     healthyMode && !recipe.zeroRefinedSugar ? Math.round(recipe.kcal * 0.72) : recipe.kcal;
@@ -844,6 +886,42 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
           </div>
         </section>
       )}
+
+      {/* Infinite Scroll Auto-Loaded Next Recipes */}
+      {infiniteRecipes.map((nextRecipe, idx) => (
+        <AutoLoadedRecipeBlock
+          key={nextRecipe.id}
+          recipe={nextRecipe}
+          index={idx}
+          unit={unit}
+          isSaved={savedIds.includes(nextRecipe.id)}
+          onToggleSave={(r) => (onToggleSaveRecipe ? onToggleSaveRecipe(r) : onToggleSave())}
+          onStartCookMode={(r, stepIdx = 0) =>
+            onStartCookModeRecipe ? onStartCookModeRecipe(r, stepIdx) : onStartCookMode(stepIdx)
+          }
+          onOpenShare={(r, fmt = 'story') =>
+            onOpenShareRecipe ? onOpenShareRecipe(r, fmt) : onOpenShare(fmt, false)
+          }
+          onOpenRecipe={onOpenRecipe}
+        />
+      ))}
+
+      {/* Infinite Scroll Sentinel */}
+      <div
+        ref={sentinelRef}
+        className="px-gutter py-8 flex items-center justify-center gap-2 text-secondary font-label-md text-label-md"
+      >
+        {infiniteRecipes.length + 1 < RECIPES.length ? (
+          <>
+            <span className="material-symbols-outlined animate-spin text-[18px] text-primary">
+              autorenew
+            </span>
+            <span>Scroll for next recipe...</span>
+          </>
+        ) : (
+          <span>You&apos;ve explored all {RECIPES.length} Crave Recipes! 🎉</span>
+        )}
+      </div>
 
       {/* Sticky Bottom Social Action HUD */}
       <div className="fixed bottom-3 left-4 right-4 z-40 max-w-[480px] mx-auto pb-safe flex items-center gap-2">
