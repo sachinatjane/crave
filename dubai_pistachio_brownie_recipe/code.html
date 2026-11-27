@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#fff8f6;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-fixed": "#2a1700", "outline-variant": "#e5bdbe", "surface-container-lowest": "#ffffff", "on-primary-fixed-variant": "#920028", "on-tertiary": "#ffffff", "on-surface-variant": "#5c3f40", "on-secondary-fixed-variant": "#52443d", "surface-container-low": "#fff1eb", "tertiary-container": "#a36700", "primary-fixed": "#ffdada", "on-secondary-fixed": "#251914", "primary-container": "#e11d48", "on-background": "#271811", "inverse-surface": "#3e2d25", "inverse-on-surface": "#ffede6", "surface-container": "#ffeae1", "on-primary-fixed": "#40000c", "on-tertiary-container": "#fffaf9", "secondary": "#6b5b54", "primary-fixed-dim": "#ffb3b6", "secondary-container": "#f2dbd2", "tertiary-fixed-dim": "#ffb95f", "secondary-fixed": "#f4ded5", "secondary-fixed-dim": "#d8c2ba", "tertiary": "#815100", "on-primary": "#ffffff", "surface": "#fff8f6", "primary": "#b80035", "surface-container-highest": "#f9ddd1", "outline": "#906f70", "surface-container-high": "#ffe2d6", "on-error-container": "#93000a", "surface-dim": "#f0d4c9", "inverse-primary": "#ffb3b6", "on-secondary-container": "#705f58", "on-primary-container": "#fffaf9", "on-surface": "#271811", "background": "#fff8f6", "on-tertiary-fixed-variant": "#653e00", "tertiary-fixed": "#ffddb8", "surface-variant": "#f9ddd1", "on-secondary": "#ffffff", "surface-tint": "#be0037", "surface-bright": "#fff8f6", "error-container": "#ffdad6", "error": "#ba1a1a", "on-error": "#ffffff" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, spacing: { "gutter": "1rem", "space-sm": "0.5rem", "space-md": "1rem", "space-2xs": "0.25rem", "space-lg": "1.5rem", "margin-tablet": "2rem", "margin": "1rem", "space-xs": "0.375rem", "gutter-desktop": "1.5rem", "space-2xl": "3rem", "gutter-tablet": "1.25rem", "space-xl": "2rem", "margin-desktop": "3rem" }, fontFamily: { "label-sm": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"] }, fontSize: { "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "800" }], "title-md": ["16px", { "lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700" }], "display-lg-mobile": ["34px", { "lineHeight": "40px", "letterSpacing": "-0.025em", "fontWeight": "800" }], "label-lg": ["13px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "17px", "letterSpacing": "0.01em", "fontWeight": "500" }], "display-lg": ["44px", { "lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "headline-lg-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "21px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_12px_rgba(39,24,17,0.04)]"><div class="h-16 px-gutter flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs min-w-0"><button aria-label="Go back" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container transition-colors shrink-0" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[22px]">arrow_back_ios_new</span></button><img alt="SweetViral Logo" class="h-7 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/ALJJyrDI-HtVdiJQ1ExP2TR0TIOWI_1yAaPbVxEn67JgUNO4540STyTD7ZAam3v46NYXULOQaZUZF3bIy2h7PmcPIcHsjWeuYJj_5bU2j_BTBEBVVHyg_TMceiI3Iv9SIiprLGr6fspG6EGyH0ir7o2yc4DW92EJrnUjTbPTxZRwe6CKdxavJ7xGJjIMdzL8G329fJ4jkInQMapYezCocFtKTLiJJbWc7JcxELl2pIOmXzFa"/><h1 class="font-title-md text-title-md text-on-surface truncate">Recipe Detail</h1></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Share recipe" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">share</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full bg-surface pt-16"><div class="flex flex-col w-full pb-28">
+<!-- Hero Section -->
+<div class="relative w-full aspect-[4/5] max-h-[500px] overflow-hidden bg-inverse-surface">
+<div class="w-full h-full bg-cover bg-center" data-alt="Macro culinary close-up shot of a thick cut fudgy dark chocolate brownie stuffed with glowing vibrant green pistachio cream and crunchy golden toasted kataifi pastry filaments oozing out, dramatic warm editorial spotlight, glossy chocolate ganache drip, ultra high-definition food photography with decadent viral dessert styling" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD7WyAkkAw-nBgBGDjPPFUHh-PmT2EY8ZXisDaENZfwkW4EIqmKg-57dkxIjv9EGMgMLygwQEtwxYRXYdUr2mhpVdcBb78HvGlO1acAR9Twbrfzf4hkmqiOEj2UxwjP5sjNX_42tQAHcjLezUrqhEcXM0caiPR4PhTGdJm33uCgjQZt_OBF2U5LhzvFStrEJps4bYhj3oMNcMLF04bmWwrtutCRiVuZzeUVCvwF210')">
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface via-inverse-surface/30 to-transparent"></div>
+</div>
+<!-- Top Floating Metric Pills -->
+<div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+<div class="pointer-events-auto flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-inverse-surface/85 backdrop-blur-md shadow-md">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label-md text-label-md text-inverse-on-surface tracking-wider uppercase">14.8M Views</span>
+</div>
+<div class="pointer-events-auto flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md shadow-md text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-tertiary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-bold">4.9</span>
+<span class="font-label-sm text-label-sm text-secondary">(2.8k)</span>
+</div>
+</div>
+<!-- Video Demo Overlay Button -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<button aria-label="Watch video demo" class="pointer-events-auto group flex items-center gap-2.5 px-5 py-3 rounded-full bg-inverse-surface/90 text-inverse-on-surface backdrop-blur-xl shadow-xl transition-all duration-200 active:scale-95 hover:bg-inverse-surface" id="watch-video-btn" type="button">
+<div class="w-7 h-7 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container shadow-sm group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+<span class="font-label-lg text-label-lg tracking-wide">Watch 20s TikTok Demo</span>
+</button>
+</div>
+<!-- Scrim Bottom Header Meta -->
+<div class="absolute bottom-4 left-4 right-4 flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-tertiary text-on-tertiary font-label-sm text-label-sm">VIRAL DUBAI TREND</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-highest/80 backdrop-blur-sm text-on-surface-variant font-label-sm text-label-sm">NO-FLUFF RECIPE</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-inverse-on-surface leading-tight drop-shadow-sm">
+        Giant Stuffed Dubai Pistachio &amp; Kataifi Brownies
+      </h2>
+<div class="flex items-center gap-2 pt-0.5">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-[15px] text-primary">verified</span>
+</div>
+<p class="font-label-md text-label-md text-inverse-on-surface/90">Created by <span class="font-bold text-primary-fixed">@sweetcraver</span> • Updated today</p>
+</div>
+</div>
+</div>
+<!-- Quick Social Proof Bar -->
+<div class="px-gutter py-3 bg-surface-container-low flex items-center justify-between text-on-secondary-container">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary" style="font-variation-settings: 'FILL' 1;">thumb_up</span>
+<span class="font-label-md text-label-md font-bold">98.4% Make Again Rate</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-secondary">Ready in 40 mins</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm text-secondary">Zero Mixer Needed</span>
+</div>
+</div>
+<!-- Primary Interactive Control Hub -->
+<div class="px-gutter mt-space-md flex flex-col gap-space-md">
+<!-- Macro Stats Grid -->
+<div class="grid grid-cols-4 gap-2 p-3 bg-surface-container rounded-lg shadow-sm">
+<div class="flex flex-col items-center justify-center text-center py-1">
+<span class="material-symbols-outlined text-[20px] text-primary">timer</span>
+<span class="font-label-sm text-label-sm text-secondary mt-1">PREP</span>
+<span class="font-headline-sm text-headline-sm text-on-surface mt-0.5">15m</span>
+</div>
+<div class="flex flex-col items-center justify-center text-center py-1">
+<span class="material-symbols-outlined text-[20px] text-primary">oven_gen</span>
+<span class="font-label-sm text-label-sm text-secondary mt-1">BAKE</span>
+<span class="font-headline-sm text-headline-sm text-on-surface mt-0.5">25m</span>
+</div>
+<div class="flex flex-col items-center justify-center text-center py-1">
+<span class="material-symbols-outlined text-[20px] text-tertiary">pace</span>
+<span class="font-label-sm text-label-sm text-secondary mt-1">TOTAL</span>
+<span class="font-headline-sm text-headline-sm text-on-surface mt-0.5">40m</span>
+</div>
+<div class="flex flex-col items-center justify-center text-center py-1">
+<span class="material-symbols-outlined text-[20px] text-primary">psychology</span>
+<span class="font-label-sm text-label-sm text-secondary mt-1">SKILL</span>
+<span class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Easy</span>
+</div>
+</div>
+<!-- Scaler & Measurement Controls -->
+<div class="p-space-md bg-surface-container-lowest rounded-lg shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary">groups</span>
+<span class="font-title-md text-title-md text-on-surface">Yield / Servings</span>
+</div>
+<!-- Servings Stepper -->
+<div class="flex items-center bg-surface-container-high rounded-full p-1 shadow-inner">
+<button aria-label="Decrease servings" class="w-8 h-8 rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center active:scale-90 transition-transform shadow-sm" id="btn-dec" type="button">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="w-10 text-center font-headline-sm text-headline-sm text-on-surface" id="serving-count">8</span>
+<button aria-label="Increase servings" class="w-8 h-8 rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center active:scale-90 transition-transform shadow-sm" id="btn-inc" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+<!-- Unit Selector Segmented Control -->
+<div class="flex items-center justify-between pt-2 border-t-0">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-wider">Unit System</span>
+<div class="flex bg-surface-container-high p-1 rounded-full text-on-surface">
+<button class="px-3.5 py-1 rounded-full font-label-md text-label-md bg-primary text-on-primary shadow-sm transition-all" id="unit-us" type="button">US Customary</button>
+<button class="px-3.5 py-1 rounded-full font-label-md text-label-md text-on-surface-variant transition-all" id="unit-metric" type="button">Metric</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Smart Ingredients Section -->
+<div class="px-gutter mt-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Ingredients</h3>
+<p class="font-body-sm text-body-sm text-secondary">Tap items as you prep</p>
+</div>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md shadow-sm active:scale-95 transition-transform" id="instacart-btn" type="button">
+<span class="material-symbols-outlined text-[16px]">shopping_cart_checkout</span>
+<span>1-Tap Instacart</span>
+</button>
+</div>
+<!-- Category 1: Pistachio Kataifi Layer -->
+<div class="flex flex-col gap-2 p-space-md bg-surface-container-low rounded-lg shadow-sm">
+<div class="flex items-center justify-between pb-1">
+<span class="font-label-lg text-label-lg text-tertiary uppercase tracking-wide">Pistachio Kataifi Crunch Layer</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-tertiary-container/15 text-tertiary-container font-bold">The Signature</span>
+</div>
+<!-- Ingredient items with data-base (amount for 8 servings in US) and data-metric -->
+<div class="flex flex-col gap-1.5">
+<label class="ingredient-row flex items-center justify-between p-2.5 rounded-DEFAULT bg-surface-container-lowest active:bg-surface-container transition-colors cursor-pointer select-none">
+<div class="flex items-center gap-3 min-w-0">
+<input class="sr-only ingredient-checkbox" type="checkbox"/>
+<div class="check-box w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center text-transparent transition-all">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="item-name font-body-md text-body-md text-on-surface truncate">Kataifi (Kadayif) shredded dough noodles</span>
+</div>
+<span class="item-qty font-title-md text-title-md text-primary shrink-0 ml-2" data-base="150" data-unit-metric="150g" data-unit-us="g (approx. 2 cups)">150g (2 cups)</span>
+</label>
+<label class="ingredient-row flex items-center justify-between p-2.5 rounded-DEFAULT bg-surface-container-lowest active:bg-surface-container transition-colors cursor-pointer select-none">
+<div class="flex items-center gap-3 min-w-0">
+<input class="sr-only ingredient-checkbox" type="checkbox"/>
+<div class="check-box w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center text-transparent transition-all">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="item-name font-body-md text-body-md text-on-surface truncate">Unsalted pure butter</span>
+</div>
+<span class="item-qty font-title-md text-title-md text-primary shrink-0 ml-2" data-base="3" data-unit-metric="45g" data-unit-us="tbsp">3 tbsp</span>
+</label>
+<label class="ingredient-row flex items-center justify-between p-2.5 rounded-DEFAULT bg-surface-container-lowest active:bg-surface-container transition-colors cursor-pointer select-none">
+<div class="flex items-center gap-3 min-w-0">
+<input class="sr-only ingredient-checkbox" type="checkbox"/>
+<div class="check-box w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center text-transparent transition-all">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="item-name font-body-md text-body-md text-on-surface truncate">Sweetened pistachio cream paste</span>
+</div>
+<span class="item-qty font-title-md text-title-md text-primary shrink-0 ml-2" data-base="0.75" data-unit-metric="200g" data-unit-us="cup">3/4 cup</span>
+</label>
+<label class="ingredient-row flex items-center justify-between p-2.5 rounded-DEFAULT bg-surface-container-lowest active:bg-surface-container transition-colors cursor-pointer select-none">
+<div class="flex items-center gap-3 min-w-0">
+<input class="sr-only ingredient-checkbox" type="checkbox"/>
+<div class="check-box w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center text-transparent transition-all">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="item-name font-body-md text-body-md text-on-surface truncate">Creamy sesame tahini</span>
+</div>
+<span class="item-qty font-title-md text-title-md text-primary shrink-0 ml-2" data-base="1.5" data-unit-metric="22ml" data-unit-us="tbsp">1.5 tbsp</span>
+</label>
+</div>
+</div>
+<!-- Category 2: Brownie Base -->
+<div class="flex flex-col gap-2 p-space-md bg-surface-container rounded-lg shadow-sm">
+<div class="flex items-center justify-between pb-1">
+<span class="font-label-lg text-label-lg text-primary uppercase tracking-wide">Fudgy Brownie Base</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-bold">Rich Dark Cocoa</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="ingredient-row flex items-center justify-between p-2.5 rounded-DEFAULT bg-surface-container-lowest active:bg-surface-container transition-colors cursor-pointer select-none">
+<div class="flex items-center gap-3 min-w-0">
+<input class="sr-only ingredient-checkbox" type="checkbox"/>
+<div class="check-box w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center text-transparent transition-all">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="item-name font-body-md text-body-md text-on-surface truncate">Bittersweet 70% dark chocolate</span>
+</div>
+<span class="item-qty font-title-md text-title-md text-primary shrink-0 ml-2" data-base="1" data-unit-metric="175g" data-unit-us="cup (chopped)">1 cup</span>
+</label>
+<label class="ingredient-row flex items-center justify-between p-2.5 rounded-DEFAULT bg-surface-container-lowest active:bg-surface-container transition-colors cursor-pointer select-none">
+<div class="flex items-center gap-3 min-w-0">
+<input class="sr-only ingredient-checkbox" type="checkbox"/>
+<div class="check-box w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center text-transparent transition-all">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="item-name font-body-md text-body-md text-on-surface truncate">Dutch-process cocoa powder</span>
+</div>
+<span class="item-qty font-title-md text-title-md text-primary shrink-0 ml-2" data-base="0.5" data-unit-metric="50g" data-unit-us="cup">1/2 cup</span>
+</label>
+<label class="ingredient-row flex items-center justify-between p-2.5 rounded-DEFAULT bg-surface-container-lowest active:bg-surface-container transition-colors cursor-pointer select-none">
+<div class="flex items-center gap-3 min-w-0">
+<input class="sr-only ingredient-checkbox" type="checkbox"/>
+<div class="check-box w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center text-transparent transition-all">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="item-name font-body-md text-body-md text-on-surface truncate">Dark brown sugar &amp; cane sugar</span>
+</div>
+<span class="item-qty font-title-md text-title-md text-primary shrink-0 ml-2" data-base="1" data-unit-metric="200g" data-unit-us="cup">1 cup</span>
+</label>
+<label class="ingredient-row flex items-center justify-between p-2.5 rounded-DEFAULT bg-surface-container-lowest active:bg-surface-container transition-colors cursor-pointer select-none">
+<div class="flex items-center gap-3 min-w-0">
+<input class="sr-only ingredient-checkbox" type="checkbox"/>
+<div class="check-box w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center text-transparent transition-all">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="item-name font-body-md text-body-md text-on-surface truncate">Large room-temperature eggs</span>
+</div>
+<span class="item-qty font-title-md text-title-md text-primary shrink-0 ml-2" data-base="2" data-unit-metric="2 whole" data-unit-us="whole eggs">2</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Step-by-Step Instructions -->
+<div class="px-gutter mt-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Step-by-Step Guide</h3>
+<p class="font-body-sm text-body-sm text-secondary">Follow precisely for peak ASMR crunch</p>
+</div>
+<span class="material-symbols-outlined text-[24px] text-tertiary">restaurant_menu</span>
+</div>
+<!-- Step 1 Card -->
+<div class="flex flex-col bg-surface-container-lowest rounded-lg p-space-md shadow-sm gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md flex items-center justify-center font-bold">1</span>
+<h4 class="font-title-md text-title-md text-on-surface">Crisp the Kataifi Crunch</h4>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">5 Mins</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Chop kataifi strands into 1-inch lengths. Melt butter over medium heat in a wide skillet, add noodles, and stir constantly until uniformly toasted to a rich amber golden hue. Cool slightly.
+      </p>
+<div class="w-full aspect-[16/9] rounded-DEFAULT overflow-hidden relative mt-1">
+<div class="w-full h-full bg-cover bg-center" data-alt="Top down aesthetic photo of golden roasted kataifi shredded pastry strings sizzling in melted butter inside a cast iron pan, warm amber glow, culinary recipe step capture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCx2sWsYn2FmfORwk_OgUsy0EHoWwFGjD5KDv6obWRWjqeWhZxrqJmrwTeYWGFWubkPLwk1pegbGuuBnX6lR9LxtYFss24MmE4DZi1XNniqH9-ROBPC_BsuRopNQi3NrzB-lw8AlXh6KTWBAGuNdU-NT3a8ByndXFO4LKYfISrVKfCr2wXd8t6KwhJXhoahCZvAMY6uGW6RwRYUxxTILUtG0OemfzonDLMuiheYD1A')"></div>
+</div>
+</div>
+<!-- Step 2 Card -->
+<div class="flex flex-col bg-surface-container-lowest rounded-lg p-space-md shadow-sm gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md flex items-center justify-center font-bold">2</span>
+<h4 class="font-title-md text-title-md text-on-surface">Mix Pistachio Velvet</h4>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">3 Mins</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        In a mixing bowl, blend the sweetened pistachio butter and sesame tahini until ultra-smooth. Gently fold in the toasted kataifi noodles until every crunchy shard is coated in emerald paste.
+      </p>
+<!-- Tip Pill -->
+<div class="flex items-start gap-2.5 p-3 rounded-DEFAULT bg-tertiary-fixed/30 text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[20px] text-tertiary shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold uppercase tracking-wider text-tertiary">Creator Secret</span>
+<p class="font-body-sm text-body-sm mt-0.5">Don't skip the tahini! Its roasted nuttiness balances the sweet pistachio paste and replicates the original Dubai chocolate bar mouthfeel.</p>
+</div>
+</div>
+</div>
+<!-- Step 3 Card -->
+<div class="flex flex-col bg-surface-container-lowest rounded-lg p-space-md shadow-sm gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md flex items-center justify-center font-bold">3</span>
+<h4 class="font-title-md text-title-md text-on-surface">The Fudgy Pour &amp; Stuffing</h4>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">7 Mins</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Whip brownie batter until glossy. Pour 55% into a parchment-lined 8x8 pan. Smooth with spatula. Spread the thick pistachio kataifi layer edge-to-edge. Ladle remaining brownie batter over top.
+      </p>
+<div class="w-full aspect-[16/9] rounded-DEFAULT overflow-hidden relative mt-1">
+<div class="w-full h-full bg-cover bg-center" data-alt="High angle shot of layered brownie batter being poured over vibrant green pistachio kataifi filling in a baking pan, glossy dark chocolate swirl, bakery setting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCbfYIFBFVeq7vNKNfnACFjal1LwKLxdaNlDcXJeBwo9IRo6ecfkPxwQstn1bLcdzBf8TMPJ_Pf-yRw2c4zFNU4mhWWugWpp9FvYX54ch6OkE8BOI7FoxD0B7W9vizkMiUpDX9Et1vfHP41bFHNEj-FbLSxKXykuzu2xPYL0l_h7vnrpUDPizeJH0Fhq0c2gpcDi_MgZ0U1B9BPuoSXxZYd_nKNfHD-n3h8ByMuZCI')"></div>
+</div>
+</div>
+<!-- Step 4 Card -->
+<div class="flex flex-col bg-surface-container-lowest rounded-lg p-space-md shadow-sm gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md flex items-center justify-center font-bold">4</span>
+<h4 class="font-title-md text-title-md text-on-surface">Bake &amp; The Viral Cut</h4>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">25 Mins</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Bake at 350°F (175°C) for 25 mins until edges set and center has a gentle fudge wobble.
+      </p>
+<!-- Chilling Pro-Tip Callout -->
+<div class="flex items-center gap-2 p-3 rounded-DEFAULT bg-primary-fixed/40 text-on-primary-fixed-variant">
+<span class="material-symbols-outlined text-[20px] text-primary shrink-0" style="font-variation-settings: 'FILL' 1;">ac_unit</span>
+<p class="font-label-md text-label-md">
+<strong class="font-bold">CRITICAL CUT TIP:</strong> Chill in fridge for 20 mins before cutting for the famous viral cross-section clean line &amp; crisp ASMR crunch sound.
+        </p>
+</div>
+</div>
+</div>
+<!-- Community Remakes & TikTok Proof Reel -->
+<div class="mt-space-lg flex flex-col gap-space-md">
+<div class="px-gutter flex items-center justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Viral Community Bakes</h3>
+<p class="font-body-sm text-body-sm text-secondary">3,400+ bakers made this weekend</p>
+</div>
+<div class="flex items-center gap-1 text-primary">
+<span class="font-label-sm text-label-sm uppercase font-bold">#DubaiBrownie</span>
+</div>
+</div>
+<!-- Horizontal UGC Card Reel -->
+<div class="flex overflow-x-auto gap-space-md px-gutter pb-2 scrollbar-none">
+<!-- UGC Card 1 -->
+<div class="shrink-0 w-64 bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm flex flex-col">
+<div class="relative w-full aspect-[4/3] bg-surface-container-highest">
+<div class="w-full h-full bg-cover bg-center" data-alt="Real home baker photo of a sliced pistachio stuffed brownie held in hand showing a clean green center cut, bright natural kitchen lighting, high engagement aesthetic" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDiWn8HqJgYJW4zmkFwZYqi9VIyNs2uD6qMbvBseGQ8rbykgmmvmcsEGV0IhtR1qynHfg_1WlgXHQIg5Wurla71JcqJ56kgzxHDCzvkVE6On8z3A09fcs8TBuaQa53HymAGT-6UmLNvu11zccjwkEnjFlKK2JCK0zD31IsS_SEG2YMSInEwV2lWLGVsSLyL_fpeF4L5I4wm3o9HaPzz5TXMYNaZM-61jKxIU8F-emg')"></div>
+<span class="absolute bottom-2 left-2 px-2 py-0.5 rounded-full bg-inverse-surface/80 text-inverse-on-surface font-label-sm text-label-sm">@foodie_maya</span>
+</div>
+<div class="p-3 flex flex-col gap-1">
+<div class="flex items-center text-tertiary-container">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface italic line-clamp-2">
+            "Tasted 10x better than the viral chocolate bar! The crunch is absolutely insane."
+          </p>
+</div>
+</div>
+<!-- UGC Card 2 -->
+<div class="shrink-0 w-64 bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm flex flex-col">
+<div class="relative w-full aspect-[4/3] bg-surface-container-highest">
+<div class="w-full h-full bg-cover bg-center" data-alt="Overhead photo of eight square cut brownies on baking parchment drizzled with extra melted white chocolate and chopped green pistachios, bakery style presentation" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuALFUoxiBECZzAWaXtC0z6_3fyyb4Oglkh7z2ln-RSCul7GG6ndbYOoj--j5SFwYwV_nA5i_reJmnufNBC2JrtLLQRGLH6QPoSme6rp552VmPorovB6N3mIRKlda6oHIOkgW0Qxq8P6ToAK2QbbXecQbA0hUvtwjt1cI7JQ7IVffcm-p5IA5uTMRGziGueb_OuEEzRvPL16NCnBv8SgQMorzoA2A86PQVLtSD_uOp0')"></div>
+<span class="absolute bottom-2 left-2 px-2 py-0.5 rounded-full bg-inverse-surface/80 text-inverse-on-surface font-label-sm text-label-sm">@bakingwithjules</span>
+</div>
+<div class="p-3 flex flex-col gap-1">
+<div class="flex items-center text-tertiary-container">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface italic line-clamp-2">
+            "Followed the 20-min chill trick. Cleanest slice ever and took only 40 mins total."
+          </p>
+</div>
+</div>
+<!-- UGC Card 3 -->
+<div class="shrink-0 w-64 bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm flex flex-col">
+<div class="relative w-full aspect-[4/3] bg-surface-container-highest">
+<div class="w-full h-full bg-cover bg-center" data-alt="POV action shot snapping open a warm crispy stuffed pistachio brownie showing cheese-like stretch of melted pistachio filling with crisp noodles, extreme macro food shot" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDoiefj0QewbtEjzxtVG0bdYw8GOZaGzJzvod1ZMUbRbAke8fc0aXwEFBu5vZUKiRwaaHGcR4Cejh9T42Z77_DnoXfTZeTtxTHiQcyXEQW4L5vIldqYhhUg57ERUu7BGeVi4QkG4-xUxUInGGeWZb3P2lxsSaaVfSVRhHG5dumktBQ3A2I5J_91hWjwE2oZDUPp5HCt0crqziwcrvEoxEVCKqVnSxlN4vuzL2fnWxQ')"></div>
+<span class="absolute bottom-2 left-2 px-2 py-0.5 rounded-full bg-inverse-surface/80 text-inverse-on-surface font-label-sm text-label-sm">@dessertking_sam</span>
+</div>
+<div class="p-3 flex flex-col gap-1">
+<div class="flex items-center text-tertiary-container">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface italic line-clamp-2">
+            "Instant crowd favorite. The tahini in the pistachio cream makes this restaurant grade."
+          </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Social Action HUD (Bottom Floating Zone) -->
+<div class="fixed bottom-3 left-4 right-4 z-40 max-w-[480px] mx-auto flex items-center gap-2">
+<!-- Cook Mode Hands-Free Action Button -->
+<button class="flex-1 h-14 rounded-full bg-inverse-surface text-inverse-on-surface flex items-center justify-between px-5 shadow-2xl active:scale-95 transition-all" id="start-cook-mode-btn" type="button">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</div>
+<div class="flex flex-col text-left">
+<span class="font-title-md text-title-md leading-none text-surface-container-lowest">Cook Mode</span>
+<span class="font-label-sm text-label-sm text-tertiary-fixed leading-none mt-1">Screen stays awake</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[20px] text-surface-container-highest">arrow_forward</span>
+</button>
+<!-- Quick Pin Save Button -->
+<button aria-label="Save to Pinterest" class="w-14 h-14 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-2xl active:scale-95 transition-transform shrink-0" id="pinterest-save-btn" type="button">
+<span class="material-symbols-outlined text-[24px]">bookmark</span>
+</button>
+<!-- Share to Story Button -->
+<button aria-label="Share recipe to story" class="w-14 h-14 rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center shadow-2xl active:scale-95 transition-transform shrink-0" id="share-story-btn" type="button">
+<span class="material-symbols-outlined text-[22px] text-primary">send</span>
+</button>
+</div>
+<!-- Toast Notification Overlay (Hidden by Default) -->
+<div class="fixed top-20 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-full bg-inverse-surface/90 text-inverse-on-surface backdrop-blur-md font-label-md text-label-md shadow-xl flex items-center gap-2 opacity-0 pointer-events-none transition-all duration-300" id="toast-pill">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed" id="toast-icon">check_circle</span>
+<span id="toast-text">Saved to your Pinterest board!</span>
+</div>
+</div>
+<script>
+  (function() {
+    // Servings & Scaling Logic
+    let servings = 8;
+    const baseServings = 8;
+    let isMetric = false;
+
+    const countEl = document.getElementById('serving-count');
+    const decBtn = document.getElementById('btn-dec');
+    const incBtn = document.getElementById('btn-inc');
+    const unitUsBtn = document.getElementById('unit-us');
+    const unitMetricBtn = document.getElementById('unit-metric');
+    const qtyElements = document.querySelectorAll('.item-qty');
+
+    function updateQuantities() {
+      countEl.textContent = servings;
+      const ratio = servings / baseServings;
+
+      qtyElements.forEach(el => {
+        const base = parseFloat(el.getAttribute('data-base'));
+        const scaled = (base * ratio);
+
+        if (isMetric) {
+          const metricText = el.getAttribute('data-unit-metric');
+          if (metricText.includes('g') || metricText.includes('ml')) {
+            const num = Math.round(parseFloat(metricText) * ratio);
+            el.textContent = metricText.replace(/^[0-9]+/, num);
+          } else {
+            el.textContent = Math.round(scaled * 10) / 10 + ' ' + metricText;
+          }
+        } else {
+          // US units
+          const unitUs = el.getAttribute('data-unit-us');
+          let displayNum = '';
+          if (scaled === 0.75) displayNum = '3/4';
+          else if (scaled === 0.5) displayNum = '1/2';
+          else if (scaled === 0.25) displayNum = '1/4';
+          else if (scaled === 1.5) displayNum = '1.5';
+          else displayNum = (Math.round(scaled * 10) / 10).toString();
+          
+          el.textContent = displayNum + ' ' + unitUs;
+        }
+      });
+    }
+
+    decBtn.addEventListener('click', () => {
+      if (servings > 2) {
+        servings -= 2;
+        updateQuantities();
+      }
+    });
+
+    incBtn.addEventListener('click', () => {
+      if (servings < 24) {
+        servings += 2;
+        updateQuantities();
+      }
+    });
+
+    unitUsBtn.addEventListener('click', () => {
+      isMetric = false;
+      unitUsBtn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+      unitUsBtn.classList.remove('text-on-surface-variant');
+      unitMetricBtn.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+      unitMetricBtn.classList.add('text-on-surface-variant');
+      updateQuantities();
+    });
+
+    unitMetricBtn.addEventListener('click', () => {
+      isMetric = true;
+      unitMetricBtn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+      unitMetricBtn.classList.remove('text-on-surface-variant');
+      unitUsBtn.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+      unitUsBtn.classList.add('text-on-surface-variant');
+      updateQuantities();
+    });
+
+    // Checkbox Checklist Interactivity
+    const ingredientRows = document.querySelectorAll('.ingredient-row');
+    ingredientRows.forEach(row => {
+      const checkbox = row.querySelector('.ingredient-checkbox');
+      const box = row.querySelector('.check-box');
+      const text = row.querySelector('.item-name');
+
+      row.addEventListener('click', (e) => {
+        checkbox.checked = !checkbox.checked;
+        if (checkbox.checked) {
+          box.classList.remove('bg-surface-container-highest', 'text-transparent');
+          box.classList.add('bg-tertiary', 'text-on-tertiary');
+          text.classList.add('line-through', 'opacity-40');
+        } else {
+          box.classList.add('bg-surface-container-highest', 'text-transparent');
+          box.classList.remove('bg-tertiary', 'text-on-tertiary');
+          text.classList.remove('line-through', 'opacity-40');
+        }
+      });
+    });
+
+    // Toast Trigger Utility
+    const toast = document.getElementById('toast-pill');
+    const toastText = document.getElementById('toast-text');
+    let toastTimeout = null;
+
+    function showToast(message, icon = 'check_circle') {
+      toastText.textContent = message;
+      document.getElementById('toast-icon').textContent = icon;
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+      toast.classList.add('opacity-100');
+      if (toastTimeout) clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.add('opacity-0', 'pointer-events-none');
+        toast.classList.remove('opacity-100');
+      }, 2500);
+    }
+
+    // Sticky Actions & HUD handlers
+    document.getElementById('start-cook-mode-btn').addEventListener('click', () => {
+      showToast('Hands-Free Cook Mode activated! ⚡', 'bolt');
+    });
+
+    document.getElementById('pinterest-save-btn').addEventListener('click', () => {
+      showToast('Saved to "Viral Desserts" board 📌', 'bookmark');
+    });
+
+    document.getElementById('share-story-btn').addEventListener('click', () => {
+      showToast('Story sticker generated! 📤', 'send');
+    });
+
+    document.getElementById('instacart-btn').addEventListener('click', () => {
+      showToast('Exported ingredients to Cart! 🛒', 'shopping_cart');
+    });
+
+    document.getElementById('watch-video-btn').addEventListener('click', () => {
+      showToast('Loading TikTok demo stream ▶', 'play_arrow');
+    });
+  })();
+</script></main></body></html>

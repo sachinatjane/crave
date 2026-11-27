@@ -1,0 +1,17 @@
+# Dependencies & build artifacts
+node_modules/
+sweetviral-app/node_modules/
+sweetviral-app/dist/
+dist/
+.vite/
+
+# Logs & OS files
+*.log
+.DS_Store
+Thumbs.db
+
+# Environment & local secrets
+.env
+.env.local
+.env.*.local
+*.pem
