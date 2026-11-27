@@ -9,6 +9,7 @@ const SITE_ORIGIN = 'https://sachinatjane.github.io/crave';
 const TODAY = new Date().toISOString().slice(0, 10);
 
 const CATEGORIES = [
+  { id: 'healthy-light', label: 'Healthy & Zero-Sugar' },
   { id: 'chocolate-brownies', label: 'Chocolate & Brownies' },
   { id: 'cookies-bars', label: 'Cookies & Bars' },
   { id: 'cakes-cupcakes', label: 'Cakes & Mug Cakes' },
@@ -153,8 +154,8 @@ const homeFallback = `<main style="position:absolute;left:-9999px;width:1px;heig
   .join('')}</ul></main>`;
 
 const enrichedHome = injectHeadTags(baseHtml, {
-  title: `Crave — ${ALL_RECIPES.length}+ Viral Dessert Recipes (Zero Fluff, Instant Cook Mode)`,
-  desc: `Explore ${ALL_RECIPES.length}+ trending American, European & global viral dessert recipes from TikTok, Instagram Reels, Pinterest & YouTube. Zero sign-up, instant US/Metric scaler & Cook Mode.`,
+  title: `Crave — ${ALL_RECIPES.length}+ Healthy & Viral Dessert Recipes (Zero Refined Sugar Swaps)`,
+  desc: `Explore ${ALL_RECIPES.length}+ healthy & viral dessert recipes with zero-refined-sugar swaps, under-250-cal treats, US/Metric scaling & Cook Mode.`,
   canonical: `${SITE_ORIGIN}/`,
   ogType: 'website',
   ogImage: `${SITE_ORIGIN}/ai-images/dubai-brownie-hero.jpg`,

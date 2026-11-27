@@ -5,6 +5,7 @@ import { getSiteRootPath } from '../utils/assetUrl';
 import {
   buildShoppingListText,
   formatScaledIngredient,
+  getHealthyIngredientSwap,
   renderStepInstruction
 } from '../utils/scaler';
 import { buildDeepRecipeUrl } from '../utils/shareEngine';
@@ -52,7 +53,11 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
   const [showDemoModal, setShowDemoModal] = useState(false);
   const [demoSlide, setDemoSlide] = useState(0);
   const [showConfetti, setShowConfetti] = useState(false);
+  const [healthyMode, setHealthyMode] = useState(Boolean(recipe.zeroRefinedSugar));
   const ingredientsRef = useRef<HTMLDivElement>(null);
+
+  const displayKcal =
+    healthyMode && !recipe.zeroRefinedSugar ? Math.round(recipe.kcal * 0.72) : recipe.kcal;
 
   const rootPath = getSiteRootPath();
   const catMeta = DESSERT_CATEGORIES.find((c) => c.id === recipe.dessertCategory);
@@ -240,7 +245,7 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
             </div>
             <p className="font-label-md text-label-md text-inverse-on-surface/90">
               By <span className="font-bold text-primary-fixed">{recipe.creatorHandle}</span> •{' '}
-              {recipe.kcal} kcal / serving
+              {displayKcal} kcal / serving
             </p>
           </div>
         </div>
@@ -417,6 +422,54 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
           </div>
         </div>
 
+        {/* Healthy Swap (Zero Refined Sugar) Mode Toggle */}
+        <div className="p-2.5 rounded-lg bg-[#e8f8f2] border border-pistachio/25 flex items-center justify-between gap-2 flex-wrap">
+          <div className="flex items-center gap-2 min-w-0">
+            <span className="material-symbols-outlined text-[18px] text-pistachio-dark shrink-0">
+              eco
+            </span>
+            <div className="min-w-0">
+              <span className="block font-label-md text-label-md text-pistachio-dark font-extrabold">
+                {recipe.zeroRefinedSugar
+                  ? 'Naturally Zero Refined Sugar ✓'
+                  : healthyMode
+                  ? `Healthy Swap Active (~${displayKcal} kcal)`
+                  : 'Make It Zero Refined Sugar'}
+              </span>
+              <span className="block font-body-sm text-body-sm text-on-surface-variant truncate">
+                {recipe.zeroRefinedSugar
+                  ? 'Made with whole foods & natural sweetness'
+                  : '1-tap swap: Monk fruit, oat/almond flour & Greek yogurt'}
+              </span>
+            </div>
+          </div>
+          {!recipe.zeroRefinedSugar && (
+            <div className="flex bg-white p-0.5 rounded-full shadow-sm shrink-0">
+              <button
+                type="button"
+                onClick={() => setHealthyMode(false)}
+                className={`px-2.5 py-1 rounded-full font-label-sm text-label-sm transition-all ${
+                  !healthyMode ? 'bg-inverse-surface text-white' : 'text-secondary'
+                }`}
+              >
+                Classic
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  triggerHaptic(20);
+                  setHealthyMode(true);
+                }}
+                className={`px-2.5 py-1 rounded-full font-label-sm text-label-sm transition-all ${
+                  healthyMode ? 'bg-pistachio text-white font-bold' : 'text-pistachio-dark'
+                }`}
+              >
+                🌿 Healthy
+              </button>
+            </div>
+          )}
+        </div>
+
         {recipe.ingredientGroups.map((group) => (
           <div
             key={group.title}
@@ -452,6 +505,9 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
                   recipe.baseServings,
                   unit
                 );
+                const swap = healthyMode
+                  ? getHealthyIngredientSwap(item.name)
+                  : { text: item.name, swapped: false };
                 return (
                   <button
                     key={item.id}
@@ -472,13 +528,20 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
                       >
                         <span className="material-symbols-outlined text-[14px]">check</span>
                       </span>
-                      <span
-                        className={`font-body-md text-body-md text-on-surface transition-all ${
-                          checked ? 'line-through opacity-40' : ''
-                        }`}
-                      >
-                        {item.name}
-                      </span>
+                      <div className="min-w-0">
+                        <span
+                          className={`font-body-md text-body-md text-on-surface transition-all ${
+                            checked ? 'line-through opacity-40' : ''
+                          }`}
+                        >
+                          {swap.text}
+                        </span>
+                        {swap.swapped && (
+                          <span className="ml-1.5 inline-block px-1.5 py-0.5 rounded-full bg-[#e8f8f2] text-pistachio-dark font-label-sm text-[9px] font-extrabold uppercase">
+                            Swapped
+                          </span>
+                        )}
+                      </div>
                     </div>
                     <span className="font-title-md text-title-md text-primary shrink-0 ml-3 tabular-nums">
                       {qtyLabel}

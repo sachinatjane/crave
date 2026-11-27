@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useLayoutEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { BrandHeader } from './components/BrandHeader';
 import { BottomNav } from './components/BottomNav';
 import { CommunityRemakesView } from './components/CommunityRemakesView';
@@ -187,27 +187,14 @@ export function App() {
     return () => window.removeEventListener('popstate', onPopState);
   }, []);
 
-  // Always snap to the very top immediately after screen or recipe changes
-  useLayoutEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
-    const raf = window.requestAnimationFrame(() => {
-      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-    });
-    return () => window.cancelAnimationFrame(raf);
-  }, [
-    screen.type,
-    screen.type === 'tab' ? screen.tab : screen.recipeId,
-    screen.type === 'cook' ? screen.stepIndex : 0
-  ]);
-
   const navigateToRecipe = (recipe: Recipe) => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     setScreen({ type: 'recipe', recipeId: recipe.id });
   };
 
   const navigateToCookMode = (recipe: Recipe, stepIndex = 0) => {
     triggerHaptic(30);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     setScreen({ type: 'cook', recipeId: recipe.id, stepIndex });
   };
 
@@ -263,8 +250,8 @@ export function App() {
           screen.type === 'cook'
             ? 'Active Cook Session'
             : screen.type === 'recipe'
-            ? 'Recipe Detail'
-            : undefined
+              ? 'Recipe Detail'
+              : undefined
         }
         savedCount={savedIds.length}
         inAppInfo={inAppInfo}
@@ -279,11 +266,11 @@ export function App() {
         onShare={
           activeRecipe
             ? () =>
-                setShareState({
-                  recipe: activeRecipe,
-                  format: 'story',
-                  madeBadge: madeIds.includes(activeRecipe.id)
-                })
+              setShareState({
+                recipe: activeRecipe,
+                format: 'story',
+                madeBadge: madeIds.includes(activeRecipe.id)
+              })
             : undefined
         }
       />
@@ -348,7 +335,6 @@ export function App() {
 
         {screen.type === 'recipe' && activeRecipe && (
           <RecipeDetailView
-            key={activeRecipe.id}
             recipe={activeRecipe}
             servings={activeServings}
             unit={unit}
@@ -382,7 +368,6 @@ export function App() {
 
         {screen.type === 'cook' && activeRecipe && (
           <CookModeView
-            key={`${activeRecipe.id}-${screen.stepIndex}`}
             recipe={activeRecipe}
             servings={activeServings}
             unit={unit}

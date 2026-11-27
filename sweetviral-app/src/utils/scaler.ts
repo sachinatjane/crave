@@ -101,3 +101,35 @@ export function buildShoppingListText(
   lines.push(`Open interactive Cook Mode: ${shareUrl}`);
   return lines.join('\n');
 }
+
+export function getHealthyIngredientSwap(name: string): { text: string; swapped: boolean } {
+  const low = name.toLowerCase();
+  if (low.includes('monk fruit') || low.includes('stevia') || low.includes('date') || low.includes('greek yogurt') || low.includes('oat flour') || low.includes('almond flour')) {
+    return { text: name, swapped: false };
+  }
+  if (low.includes('condensed milk')) {
+    return { text: 'Sugar-free coconut condensed milk', swapped: true };
+  }
+  if (low.includes('powdered') || low.includes('icing sugar')) {
+    return { text: 'Powdered monk fruit sweetener (zero sugar)', swapped: true };
+  }
+  if (low.includes('sugar')) {
+    return { text: 'Monk fruit or pure coconut sugar (zero refined sugar)', swapped: true };
+  }
+  if (low.includes('heavy cream') || low.includes('whipping cream')) {
+    return { text: 'Whipped coconut cream or thick 2% Greek yogurt', swapped: true };
+  }
+  if (low.includes('nutella')) {
+    return { text: 'Unsweetened hazelnut cacao butter + stevia', swapped: true };
+  }
+  if (low.includes('chocolate') && !low.includes('80%') && !low.includes('85%')) {
+    return { text: '85% stevia-sweetened dark chocolate', swapped: true };
+  }
+  if (low.includes('all-purpose flour') || low.includes('cake flour') || low.includes('self-rising flour')) {
+    return { text: 'Superfine oat flour or blanched almond flour', swapped: true };
+  }
+  if (low.includes('butter') && !low.includes('peanut') && !low.includes('almond') && !low.includes('pistachio')) {
+    return { text: 'Melted coconut oil or grass-fed ghee', swapped: true };
+  }
+  return { text: name, swapped: false };
+}

@@ -18,11 +18,12 @@ interface TrendingFeedViewProps {
 }
 
 const FILTER_PILLS: Array<{ id: CategoryTag; label: string }> = [
-  { id: 'all', label: '✨ All Viral' },
-  { id: 'under15', label: '⚡ Under 15 Mins' },
+  { id: 'all', label: '✨ All' },
+  { id: 'zero-sugar', label: '🌿 Zero Refined Sugar' },
+  { id: 'under250', label: '🔥 Under 250 Cal' },
+  { id: 'high-protein', label: '💪 High Protein' },
+  { id: 'under15', label: '⚡ Under 15m' },
   { id: 'nobake', label: '❄️ No-Bake' },
-  { id: 'three-ing', label: '🥣 3-4 Ingred.' },
-  { id: 'airfryer', label: '🌪️ Air Fryer' },
   { id: 'vegan-gf', label: '🌱 Vegan / GF' }
 ];
 
@@ -35,7 +36,7 @@ const PLATFORM_CHIPS: Array<{ id: 'all' | SocialPlatform; label: string }> = [
   { id: 'facebook', label: 'Facebook' }
 ];
 
-type SortOption = 'viral' | 'fastest' | 'rating' | 'calories';
+type SortOption = 'healthy' | 'viral' | 'fastest' | 'rating' | 'calories';
 type RegionFilter = 'all' | 'usa' | 'europe';
 
 const EUROPEAN_CUISINES = new Set([
@@ -77,7 +78,8 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
   const [activeFilter, setActiveFilter] = useState<CategoryTag>('all');
   const [activePlatform, setActivePlatform] = useState<'all' | SocialPlatform>('all');
   const [activeRegion, setActiveRegion] = useState<RegionFilter>('all');
-  const [sortBy, setSortBy] = useState<SortOption>('viral');
+  const [sortBy, setSortBy] = useState<SortOption>('healthy');
+  const [heroMode, setHeroMode] = useState<'healthy' | 'classic'>('healthy');
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const [rouletteIndex, setRouletteIndex] = useState(0);
   const [isSpinning, setIsSpinning] = useState(false);
@@ -93,8 +95,17 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
     onCategoryChange?.(cat);
   };
 
-  const heroRecipe = RECIPES[0];
-  const storyRadarRecipes = useMemo(() => RECIPES.slice(0, 16), []);
+  const healthySpotlight = useMemo(
+    () => RECIPES.find((r) => r.zeroRefinedSugar) || RECIPES[0],
+    []
+  );
+  const heroRecipe = heroMode === 'healthy' ? healthySpotlight : RECIPES[0];
+
+  const storyRadarRecipes = useMemo(() => {
+    const healthyFirst = RECIPES.filter((r) => r.zeroRefinedSugar || r.isHealthy);
+    const others = RECIPES.filter((r) => !r.zeroRefinedSugar && !r.isHealthy);
+    return [...healthyFirst, ...others].slice(0, 18);
+  }, []);
 
   const categoryCounts = useMemo(() => {
     const map: Record<string, number> = { all: RECIPES.length };
@@ -119,6 +130,14 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
       return catMainOk && attrOk && platOk && regionOk;
     });
 
+    if (sortBy === 'healthy') {
+      return [...list].sort((a, b) => {
+        const aScore = (a.zeroRefinedSugar ? 3 : 0) + (a.isHealthy ? 2 : 0) + (a.kcal <= 250 ? 1 : 0);
+        const bScore = (b.zeroRefinedSugar ? 3 : 0) + (b.isHealthy ? 2 : 0) + (b.kcal <= 250 ? 1 : 0);
+        if (bScore !== aScore) return bScore - aScore;
+        return b.viewsNumeric - a.viewsNumeric;
+      });
+    }
     if (sortBy === 'fastest') {
       return [...list].sort((a, b) => a.totalMin - b.totalMin);
     }
@@ -214,17 +233,36 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
             />
             <div className="absolute inset-0 bg-gradient-to-t from-inverse-surface via-inverse-surface/40 to-transparent" />
 
-            <div className="absolute top-space-sm left-space-sm right-space-sm flex items-center justify-between">
-              <div className="flex items-center gap-1.5 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1.5 rounded-full shadow-md">
-                <span
-                  className="material-symbols-outlined text-[16px] text-primary"
-                  style={{ fontVariationSettings: "'FILL' 1" }}
+            <div className="absolute top-space-sm left-space-sm right-space-sm flex items-center justify-between gap-2">
+              <div className="flex items-center gap-1 bg-surface-container-lowest/90 backdrop-blur-md p-1 rounded-full shadow-md">
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setHeroMode('healthy');
+                  }}
+                  className={`px-2.5 py-1 rounded-full font-label-sm text-label-sm font-extrabold uppercase transition-colors ${
+                    heroMode === 'healthy'
+                      ? 'bg-pistachio text-white'
+                      : 'text-on-surface-variant'
+                  }`}
                 >
-                  trending_up
-                </span>
-                <span className="font-label-sm text-label-sm text-on-surface font-extrabold tracking-wide uppercase">
-                  {heroRecipe.badgeChip}
-                </span>
+                  🌿 Healthy #1
+                </button>
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setHeroMode('classic');
+                  }}
+                  className={`px-2.5 py-1 rounded-full font-label-sm text-label-sm font-extrabold uppercase transition-colors ${
+                    heroMode === 'classic'
+                      ? 'bg-primary text-white'
+                      : 'text-on-surface-variant'
+                  }`}
+                >
+                  🔥 Viral #1
+                </button>
               </div>
 
               <div className="flex items-center gap-2">
@@ -448,10 +486,11 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
               onChange={(e) => setSortBy(e.target.value as SortOption)}
               className="bg-surface-container-low text-on-surface font-label-sm text-label-sm px-2.5 py-1 rounded-full outline-none"
             >
-              <option value="viral">🔥 Viral</option>
+              <option value="healthy">🌿 Healthy First</option>
+              <option value="viral">🔥 Most Viral</option>
+              <option value="calories">🪶 Lowest Cal</option>
               <option value="fastest">⚡ Fastest</option>
               <option value="rating">⭐ Top Rated</option>
-              <option value="calories">🪶 Lightest</option>
             </select>
           </div>
         </div>
@@ -518,12 +557,18 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
                         </span>
                       </div>
 
-                      <div className="absolute bottom-2 left-2 flex items-center gap-1 bg-surface-container-lowest/90 backdrop-blur-md px-2 py-0.5 rounded-full shadow-sm max-w-[78%]">
-                        <span className="material-symbols-outlined text-[13px] text-tertiary shrink-0">
-                          public
+                      <div
+                        className={`absolute bottom-2 left-2 flex items-center gap-1 backdrop-blur-md px-2 py-0.5 rounded-full shadow-sm max-w-[78%] ${
+                          recipe.zeroRefinedSugar
+                            ? 'bg-[#e8f8f2]/95 text-pistachio-dark'
+                            : 'bg-surface-container-lowest/90 text-on-surface'
+                        }`}
+                      >
+                        <span className="material-symbols-outlined text-[13px] shrink-0">
+                          {recipe.zeroRefinedSugar ? 'eco' : 'local_fire_department'}
                         </span>
-                        <span className="font-label-sm text-label-sm text-on-surface truncate">
-                          {recipe.cuisine}
+                        <span className="font-label-sm text-label-sm font-bold truncate">
+                          {recipe.zeroRefinedSugar ? `Zero Sugar • ${recipe.kcal} cal` : `${recipe.kcal} cal`}
                         </span>
                       </div>
 

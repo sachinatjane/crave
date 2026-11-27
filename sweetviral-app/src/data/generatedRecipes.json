@@ -1,5 +1,1739 @@
 [
   {
+    "id": "healthy-1",
+    "slug": "viral-stuffed-date-snickers",
+    "title": "Viral Stuffed Medjool Date Snickers (Zero Refined Sugar)",
+    "shortTag": "Date Snickers",
+    "storyViews": "245K",
+    "viewsLabel": "245K Views",
+    "viewsNumeric": 245.0,
+    "remakeSuccessRate": "98.6%",
+    "rating": 5.0,
+    "ratingCount": "610",
+    "prepMin": 6,
+    "bakeMin": 0,
+    "totalMin": 6,
+    "skill": "Quick",
+    "baseServings": 6,
+    "kcal": 165,
+    "zeroMixer": true,
+    "isHealthy": true,
+    "zeroRefinedSugar": true,
+    "cuisine": "Healthy Viral",
+    "dessertCategory": "healthy-light",
+    "primaryPlatform": "tiktok",
+    "platforms": [
+      "tiktok",
+      "instagram",
+      "pinterest",
+      "youtube"
+    ],
+    "categories": [
+      "all",
+      "healthy",
+      "zero-sugar",
+      "under250",
+      "under15",
+      "nobake",
+      "three-ing",
+      "vegan-gf"
+    ],
+    "soundName": "healthy swap viral",
+    "badgeChip": "Zero Refined Sugar",
+    "creatorHandle": "@crave_healthy",
+    "hookLine": "Chewy caramel Medjool dates stuffed with creamy peanut butter, crunchy roasted peanuts & dark chocolate shell.",
+    "heroImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Dates005.jpg/960px-Dates005.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "thumbImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Dates005.jpg/960px-Dates005.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "pinterestImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Dates005.jpg/960px-Dates005.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "hashtags": [
+      "#DateSnickers",
+      "#GuiltFreeCravings",
+      "#HealthyDesserts",
+      "#CraveMadeMeDoIt"
+    ],
+    "pantryCore": [
+      "honey",
+      "pistachio",
+      "chocolate"
+    ],
+    "ingredientGroups": [
+      {
+        "title": "4-Ingredient Healthy Caramel Bites",
+        "badge": "Zero Refined Sugar",
+        "tone": "tertiary",
+        "items": [
+          {
+            "id": "hd_dates",
+            "name": "Soft pitted Medjool dates",
+            "baseAmount": 12,
+            "usUnit": "dates",
+            "metricAmount": 240,
+            "metricUnit": "g",
+            "pantryKey": "honey",
+            "stepRef": 1
+          },
+          {
+            "id": "hd_pb",
+            "name": "Natural unsweetened creamy peanut butter",
+            "baseAmount": 0.33,
+            "usUnit": "cup",
+            "metricAmount": 85,
+            "metricUnit": "g",
+            "pantryKey": "pistachio",
+            "stepRef": 1
+          },
+          {
+            "id": "hd_nuts",
+            "name": "Roasted salted peanuts (crushed)",
+            "baseAmount": 0.25,
+            "usUnit": "cup",
+            "metricAmount": 35,
+            "metricUnit": "g",
+            "pantryKey": "pistachio",
+            "stepRef": 1
+          },
+          {
+            "id": "hd_choc",
+            "name": "Melted 85% dark chocolate + 1 tsp coconut oil",
+            "baseAmount": 0.5,
+            "usUnit": "cup",
+            "metricAmount": 90,
+            "metricUnit": "g",
+            "pantryKey": "chocolate",
+            "stepRef": 2
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "phaseLabel": "Stuff Dates",
+        "title": "Slice Dates & Spoon Peanut Butter",
+        "instructionTemplate": "Split {hd_dates} lengthwise, fill each cavity with {hd_pb}, and press {hd_nuts} right into the center.",
+        "durationMin": 3,
+        "timerSeconds": 180,
+        "activeMeasureSummary": "Medjool Dates + Peanut Butter",
+        "creatorSecret": "Freeze the stuffed dates for 10 mins before dipping so the chocolate shell snaps crisp instantly."
+      },
+      {
+        "stepNumber": 2,
+        "phaseLabel": "Dark Choc Dip",
+        "title": "Dip in 85% Dark Chocolate & Freeze",
+        "instructionTemplate": "Dip each stuffed date in {hd_choc}, top with flaky sea salt, and chill 15 minutes until snappy.",
+        "durationMin": 3,
+        "timerSeconds": 180,
+        "activeMeasureSummary": "Chill 15m • Zero Sugar"
+      }
+    ],
+    "ugcQuotes": [
+      {
+        "id": "hq-0",
+        "handle": "@fitfoodie_claire",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Dates005.jpg/960px-Dates005.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "quote": "Zero refined sugar and only 165 cal—tastes like total indulgence!",
+        "rating": 5
+      }
+    ]
+  },
+  {
+    "id": "healthy-2",
+    "slug": "greek-yogurt-berry-crunch-bark",
+    "title": "Frozen Greek Yogurt Berry Crunch Bark",
+    "shortTag": "Yogurt Bark",
+    "storyViews": "218K",
+    "viewsLabel": "218K Views",
+    "viewsNumeric": 218.0,
+    "remakeSuccessRate": "98.6%",
+    "rating": 4.9,
+    "ratingCount": "480",
+    "prepMin": 5,
+    "bakeMin": 0,
+    "totalMin": 5,
+    "skill": "Quick",
+    "baseServings": 6,
+    "kcal": 135,
+    "zeroMixer": true,
+    "isHealthy": true,
+    "zeroRefinedSugar": true,
+    "cuisine": "Healthy Viral",
+    "dessertCategory": "healthy-light",
+    "primaryPlatform": "tiktok",
+    "platforms": [
+      "tiktok",
+      "instagram",
+      "pinterest",
+      "youtube"
+    ],
+    "categories": [
+      "all",
+      "healthy",
+      "zero-sugar",
+      "high-protein",
+      "under250",
+      "under15",
+      "nobake",
+      "vegan-gf"
+    ],
+    "soundName": "healthy swap viral",
+    "badgeChip": "Zero Refined Sugar",
+    "creatorHandle": "@crave_healthy",
+    "hookLine": "High-protein Greek yogurt sweetened lightly with raw honey, swirled with fresh berries & crunchy pistachios.",
+    "heroImage": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Labneh01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "thumbImage": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Labneh01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "pinterestImage": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Labneh01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "hashtags": [
+      "#YogurtBark",
+      "#GuiltFreeCravings",
+      "#HealthyDesserts",
+      "#CraveMadeMeDoIt"
+    ],
+    "pantryCore": [
+      "milk",
+      "honey",
+      "strawberry"
+    ],
+    "ingredientGroups": [
+      {
+        "title": "High-Protein Bark",
+        "badge": "14g Protein / Serve",
+        "tone": "tertiary",
+        "items": [
+          {
+            "id": "yb_yog",
+            "name": "Thick plain Greek yogurt",
+            "baseAmount": 2,
+            "usUnit": "cups",
+            "metricAmount": 480,
+            "metricUnit": "g",
+            "pantryKey": "milk",
+            "stepRef": 1
+          },
+          {
+            "id": "yb_hon",
+            "name": "Pure raw honey or maple syrup",
+            "baseAmount": 2,
+            "usUnit": "tbsp",
+            "metricAmount": 40,
+            "metricUnit": "g",
+            "pantryKey": "honey",
+            "stepRef": 1
+          },
+          {
+            "id": "yb_ber",
+            "name": "Sliced strawberries, blueberries & pistachios",
+            "baseAmount": 0.75,
+            "usUnit": "cup",
+            "metricAmount": 110,
+            "metricUnit": "g",
+            "pantryKey": "strawberry",
+            "stepRef": 1
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "phaseLabel": "Swirl & Freeze",
+        "title": "Spread Thin & Snap Into Bark Shards",
+        "instructionTemplate": "Whisk {yb_yog} with {yb_hon}, spread onto parchment-lined tray 1/3-inch thick, scatter {yb_ber}, and freeze 2 hours before snapping into shards.",
+        "durationMin": 5,
+        "timerSeconds": 300,
+        "activeMeasureSummary": "Freeze 2 Hours • 135 Cal",
+        "creatorSecret": "Use full-fat or 2% strained Greek yogurt so the bark stays creamy instead of icy."
+      }
+    ],
+    "ugcQuotes": [
+      {
+        "id": "hq-1",
+        "handle": "@fitfoodie_claire",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Labneh01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "quote": "Zero refined sugar and only 135 cal—tastes like total indulgence!",
+        "rating": 5
+      }
+    ]
+  },
+  {
+    "id": "healthy-3",
+    "slug": "high-protein-chocolate-mug-brownie",
+    "title": "2-Min High-Protein Fudge Mug Brownie",
+    "shortTag": "Protein Mug",
+    "storyViews": "196K",
+    "viewsLabel": "196K Views",
+    "viewsNumeric": 196.0,
+    "remakeSuccessRate": "98.6%",
+    "rating": 4.9,
+    "ratingCount": "530",
+    "prepMin": 2,
+    "bakeMin": 1,
+    "totalMin": 3,
+    "skill": "Quick",
+    "baseServings": 1,
+    "kcal": 210,
+    "zeroMixer": true,
+    "isHealthy": true,
+    "zeroRefinedSugar": true,
+    "cuisine": "Healthy Viral",
+    "dessertCategory": "healthy-light",
+    "primaryPlatform": "tiktok",
+    "platforms": [
+      "tiktok",
+      "instagram",
+      "pinterest",
+      "youtube"
+    ],
+    "categories": [
+      "all",
+      "healthy",
+      "zero-sugar",
+      "high-protein",
+      "under250",
+      "under15"
+    ],
+    "soundName": "healthy swap viral",
+    "badgeChip": "Zero Refined Sugar",
+    "creatorHandle": "@crave_healthy",
+    "hookLine": "22g protein molten chocolate brownie in a mug with zero refined sugar, zero flour, and 60s cook time.",
+    "heroImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Green_and_Black%27s_dark_chocolate_bar_2.jpg/960px-Green_and_Black%27s_dark_chocolate_bar_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "thumbImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Green_and_Black%27s_dark_chocolate_bar_2.jpg/960px-Green_and_Black%27s_dark_chocolate_bar_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "pinterestImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Green_and_Black%27s_dark_chocolate_bar_2.jpg/960px-Green_and_Black%27s_dark_chocolate_bar_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "hashtags": [
+      "#ProteinMug",
+      "#GuiltFreeCravings",
+      "#HealthyDesserts",
+      "#CraveMadeMeDoIt"
+    ],
+    "pantryCore": [
+      "chocolate",
+      "banana",
+      "milk"
+    ],
+    "ingredientGroups": [
+      {
+        "title": "Single-Serve Protein Mug",
+        "badge": "22g Protein",
+        "tone": "primary",
+        "items": [
+          {
+            "id": "pm_prot",
+            "name": "Chocolate whey or plant protein powder + 1 tbsp cocoa",
+            "baseAmount": 1,
+            "usUnit": "scoop",
+            "metricAmount": 32,
+            "metricUnit": "g",
+            "pantryKey": "chocolate",
+            "stepRef": 1
+          },
+          {
+            "id": "pm_ban",
+            "name": "Mashed ripe banana or applesauce",
+            "baseAmount": 0.25,
+            "usUnit": "cup",
+            "metricAmount": 60,
+            "metricUnit": "g",
+            "pantryKey": "banana",
+            "stepRef": 1
+          },
+          {
+            "id": "pm_mlk",
+            "name": "Unsweetened almond milk + 1/4 tsp baking powder",
+            "baseAmount": 3,
+            "usUnit": "tbsp",
+            "metricAmount": 45,
+            "metricUnit": "ml",
+            "pantryKey": "milk",
+            "stepRef": 1
+          },
+          {
+            "id": "pm_chp",
+            "name": "Stevia-sweetened dark chocolate chips",
+            "baseAmount": 1,
+            "usUnit": "tbsp",
+            "metricAmount": 15,
+            "metricUnit": "g",
+            "pantryKey": "chocolate",
+            "stepRef": 1
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "phaseLabel": "Mix & 55s Microwave",
+        "title": "Whisk in Mug & Microwave 55 Seconds",
+        "instructionTemplate": "Whisk {pm_prot}, {pm_ban}, and {pm_mlk} smooth in a mug, press {pm_chp} into the center, and microwave 50–55 seconds for a molten lava middle.",
+        "durationMin": 3,
+        "timerSeconds": 180,
+        "activeMeasureSummary": "Exact 55s • 22g Protein",
+        "creatorSecret": "Never microwave past 60 seconds—pulling early keeps the center fudgy instead of dry."
+      }
+    ],
+    "ugcQuotes": [
+      {
+        "id": "hq-2",
+        "handle": "@fitfoodie_claire",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Green_and_Black%27s_dark_chocolate_bar_2.jpg/960px-Green_and_Black%27s_dark_chocolate_bar_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "quote": "Zero refined sugar and only 210 cal—tastes like total indulgence!",
+        "rating": 5
+      }
+    ]
+  },
+  {
+    "id": "healthy-4",
+    "slug": "matcha-coconut-chia-pudding",
+    "title": "Overnight Matcha Coconut Chia Parfait",
+    "shortTag": "Matcha Chia",
+    "storyViews": "162K",
+    "viewsLabel": "162K Views",
+    "viewsNumeric": 162.0,
+    "remakeSuccessRate": "98.6%",
+    "rating": 4.9,
+    "ratingCount": "320",
+    "prepMin": 5,
+    "bakeMin": 0,
+    "totalMin": 5,
+    "skill": "Quick",
+    "baseServings": 2,
+    "kcal": 190,
+    "zeroMixer": true,
+    "isHealthy": true,
+    "zeroRefinedSugar": true,
+    "cuisine": "Healthy Viral",
+    "dessertCategory": "healthy-light",
+    "primaryPlatform": "tiktok",
+    "platforms": [
+      "tiktok",
+      "instagram",
+      "pinterest",
+      "youtube"
+    ],
+    "categories": [
+      "all",
+      "healthy",
+      "zero-sugar",
+      "under250",
+      "under15",
+      "nobake",
+      "vegan-gf"
+    ],
+    "soundName": "healthy swap viral",
+    "badgeChip": "Zero Refined Sugar",
+    "creatorHandle": "@crave_healthy",
+    "hookLine": "Antioxidant-rich ceremonial matcha & creamy coconut milk chia pudding layered with fresh berries.",
+    "heroImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Seed_of_chia_%28Salvia_hispanica%29Salvia_hispanica_group.jpg/960px-Seed_of_chia_%28Salvia_hispanica%29Salvia_hispanica_group.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "thumbImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Seed_of_chia_%28Salvia_hispanica%29Salvia_hispanica_group.jpg/960px-Seed_of_chia_%28Salvia_hispanica%29Salvia_hispanica_group.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "pinterestImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Seed_of_chia_%28Salvia_hispanica%29Salvia_hispanica_group.jpg/960px-Seed_of_chia_%28Salvia_hispanica%29Salvia_hispanica_group.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "hashtags": [
+      "#MatchaChia",
+      "#GuiltFreeCravings",
+      "#HealthyDesserts",
+      "#CraveMadeMeDoIt"
+    ],
+    "pantryCore": [
+      "pistachio",
+      "milk",
+      "vanilla"
+    ],
+    "ingredientGroups": [
+      {
+        "title": "Superfood Chia Pudding",
+        "badge": "Vegan & GF",
+        "tone": "tertiary",
+        "items": [
+          {
+            "id": "mc_chia",
+            "name": "Organic black or white chia seeds",
+            "baseAmount": 0.25,
+            "usUnit": "cup",
+            "metricAmount": 42,
+            "metricUnit": "g",
+            "pantryKey": "pistachio",
+            "stepRef": 1
+          },
+          {
+            "id": "mc_mlk",
+            "name": "Light coconut or almond milk",
+            "baseAmount": 1,
+            "usUnit": "cup",
+            "metricAmount": 240,
+            "metricUnit": "ml",
+            "pantryKey": "milk",
+            "stepRef": 1
+          },
+          {
+            "id": "mc_mat",
+            "name": "Ceremonial matcha + 1 tbsp pure maple syrup",
+            "baseAmount": 1,
+            "usUnit": "tsp",
+            "metricAmount": 3,
+            "metricUnit": "g",
+            "pantryKey": "vanilla",
+            "stepRef": 1
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "phaseLabel": "Whisk Twice & Chill",
+        "title": "Whisk Matcha Milk & Chia Seeds",
+        "instructionTemplate": "Whisk {mc_mlk} and {mc_mat} frothy, stir in {mc_chia}, wait 5 mins and stir again to prevent clumps, then chill 2+ hours.",
+        "durationMin": 5,
+        "timerSeconds": 300,
+        "activeMeasureSummary": "Zero Refined Sugar • Vegan",
+        "creatorSecret": "Stirring a second time after 5 minutes guarantees an ultra-smooth, lump-free pudding."
+      }
+    ],
+    "ugcQuotes": [
+      {
+        "id": "hq-3",
+        "handle": "@fitfoodie_claire",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Seed_of_chia_%28Salvia_hispanica%29Salvia_hispanica_group.jpg/960px-Seed_of_chia_%28Salvia_hispanica%29Salvia_hispanica_group.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "quote": "Zero refined sugar and only 190 cal—tastes like total indulgence!",
+        "rating": 5
+      }
+    ]
+  },
+  {
+    "id": "healthy-5",
+    "slug": "one-ingredient-banana-nice-cream",
+    "title": "1-Ingredient Creamy Banana Nice Cream",
+    "shortTag": "Nice Cream",
+    "storyViews": "184K",
+    "viewsLabel": "184K Views",
+    "viewsNumeric": 184.0,
+    "remakeSuccessRate": "98.6%",
+    "rating": 4.9,
+    "ratingCount": "440",
+    "prepMin": 5,
+    "bakeMin": 0,
+    "totalMin": 5,
+    "skill": "Quick",
+    "baseServings": 2,
+    "kcal": 150,
+    "zeroMixer": true,
+    "isHealthy": true,
+    "zeroRefinedSugar": true,
+    "cuisine": "Healthy Viral",
+    "dessertCategory": "healthy-light",
+    "primaryPlatform": "tiktok",
+    "platforms": [
+      "tiktok",
+      "instagram",
+      "pinterest",
+      "youtube"
+    ],
+    "categories": [
+      "all",
+      "healthy",
+      "zero-sugar",
+      "under250",
+      "under15",
+      "nobake",
+      "three-ing",
+      "vegan-gf"
+    ],
+    "soundName": "healthy swap viral",
+    "badgeChip": "Zero Refined Sugar",
+    "creatorHandle": "@crave_healthy",
+    "hookLine": "Whipped frozen bananas transform into glossy soft-serve gelato with zero added sugar or dairy.",
+    "heroImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Kiwi_Smoothie.jpg/960px-Kiwi_Smoothie.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "thumbImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Kiwi_Smoothie.jpg/960px-Kiwi_Smoothie.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "pinterestImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Kiwi_Smoothie.jpg/960px-Kiwi_Smoothie.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "hashtags": [
+      "#NiceCream",
+      "#GuiltFreeCravings",
+      "#HealthyDesserts",
+      "#CraveMadeMeDoIt"
+    ],
+    "pantryCore": [
+      "banana",
+      "milk"
+    ],
+    "ingredientGroups": [
+      {
+        "title": "Dairy-Free Soft Serve",
+        "badge": "150 Calories",
+        "tone": "tertiary",
+        "items": [
+          {
+            "id": "nc_ban",
+            "name": "Frozen sliced spotted-ripe bananas",
+            "baseAmount": 3,
+            "usUnit": "bananas",
+            "metricAmount": 330,
+            "metricUnit": "g",
+            "pantryKey": "banana",
+            "stepRef": 1
+          },
+          {
+            "id": "nc_add",
+            "name": "Splash of almond milk + cacao nibs (optional)",
+            "baseAmount": 1,
+            "usUnit": "tbsp",
+            "metricAmount": 15,
+            "metricUnit": "ml",
+            "pantryKey": "milk",
+            "stepRef": 1
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "phaseLabel": "Pulse & Whip Soft Serve",
+        "title": "Blend Frozen Bananas Until Glossy",
+        "instructionTemplate": "Blend {nc_ban} and {nc_add} in a food processor, scraping down sides, until suddenly silky soft-serve texture forms.",
+        "durationMin": 5,
+        "timerSeconds": 300,
+        "activeMeasureSummary": "Serve Soft-Serve Immediately",
+        "creatorSecret": "Use speckled sweet bananas—the riper they are, the creamier and sweeter your nice cream!"
+      }
+    ],
+    "ugcQuotes": [
+      {
+        "id": "hq-4",
+        "handle": "@fitfoodie_claire",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Kiwi_Smoothie.jpg/960px-Kiwi_Smoothie.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "quote": "Zero refined sugar and only 150 cal—tastes like total indulgence!",
+        "rating": 5
+      }
+    ]
+  },
+  {
+    "id": "healthy-6",
+    "slug": "avocado-silk-dark-chocolate-mousse",
+    "title": "5-Min Avocado Silk Dark Chocolate Mousse",
+    "shortTag": "Avocado Mousse",
+    "storyViews": "175K",
+    "viewsLabel": "175K Views",
+    "viewsNumeric": 175.0,
+    "remakeSuccessRate": "98.6%",
+    "rating": 4.8,
+    "ratingCount": "380",
+    "prepMin": 5,
+    "bakeMin": 0,
+    "totalMin": 5,
+    "skill": "Quick",
+    "baseServings": 4,
+    "kcal": 215,
+    "zeroMixer": true,
+    "isHealthy": true,
+    "zeroRefinedSugar": true,
+    "cuisine": "Healthy Viral",
+    "dessertCategory": "healthy-light",
+    "primaryPlatform": "tiktok",
+    "platforms": [
+      "tiktok",
+      "instagram",
+      "pinterest",
+      "youtube"
+    ],
+    "categories": [
+      "all",
+      "healthy",
+      "zero-sugar",
+      "under250",
+      "under15",
+      "nobake",
+      "vegan-gf"
+    ],
+    "soundName": "healthy swap viral",
+    "badgeChip": "Zero Refined Sugar",
+    "creatorHandle": "@crave_healthy",
+    "hookLine": "Heart-healthy ripe avocados whip with dark cocoa & maple into velvety French-style mousse (zero avocado taste!).",
+    "heroImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Persea_americana_fruit_2.JPG/960px-Persea_americana_fruit_2.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "thumbImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Persea_americana_fruit_2.JPG/960px-Persea_americana_fruit_2.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "pinterestImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Persea_americana_fruit_2.JPG/960px-Persea_americana_fruit_2.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "hashtags": [
+      "#AvocadoMousse",
+      "#GuiltFreeCravings",
+      "#HealthyDesserts",
+      "#CraveMadeMeDoIt"
+    ],
+    "pantryCore": [
+      "banana",
+      "chocolate",
+      "honey"
+    ],
+    "ingredientGroups": [
+      {
+        "title": "Silky Plant Mousse",
+        "badge": "Heart-Healthy Fats",
+        "tone": "primary",
+        "items": [
+          {
+            "id": "av_avo",
+            "name": "Ripe creamy avocados",
+            "baseAmount": 2,
+            "usUnit": "pcs",
+            "metricAmount": 280,
+            "metricUnit": "g",
+            "pantryKey": "banana",
+            "stepRef": 1
+          },
+          {
+            "id": "av_coc",
+            "name": "Unsweetened Dutch cocoa powder",
+            "baseAmount": 0.33,
+            "usUnit": "cup",
+            "metricAmount": 30,
+            "metricUnit": "g",
+            "pantryKey": "chocolate",
+            "stepRef": 1
+          },
+          {
+            "id": "av_map",
+            "name": "Pure maple syrup + 1 tsp vanilla + espresso pinch",
+            "baseAmount": 0.25,
+            "usUnit": "cup",
+            "metricAmount": 60,
+            "metricUnit": "ml",
+            "pantryKey": "honey",
+            "stepRef": 1
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "phaseLabel": "Blitz Silky Smooth",
+        "title": "Blend Avocados, Cocoa & Maple",
+        "instructionTemplate": "Blend {av_avo}, {av_coc}, and {av_map} with 3 tbsp almond milk until glossy, piped-mousse smooth. Chill 20 mins.",
+        "durationMin": 5,
+        "timerSeconds": 300,
+        "activeMeasureSummary": "Vegan • Zero Refined Sugar",
+        "creatorSecret": "A tiny pinch of espresso powder + sea salt makes it taste 100% like classic dark chocolate ganache."
+      }
+    ],
+    "ugcQuotes": [
+      {
+        "id": "hq-5",
+        "handle": "@fitfoodie_claire",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Persea_americana_fruit_2.JPG/960px-Persea_americana_fruit_2.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "quote": "Zero refined sugar and only 215 cal—tastes like total indulgence!",
+        "rating": 5
+      }
+    ]
+  },
+  {
+    "id": "healthy-8",
+    "slug": "baked-cinnamon-honey-apples",
+    "title": "Warm Baked Cinnamon Oat-Stuffed Apples",
+    "shortTag": "Baked Apples",
+    "storyViews": "142K",
+    "viewsLabel": "142K Views",
+    "viewsNumeric": 142.0,
+    "remakeSuccessRate": "98.6%",
+    "rating": 4.9,
+    "ratingCount": "260",
+    "prepMin": 5,
+    "bakeMin": 20,
+    "totalMin": 25,
+    "skill": "Quick",
+    "baseServings": 2,
+    "kcal": 170,
+    "zeroMixer": true,
+    "isHealthy": true,
+    "zeroRefinedSugar": true,
+    "cuisine": "Healthy American",
+    "dessertCategory": "healthy-light",
+    "primaryPlatform": "tiktok",
+    "platforms": [
+      "tiktok",
+      "instagram",
+      "pinterest",
+      "youtube"
+    ],
+    "categories": [
+      "all",
+      "healthy",
+      "zero-sugar",
+      "under250",
+      "airfryer",
+      "vegan-gf"
+    ],
+    "soundName": "healthy swap viral",
+    "badgeChip": "Zero Refined Sugar",
+    "creatorHandle": "@crave_healthy",
+    "hookLine": "Tender caramelized apples stuffed with toasted oats, pecans, cinnamon & a drizzle of warm raw honey.",
+    "heroImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Hot_and_Sweet_Baked_Apples_-_50495578482.jpg/960px-Hot_and_Sweet_Baked_Apples_-_50495578482.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "thumbImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Hot_and_Sweet_Baked_Apples_-_50495578482.jpg/960px-Hot_and_Sweet_Baked_Apples_-_50495578482.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "pinterestImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Hot_and_Sweet_Baked_Apples_-_50495578482.jpg/960px-Hot_and_Sweet_Baked_Apples_-_50495578482.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "hashtags": [
+      "#BakedApples",
+      "#GuiltFreeCravings",
+      "#HealthyDesserts",
+      "#CraveMadeMeDoIt"
+    ],
+    "pantryCore": [
+      "cinnamon",
+      "flour",
+      "honey"
+    ],
+    "ingredientGroups": [
+      {
+        "title": "Cinnamon Oat Apples",
+        "badge": "170 Calories",
+        "tone": "tertiary",
+        "items": [
+          {
+            "id": "ba_app",
+            "name": "Crisp Honeycrisp apples (cored)",
+            "baseAmount": 2,
+            "usUnit": "apples",
+            "metricAmount": 340,
+            "metricUnit": "g",
+            "pantryKey": "cinnamon",
+            "stepRef": 1
+          },
+          {
+            "id": "ba_oat",
+            "name": "Rolled oats + chopped pecans + 1 tsp cinnamon",
+            "baseAmount": 0.33,
+            "usUnit": "cup",
+            "metricAmount": 35,
+            "metricUnit": "g",
+            "pantryKey": "flour",
+            "stepRef": 1
+          },
+          {
+            "id": "ba_hon",
+            "name": "Pure maple or raw honey + 1 tsp coconut oil",
+            "baseAmount": 1.5,
+            "usUnit": "tbsp",
+            "metricAmount": 22,
+            "metricUnit": "ml",
+            "pantryKey": "honey",
+            "stepRef": 1
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "phaseLabel": "Core & Air Fry",
+        "title": "Stuff Apples & Air Fry 18 Mins",
+        "instructionTemplate": "Mix {ba_oat} and {ba_hon}, pack into {ba_app}, and air-fry at 350°F (175°C) for 18–20 minutes until fork-tender and bubbling.",
+        "durationMin": 20,
+        "timerSeconds": 1200,
+        "activeMeasureSummary": "350°F Air Fryer • 170 Cal",
+        "creatorSecret": "Top with a spoonful of cold Greek yogurt for warm-meets-cold apple pie vibes."
+      }
+    ],
+    "ugcQuotes": [
+      {
+        "id": "hq-7",
+        "handle": "@fitfoodie_claire",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Hot_and_Sweet_Baked_Apples_-_50495578482.jpg/960px-Hot_and_Sweet_Baked_Apples_-_50495578482.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "quote": "Zero refined sugar and only 170 cal—tastes like total indulgence!",
+        "rating": 5
+      }
+    ]
+  },
+  {
+    "id": "healthy-9",
+    "slug": "no-bake-almond-oat-protein-bars",
+    "title": "No-Bake Almond Butter Oat Protein Bars",
+    "shortTag": "Protein Bars",
+    "storyViews": "188K",
+    "viewsLabel": "188K Views",
+    "viewsNumeric": 188.0,
+    "remakeSuccessRate": "98.6%",
+    "rating": 4.9,
+    "ratingCount": "410",
+    "prepMin": 8,
+    "bakeMin": 0,
+    "totalMin": 8,
+    "skill": "Quick",
+    "baseServings": 8,
+    "kcal": 210,
+    "zeroMixer": true,
+    "isHealthy": true,
+    "zeroRefinedSugar": true,
+    "cuisine": "Healthy Viral",
+    "dessertCategory": "healthy-light",
+    "primaryPlatform": "tiktok",
+    "platforms": [
+      "tiktok",
+      "instagram",
+      "pinterest",
+      "youtube"
+    ],
+    "categories": [
+      "all",
+      "healthy",
+      "zero-sugar",
+      "high-protein",
+      "under250",
+      "under15",
+      "nobake"
+    ],
+    "soundName": "healthy swap viral",
+    "badgeChip": "Zero Refined Sugar",
+    "creatorHandle": "@crave_healthy",
+    "hookLine": "Chewy meal-prep cookie-dough protein bars dipped in 80% dark chocolate with zero refined sugar.",
+    "heroImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Three_protein_bars%2C_two_cut_in_half.jpg/960px-Three_protein_bars%2C_two_cut_in_half.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "thumbImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Three_protein_bars%2C_two_cut_in_half.jpg/960px-Three_protein_bars%2C_two_cut_in_half.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "pinterestImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Three_protein_bars%2C_two_cut_in_half.jpg/960px-Three_protein_bars%2C_two_cut_in_half.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "hashtags": [
+      "#ProteinBars",
+      "#GuiltFreeCravings",
+      "#HealthyDesserts",
+      "#CraveMadeMeDoIt"
+    ],
+    "pantryCore": [
+      "flour",
+      "pistachio",
+      "chocolate"
+    ],
+    "ingredientGroups": [
+      {
+        "title": "No-Bake Protein Bars",
+        "badge": "15g Protein / Bar",
+        "tone": "primary",
+        "items": [
+          {
+            "id": "pb_oat",
+            "name": "Quick rolled oats + vanilla protein powder",
+            "baseAmount": 1.5,
+            "usUnit": "cups",
+            "metricAmount": 150,
+            "metricUnit": "g",
+            "pantryKey": "flour",
+            "stepRef": 1
+          },
+          {
+            "id": "pb_alm",
+            "name": "Creamy almond butter + 1/4 cup maple syrup",
+            "baseAmount": 0.5,
+            "usUnit": "cup",
+            "metricAmount": 125,
+            "metricUnit": "g",
+            "pantryKey": "pistachio",
+            "stepRef": 1
+          },
+          {
+            "id": "pb_chc",
+            "name": "Melted 80% dark chocolate drizzle",
+            "baseAmount": 0.33,
+            "usUnit": "cup",
+            "metricAmount": 60,
+            "metricUnit": "g",
+            "pantryKey": "chocolate",
+            "stepRef": 2
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "phaseLabel": "Press & Chill",
+        "title": "Mix Dough, Press Pan & Drizzle Choc",
+        "instructionTemplate": "Stir {pb_oat} and {pb_alm} with 2 tbsp almond milk until cookie-dough firm, press into a lined loaf pan, drizzle {pb_chc}, and chill 30 mins.",
+        "durationMin": 8,
+        "timerSeconds": 480,
+        "activeMeasureSummary": "Zero Oven • 15g Protein"
+      }
+    ],
+    "ugcQuotes": [
+      {
+        "id": "hq-8",
+        "handle": "@fitfoodie_claire",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Three_protein_bars%2C_two_cut_in_half.jpg/960px-Three_protein_bars%2C_two_cut_in_half.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "quote": "Zero refined sugar and only 210 cal—tastes like total indulgence!",
+        "rating": 5
+      }
+    ]
+  },
+  {
+    "id": "healthy-10",
+    "slug": "whipped-greek-yogurt-granola-parfait",
+    "title": "Whipped Cheesecake Yogurt Berry Parfait",
+    "shortTag": "Yogurt Parfait",
+    "storyViews": "134K",
+    "viewsLabel": "134K Views",
+    "viewsNumeric": 134.0,
+    "remakeSuccessRate": "98.6%",
+    "rating": 4.8,
+    "ratingCount": "215",
+    "prepMin": 4,
+    "bakeMin": 0,
+    "totalMin": 4,
+    "skill": "Quick",
+    "baseServings": 2,
+    "kcal": 185,
+    "zeroMixer": true,
+    "isHealthy": true,
+    "zeroRefinedSugar": true,
+    "cuisine": "Healthy Viral",
+    "dessertCategory": "healthy-light",
+    "primaryPlatform": "tiktok",
+    "platforms": [
+      "tiktok",
+      "instagram",
+      "pinterest",
+      "youtube"
+    ],
+    "categories": [
+      "all",
+      "healthy",
+      "zero-sugar",
+      "high-protein",
+      "under250",
+      "under15",
+      "nobake"
+    ],
+    "soundName": "healthy swap viral",
+    "badgeChip": "Zero Refined Sugar",
+    "creatorHandle": "@crave_healthy",
+    "hookLine": "Tastes like strawberry cheesecake in a jar—whipped Greek yogurt, lemon zest, berries & toasted granola.",
+    "heroImage": "https://upload.wikimedia.org/wikipedia/commons/9/94/Granola%2C_yogurt%2C_fruit._%2816696981528%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "thumbImage": "https://upload.wikimedia.org/wikipedia/commons/9/94/Granola%2C_yogurt%2C_fruit._%2816696981528%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "pinterestImage": "https://upload.wikimedia.org/wikipedia/commons/9/94/Granola%2C_yogurt%2C_fruit._%2816696981528%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "hashtags": [
+      "#YogurtParfait",
+      "#GuiltFreeCravings",
+      "#HealthyDesserts",
+      "#CraveMadeMeDoIt"
+    ],
+    "pantryCore": [
+      "milk",
+      "flour",
+      "strawberry"
+    ],
+    "ingredientGroups": [
+      {
+        "title": "Cheesecake Parfait",
+        "badge": "18g Protein",
+        "tone": "tertiary",
+        "items": [
+          {
+            "id": "yp_yog",
+            "name": "Greek yogurt + 1 tsp vanilla + lemon zest",
+            "baseAmount": 1.5,
+            "usUnit": "cups",
+            "metricAmount": 360,
+            "metricUnit": "g",
+            "pantryKey": "milk",
+            "stepRef": 1
+          },
+          {
+            "id": "yp_grn",
+            "name": "Low-sugar toasted almond granola",
+            "baseAmount": 0.5,
+            "usUnit": "cup",
+            "metricAmount": 55,
+            "metricUnit": "g",
+            "pantryKey": "flour",
+            "stepRef": 1
+          },
+          {
+            "id": "yp_ber",
+            "name": "Fresh raspberries & blueberries",
+            "baseAmount": 0.75,
+            "usUnit": "cup",
+            "metricAmount": 110,
+            "metricUnit": "g",
+            "pantryKey": "strawberry",
+            "stepRef": 1
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "phaseLabel": "Whip & Layer",
+        "title": "Whip Yogurt Cheesecake Smooth & Layer",
+        "instructionTemplate": "Whisk {yp_yog} until airy, then layer in glasses with {yp_ber} and {yp_grn}.",
+        "durationMin": 4,
+        "timerSeconds": 240,
+        "activeMeasureSummary": "4 Mins • 18g Protein"
+      }
+    ],
+    "ugcQuotes": [
+      {
+        "id": "hq-9",
+        "handle": "@fitfoodie_claire",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/9/94/Granola%2C_yogurt%2C_fruit._%2816696981528%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "quote": "Zero refined sugar and only 185 cal—tastes like total indulgence!",
+        "rating": 5
+      }
+    ]
+  },
+  {
+    "id": "healthy-11",
+    "slug": "almond-flour-zero-sugar-banana-bread",
+    "title": "Zero-Sugar Almond Flour Banana Bread",
+    "shortTag": "Healthy Banana",
+    "storyViews": "169K",
+    "viewsLabel": "169K Views",
+    "viewsNumeric": 169.0,
+    "remakeSuccessRate": "98.6%",
+    "rating": 4.9,
+    "ratingCount": "350",
+    "prepMin": 10,
+    "bakeMin": 38,
+    "totalMin": 48,
+    "skill": "Quick",
+    "baseServings": 10,
+    "kcal": 195,
+    "zeroMixer": true,
+    "isHealthy": true,
+    "zeroRefinedSugar": true,
+    "cuisine": "Healthy American",
+    "dessertCategory": "healthy-light",
+    "primaryPlatform": "tiktok",
+    "platforms": [
+      "tiktok",
+      "instagram",
+      "pinterest",
+      "youtube"
+    ],
+    "categories": [
+      "all",
+      "healthy",
+      "zero-sugar",
+      "under250",
+      "vegan-gf"
+    ],
+    "soundName": "healthy swap viral",
+    "badgeChip": "Zero Refined Sugar",
+    "creatorHandle": "@crave_healthy",
+    "hookLine": "Ultra-moist gluten-free banana bread naturally sweetened only by spotted ripe bananas & cinnamon.",
+    "heroImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Banana_bread_slices.jpg/960px-Banana_bread_slices.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "thumbImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Banana_bread_slices.jpg/960px-Banana_bread_slices.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "pinterestImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Banana_bread_slices.jpg/960px-Banana_bread_slices.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "hashtags": [
+      "#HealthyBanana",
+      "#GuiltFreeCravings",
+      "#HealthyDesserts",
+      "#CraveMadeMeDoIt"
+    ],
+    "pantryCore": [
+      "banana",
+      "pistachio",
+      "eggs"
+    ],
+    "ingredientGroups": [
+      {
+        "title": "Gluten-Free Banana Loaf",
+        "badge": "Zero Refined Sugar",
+        "tone": "tertiary",
+        "items": [
+          {
+            "id": "bb_ban",
+            "name": "Very ripe mashed bananas",
+            "baseAmount": 3,
+            "usUnit": "bananas",
+            "metricAmount": 340,
+            "metricUnit": "g",
+            "pantryKey": "banana",
+            "stepRef": 1
+          },
+          {
+            "id": "bb_alm",
+            "name": "Superfine blanched almond flour + 1 tsp baking soda",
+            "baseAmount": 2,
+            "usUnit": "cups",
+            "metricAmount": 200,
+            "metricUnit": "g",
+            "pantryKey": "pistachio",
+            "stepRef": 1
+          },
+          {
+            "id": "bb_egg",
+            "name": "Pasture-raised eggs + 1 tsp cinnamon + walnuts",
+            "baseAmount": 3,
+            "usUnit": "eggs",
+            "metricAmount": 3,
+            "metricUnit": "whole",
+            "pantryKey": "eggs",
+            "stepRef": 1
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "phaseLabel": "Whisk & Bake Loaf",
+        "title": "Mix 1-Bowl Batter & Bake 38m",
+        "instructionTemplate": "Whisk {bb_ban} and {bb_egg}, fold in {bb_alm}, and bake in a parchment-lined loaf pan at 350°F (175°C) for 38 mins.",
+        "durationMin": 38,
+        "timerSeconds": 2280,
+        "activeMeasureSummary": "350°F • Gluten-Free"
+      }
+    ],
+    "ugcQuotes": [
+      {
+        "id": "hq-10",
+        "handle": "@fitfoodie_claire",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Banana_bread_slices.jpg/960px-Banana_bread_slices.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "quote": "Zero refined sugar and only 195 cal—tastes like total indulgence!",
+        "rating": 5
+      }
+    ]
+  },
+  {
+    "id": "healthy-12",
+    "slug": "three-ingredient-peanut-butter-oat-cookies",
+    "title": "3-Ingredient Banana Peanut Butter Oat Cookies",
+    "shortTag": "3-Ing Healthy",
+    "storyViews": "205K",
+    "viewsLabel": "205K Views",
+    "viewsNumeric": 205.0,
+    "remakeSuccessRate": "98.6%",
+    "rating": 4.9,
+    "ratingCount": "495",
+    "prepMin": 5,
+    "bakeMin": 10,
+    "totalMin": 15,
+    "skill": "Quick",
+    "baseServings": 8,
+    "kcal": 145,
+    "zeroMixer": true,
+    "isHealthy": true,
+    "zeroRefinedSugar": true,
+    "cuisine": "Healthy American",
+    "dessertCategory": "healthy-light",
+    "primaryPlatform": "tiktok",
+    "platforms": [
+      "tiktok",
+      "instagram",
+      "pinterest",
+      "youtube"
+    ],
+    "categories": [
+      "all",
+      "healthy",
+      "zero-sugar",
+      "under250",
+      "under15",
+      "three-ing",
+      "vegan-gf"
+    ],
+    "soundName": "healthy swap viral",
+    "badgeChip": "Zero Refined Sugar",
+    "creatorHandle": "@crave_healthy",
+    "hookLine": "Soft, chewy breakfast-worthy cookies made from 3 whole foods: ripe bananas, rolled oats & peanut butter.",
+    "heroImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Oatmeal.jpg/960px-Oatmeal.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "thumbImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Oatmeal.jpg/960px-Oatmeal.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "pinterestImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Oatmeal.jpg/960px-Oatmeal.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "hashtags": [
+      "#3-IngHealthy",
+      "#GuiltFreeCravings",
+      "#HealthyDesserts",
+      "#CraveMadeMeDoIt"
+    ],
+    "pantryCore": [
+      "banana",
+      "flour",
+      "pistachio"
+    ],
+    "ingredientGroups": [
+      {
+        "title": "3 Whole-Food Ingredients",
+        "badge": "Vegan & GF",
+        "tone": "primary",
+        "items": [
+          {
+            "id": "oc_ban",
+            "name": "Mashed ripe bananas",
+            "baseAmount": 2,
+            "usUnit": "bananas",
+            "metricAmount": 220,
+            "metricUnit": "g",
+            "pantryKey": "banana",
+            "stepRef": 1
+          },
+          {
+            "id": "oc_oat",
+            "name": "Rolled oats (GF if needed)",
+            "baseAmount": 1.25,
+            "usUnit": "cups",
+            "metricAmount": 110,
+            "metricUnit": "g",
+            "pantryKey": "flour",
+            "stepRef": 1
+          },
+          {
+            "id": "oc_pb",
+            "name": "Natural creamy peanut butter",
+            "baseAmount": 0.33,
+            "usUnit": "cup",
+            "metricAmount": 85,
+            "metricUnit": "g",
+            "pantryKey": "pistachio",
+            "stepRef": 1
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "phaseLabel": "Mash & Bake 10m",
+        "title": "Scoop Rounds & Bake Until Golden",
+        "instructionTemplate": "Mash {oc_ban} with {oc_pb}, fold in {oc_oat}, flatten 8 cookie mounds on parchment, and bake at 350°F (175°C) for 10 mins.",
+        "durationMin": 10,
+        "timerSeconds": 600,
+        "activeMeasureSummary": "350°F • 145 Cal Each"
+      }
+    ],
+    "ugcQuotes": [
+      {
+        "id": "hq-11",
+        "handle": "@fitfoodie_claire",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Oatmeal.jpg/960px-Oatmeal.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "quote": "Zero refined sugar and only 145 cal—tastes like total indulgence!",
+        "rating": 5
+      }
+    ]
+  },
+  {
+    "id": "healthy-13",
+    "slug": "blueberry-lemon-chia-jam-cups",
+    "title": "No-Bake Blueberry Lemon Chia Yogurt Cups",
+    "shortTag": "Chia Jam Cup",
+    "storyViews": "128K",
+    "viewsLabel": "128K Views",
+    "viewsNumeric": 128.0,
+    "remakeSuccessRate": "98.6%",
+    "rating": 4.8,
+    "ratingCount": "195",
+    "prepMin": 6,
+    "bakeMin": 0,
+    "totalMin": 6,
+    "skill": "Quick",
+    "baseServings": 4,
+    "kcal": 160,
+    "zeroMixer": true,
+    "isHealthy": true,
+    "zeroRefinedSugar": true,
+    "cuisine": "Healthy Viral",
+    "dessertCategory": "healthy-light",
+    "primaryPlatform": "tiktok",
+    "platforms": [
+      "tiktok",
+      "instagram",
+      "pinterest",
+      "youtube"
+    ],
+    "categories": [
+      "all",
+      "healthy",
+      "zero-sugar",
+      "high-protein",
+      "under250",
+      "under15",
+      "nobake",
+      "vegan-gf"
+    ],
+    "soundName": "healthy swap viral",
+    "badgeChip": "Zero Refined Sugar",
+    "creatorHandle": "@crave_healthy",
+    "hookLine": "5-minute sugar-free blueberry chia jam layered over bright lemon Greek yogurt.",
+    "heroImage": "https://upload.wikimedia.org/wikipedia/commons/1/15/Blueberries.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "thumbImage": "https://upload.wikimedia.org/wikipedia/commons/1/15/Blueberries.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "pinterestImage": "https://upload.wikimedia.org/wikipedia/commons/1/15/Blueberries.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "hashtags": [
+      "#ChiaJamCup",
+      "#GuiltFreeCravings",
+      "#HealthyDesserts",
+      "#CraveMadeMeDoIt"
+    ],
+    "pantryCore": [
+      "strawberry",
+      "milk"
+    ],
+    "ingredientGroups": [
+      {
+        "title": "Lemon Chia Berry Cups",
+        "badge": "Antioxidant Hit",
+        "tone": "tertiary",
+        "items": [
+          {
+            "id": "bj_blu",
+            "name": "Wild blueberries + 2 tbsp chia seeds + lemon juice",
+            "baseAmount": 1.5,
+            "usUnit": "cups",
+            "metricAmount": 220,
+            "metricUnit": "g",
+            "pantryKey": "strawberry",
+            "stepRef": 1
+          },
+          {
+            "id": "bj_yog",
+            "name": "Vanilla Greek yogurt or coconut yogurt",
+            "baseAmount": 1.5,
+            "usUnit": "cups",
+            "metricAmount": 360,
+            "metricUnit": "g",
+            "pantryKey": "milk",
+            "stepRef": 2
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "phaseLabel": "Simmer Chia Jam",
+        "title": "Mash Warm Blueberries with Chia Seeds",
+        "instructionTemplate": "Warm {bj_blu} 3 mins until berries burst, let chia thicken into glossy jam 5 mins, then swirl over {bj_yog}.",
+        "durationMin": 6,
+        "timerSeconds": 360,
+        "activeMeasureSummary": "Zero Added Sugar"
+      }
+    ],
+    "ugcQuotes": [
+      {
+        "id": "hq-12",
+        "handle": "@fitfoodie_claire",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/1/15/Blueberries.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "quote": "Zero refined sugar and only 160 cal—tastes like total indulgence!",
+        "rating": 5
+      }
+    ]
+  },
+  {
+    "id": "healthy-14",
+    "slug": "raspberry-dark-choc-coconut-clusters",
+    "title": "Viral Raspberry Dark-Choc Coconut Clusters",
+    "shortTag": "Berry Clusters",
+    "storyViews": "232K",
+    "viewsLabel": "232K Views",
+    "viewsNumeric": 232.0,
+    "remakeSuccessRate": "98.6%",
+    "rating": 5.0,
+    "ratingCount": "580",
+    "prepMin": 6,
+    "bakeMin": 0,
+    "totalMin": 6,
+    "skill": "Quick",
+    "baseServings": 8,
+    "kcal": 140,
+    "zeroMixer": true,
+    "isHealthy": true,
+    "zeroRefinedSugar": true,
+    "cuisine": "Healthy Viral",
+    "dessertCategory": "healthy-light",
+    "primaryPlatform": "tiktok",
+    "platforms": [
+      "tiktok",
+      "instagram",
+      "pinterest",
+      "youtube"
+    ],
+    "categories": [
+      "all",
+      "healthy",
+      "zero-sugar",
+      "under250",
+      "under15",
+      "nobake",
+      "three-ing",
+      "vegan-gf"
+    ],
+    "soundName": "healthy swap viral",
+    "badgeChip": "Zero Refined Sugar",
+    "creatorHandle": "@crave_healthy",
+    "hookLine": "Juicy fresh raspberries folded in creamy Greek yogurt, frozen, and dipped in crisp 80% dark chocolate!",
+    "heroImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Raspberries_%28Rubus_idaeus%29.jpg/960px-Raspberries_%28Rubus_idaeus%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "thumbImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Raspberries_%28Rubus_idaeus%29.jpg/960px-Raspberries_%28Rubus_idaeus%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "pinterestImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Raspberries_%28Rubus_idaeus%29.jpg/960px-Raspberries_%28Rubus_idaeus%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "hashtags": [
+      "#BerryClusters",
+      "#GuiltFreeCravings",
+      "#HealthyDesserts",
+      "#CraveMadeMeDoIt"
+    ],
+    "pantryCore": [
+      "strawberry",
+      "chocolate"
+    ],
+    "ingredientGroups": [
+      {
+        "title": "Viral Frozen Berry Bites",
+        "badge": "4 Ingredients",
+        "tone": "primary",
+        "items": [
+          {
+            "id": "rc_ber",
+            "name": "Fresh raspberries + 1/2 cup Greek or coconut yogurt",
+            "baseAmount": 1.5,
+            "usUnit": "cups",
+            "metricAmount": 200,
+            "metricUnit": "g",
+            "pantryKey": "strawberry",
+            "stepRef": 1
+          },
+          {
+            "id": "rc_chc",
+            "name": "Melted 80% dark chocolate + 1 tsp coconut oil",
+            "baseAmount": 0.5,
+            "usUnit": "cup",
+            "metricAmount": 90,
+            "metricUnit": "g",
+            "pantryKey": "chocolate",
+            "stepRef": 2
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "phaseLabel": "Freeze & Choc Dip",
+        "title": "Dollop Berry Yogurt & Dip in Dark Choc",
+        "instructionTemplate": "Toss {rc_ber} gently, scoop 8 clusters onto parchment, freeze 30 mins, then coat in {rc_chc} and chill 5 mins to snap.",
+        "durationMin": 6,
+        "timerSeconds": 360,
+        "activeMeasureSummary": "Freeze 30m • Crisp Shell",
+        "creatorSecret": "A teaspoon of coconut oil gives the dark chocolate a thin, satisfyingly snappy shell."
+      }
+    ],
+    "ugcQuotes": [
+      {
+        "id": "hq-13",
+        "handle": "@fitfoodie_claire",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Raspberries_%28Rubus_idaeus%29.jpg/960px-Raspberries_%28Rubus_idaeus%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "quote": "Zero refined sugar and only 140 cal—tastes like total indulgence!",
+        "rating": 5
+      }
+    ]
+  },
+  {
+    "id": "healthy-15",
+    "slug": "matcha-almond-protein-bliss-bites",
+    "title": "No-Bake Matcha Pistachio Bliss Balls",
+    "shortTag": "Matcha Bites",
+    "storyViews": "149K",
+    "viewsLabel": "149K Views",
+    "viewsNumeric": 149.0,
+    "remakeSuccessRate": "98.6%",
+    "rating": 4.9,
+    "ratingCount": "240",
+    "prepMin": 8,
+    "bakeMin": 0,
+    "totalMin": 8,
+    "skill": "Quick",
+    "baseServings": 10,
+    "kcal": 130,
+    "zeroMixer": true,
+    "isHealthy": true,
+    "zeroRefinedSugar": true,
+    "cuisine": "Healthy Viral",
+    "dessertCategory": "healthy-light",
+    "primaryPlatform": "tiktok",
+    "platforms": [
+      "tiktok",
+      "instagram",
+      "pinterest",
+      "youtube"
+    ],
+    "categories": [
+      "all",
+      "healthy",
+      "zero-sugar",
+      "high-protein",
+      "under250",
+      "under15",
+      "nobake",
+      "vegan-gf"
+    ],
+    "soundName": "healthy swap viral",
+    "badgeChip": "Zero Refined Sugar",
+    "creatorHandle": "@crave_healthy",
+    "hookLine": "Clean-energy matcha pistachio bliss truffles sweetened with Medjool dates—ready in 8 mins.",
+    "heroImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Matcha_Scoop.jpg/960px-Matcha_Scoop.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "thumbImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Matcha_Scoop.jpg/960px-Matcha_Scoop.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "pinterestImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Matcha_Scoop.jpg/960px-Matcha_Scoop.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "hashtags": [
+      "#MatchaBites",
+      "#GuiltFreeCravings",
+      "#HealthyDesserts",
+      "#CraveMadeMeDoIt"
+    ],
+    "pantryCore": [
+      "pistachio",
+      "honey",
+      "vanilla"
+    ],
+    "ingredientGroups": [
+      {
+        "title": "Matcha Energy Truffles",
+        "badge": "130 Cal Each",
+        "tone": "tertiary",
+        "items": [
+          {
+            "id": "mb_nut",
+            "name": "Almond flour + crushed pistachios",
+            "baseAmount": 1,
+            "usUnit": "cup",
+            "metricAmount": 110,
+            "metricUnit": "g",
+            "pantryKey": "pistachio",
+            "stepRef": 1
+          },
+          {
+            "id": "mb_dat",
+            "name": "Pitted soft dates + 2 tbsp coconut cream",
+            "baseAmount": 0.5,
+            "usUnit": "cup",
+            "metricAmount": 90,
+            "metricUnit": "g",
+            "pantryKey": "honey",
+            "stepRef": 1
+          },
+          {
+            "id": "mb_mat",
+            "name": "Ceremonial matcha green tea powder",
+            "baseAmount": 2,
+            "usUnit": "tsp",
+            "metricAmount": 6,
+            "metricUnit": "g",
+            "pantryKey": "vanilla",
+            "stepRef": 1
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "phaseLabel": "Blitz & Roll",
+        "title": "Pulse Together & Roll Emerald Truffles",
+        "instructionTemplate": "Pulse {mb_nut}, {mb_dat}, and {mb_mat} until sticky dough forms, roll into 10 emerald truffles, and chill.",
+        "durationMin": 8,
+        "timerSeconds": 480,
+        "activeMeasureSummary": "Zero Refined Sugar • GF"
+      }
+    ],
+    "ugcQuotes": [
+      {
+        "id": "hq-14",
+        "handle": "@fitfoodie_claire",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Matcha_Scoop.jpg/960px-Matcha_Scoop.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "quote": "Zero refined sugar and only 130 cal—tastes like total indulgence!",
+        "rating": 5
+      }
+    ]
+  },
+  {
+    "id": "healthy-16",
+    "slug": "warm-spiced-berry-chia-compote",
+    "title": "Warm Cinnamon Berry Chia Compote Sundae",
+    "shortTag": "Berry Compote",
+    "storyViews": "118K",
+    "viewsLabel": "118K Views",
+    "viewsNumeric": 118.0,
+    "remakeSuccessRate": "98.6%",
+    "rating": 4.8,
+    "ratingCount": "175",
+    "prepMin": 5,
+    "bakeMin": 6,
+    "totalMin": 11,
+    "skill": "Quick",
+    "baseServings": 4,
+    "kcal": 125,
+    "zeroMixer": true,
+    "isHealthy": true,
+    "zeroRefinedSugar": true,
+    "cuisine": "Healthy European",
+    "dessertCategory": "healthy-light",
+    "primaryPlatform": "tiktok",
+    "platforms": [
+      "tiktok",
+      "instagram",
+      "pinterest",
+      "youtube"
+    ],
+    "categories": [
+      "all",
+      "healthy",
+      "zero-sugar",
+      "under250",
+      "under15",
+      "vegan-gf"
+    ],
+    "soundName": "healthy swap viral",
+    "badgeChip": "Zero Refined Sugar",
+    "creatorHandle": "@crave_healthy",
+    "hookLine": "Warm cinnamon-vanilla berry compote thickened naturally with chia over cold Greek yogurt.",
+    "heroImage": "https://upload.wikimedia.org/wikipedia/commons/9/94/Compote.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "thumbImage": "https://upload.wikimedia.org/wikipedia/commons/9/94/Compote.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "pinterestImage": "https://upload.wikimedia.org/wikipedia/commons/9/94/Compote.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "hashtags": [
+      "#BerryCompote",
+      "#GuiltFreeCravings",
+      "#HealthyDesserts",
+      "#CraveMadeMeDoIt"
+    ],
+    "pantryCore": [
+      "strawberry",
+      "honey"
+    ],
+    "ingredientGroups": [
+      {
+        "title": "Sugar-Free Berry Compote",
+        "badge": "125 Calories",
+        "tone": "tertiary",
+        "items": [
+          {
+            "id": "bc_ber",
+            "name": "Mixed berries + 1/2 tsp cinnamon + vanilla",
+            "baseAmount": 2,
+            "usUnit": "cups",
+            "metricAmount": 300,
+            "metricUnit": "g",
+            "pantryKey": "strawberry",
+            "stepRef": 1
+          },
+          {
+            "id": "bc_chi",
+            "name": "Chia seeds + 1 tbsp pure maple syrup",
+            "baseAmount": 1.5,
+            "usUnit": "tbsp",
+            "metricAmount": 18,
+            "metricUnit": "g",
+            "pantryKey": "honey",
+            "stepRef": 1
+          }
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "phaseLabel": "Simmer 6m",
+        "title": "Simmer Berries & Stir Chia Thick",
+        "instructionTemplate": "Simmer {bc_ber} 5 mins until saucy, stir in {bc_chi}, rest 3 mins to thicken, and spoon warm over chilled yogurt.",
+        "durationMin": 6,
+        "timerSeconds": 360,
+        "activeMeasureSummary": "125 Cal • Warm & Cold"
+      }
+    ],
+    "ugcQuotes": [
+      {
+        "id": "hq-15",
+        "handle": "@fitfoodie_claire",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/9/94/Compote.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "quote": "Zero refined sugar and only 125 cal—tastes like total indulgence!",
+        "rating": 5
+      }
+    ]
+  },
+  {
     "id": "viral-1",
     "slug": "san-sebastian-basque-burnt-cheesecake",
     "title": "San Sebastian Basque Burnt Cheesecake",
@@ -26,8 +1760,9 @@
       "pinterest"
     ],
     "categories": [
+      "vegan-gf",
       "all",
-      "vegan-gf"
+      "healthy"
     ],
     "soundName": "creamy slice jiggle",
     "badgeChip": "Viral Jiggle",
@@ -148,7 +1883,8 @@
         "quote": "Turned out bakery-grade on my first try! Ready in 44 mins.",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "viral-2",
@@ -177,8 +1913,8 @@
       "facebook"
     ],
     "categories": [
-      "all",
-      "nobake"
+      "nobake",
+      "all"
     ],
     "soundName": "creamy slice jiggle",
     "badgeChip": "No-Bake Viral",
@@ -645,8 +2381,9 @@
       "pinterest"
     ],
     "categories": [
+      "vegan-gf",
       "all",
-      "vegan-gf"
+      "healthy"
     ],
     "soundName": "velvet spoon wobble",
     "badgeChip": "ASMR Crack",
@@ -754,7 +2491,8 @@
         "quote": "Turned out bakery-grade on my first try! Ready in 45 mins.",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "viral-6",
@@ -783,9 +2521,11 @@
       "pinterest"
     ],
     "categories": [
-      "all",
+      "under250",
       "under15",
       "three-ing",
+      "all",
+      "healthy",
       "nobake"
     ],
     "soundName": "fudge crackle asmr",
@@ -875,7 +2615,8 @@
         "quote": "Turned out bakery-grade on my first try! Ready in 15 mins.",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "viral-7",
@@ -904,7 +2645,9 @@
       "facebook"
     ],
     "categories": [
-      "all"
+      "healthy",
+      "all",
+      "under250"
     ],
     "soundName": "creamy slice jiggle",
     "badgeChip": "Cloud Jiggle",
@@ -1024,7 +2767,8 @@
         "quote": "Turned out bakery-grade on my first try! Ready in 70 mins.",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "viral-8",
@@ -1053,9 +2797,9 @@
       "tiktok"
     ],
     "categories": [
+      "nobake",
       "all",
-      "under15",
-      "nobake"
+      "under15"
     ],
     "soundName": "frosty scoop crunch",
     "badgeChip": "No-Machine Hack",
@@ -1444,9 +3188,9 @@
       "pinterest"
     ],
     "categories": [
+      "nobake",
       "all",
       "under15",
-      "nobake",
       "three-ing"
     ],
     "soundName": "frosty scoop crunch",
@@ -1795,8 +3539,9 @@
       "facebook"
     ],
     "categories": [
+      "vegan-gf",
       "all",
-      "vegan-gf"
+      "healthy"
     ],
     "soundName": "viral street sweet",
     "badgeChip": "Vegan & GF",
@@ -1884,7 +3629,8 @@
         "quote": "Turned out bakery-grade on my first try! Ready in 28 mins.",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "viral-15",
@@ -1913,8 +3659,8 @@
       "pinterest"
     ],
     "categories": [
-      "all",
-      "nobake"
+      "nobake",
+      "all"
     ],
     "soundName": "golden crust cut",
     "badgeChip": "No-Bake Pie",
@@ -2427,8 +4173,10 @@
       "facebook"
     ],
     "categories": [
+      "vegan-gf",
       "all",
-      "vegan-gf"
+      "under250",
+      "healthy"
     ],
     "soundName": "bakery cookie snap",
     "badgeChip": "Gluten-Free",
@@ -2517,7 +4265,8 @@
         "quote": "Turned out bakery-grade on my first try! Ready in 39 mins.",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "viral-20",
@@ -2546,7 +4295,9 @@
       "pinterest"
     ],
     "categories": [
-      "all"
+      "healthy",
+      "all",
+      "under250"
     ],
     "soundName": "flaky crunch asmr",
     "badgeChip": "40-Layer Crunch",
@@ -2634,7 +4385,8 @@
         "quote": "Turned out bakery-grade on my first try! Ready in 45 mins.",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "viral-21",
@@ -2663,7 +4415,9 @@
       "pinterest"
     ],
     "categories": [
-      "all"
+      "healthy",
+      "all",
+      "under250"
     ],
     "soundName": "golden crust cut",
     "badgeChip": "Blistered Custard",
@@ -2751,7 +4505,8 @@
         "quote": "Turned out bakery-grade on my first try! Ready in 26 mins.",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "viral-22",
@@ -2897,10 +4652,11 @@
       "tiktok"
     ],
     "categories": [
-      "all",
       "under15",
-      "nobake",
-      "vegan-gf"
+      "vegan-gf",
+      "all",
+      "healthy",
+      "nobake"
     ],
     "soundName": "velvet spoon wobble",
     "badgeChip": "No-Bake • GF",
@@ -2999,7 +4755,8 @@
         "quote": "Turned out bakery-grade on my first try! Ready in 8 mins.",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "viral-24",
@@ -3252,9 +5009,9 @@
       "pinterest"
     ],
     "categories": [
+      "nobake",
       "all",
-      "under15",
-      "nobake"
+      "under15"
     ],
     "soundName": "creamy slice jiggle",
     "badgeChip": "8 Min • No-Bake",
@@ -3478,9 +5235,10 @@
       "tiktok"
     ],
     "categories": [
+      "vegan-gf",
       "all",
       "under15",
-      "vegan-gf"
+      "healthy"
     ],
     "soundName": "frosty scoop crunch",
     "badgeChip": "11 Min Skillet",
@@ -3559,7 +5317,8 @@
         "quote": "Turned out bakery-grade on my first try! Ready in 11 mins.",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "viral-29",
@@ -3588,9 +5347,9 @@
       "facebook"
     ],
     "categories": [
+      "nobake",
       "all",
-      "under15",
-      "nobake"
+      "under15"
     ],
     "soundName": "frosty scoop crunch",
     "badgeChip": "No-Bake Summer",
@@ -3815,10 +5574,12 @@
       "pinterest"
     ],
     "categories": [
-      "all",
+      "under250",
       "under15",
-      "nobake",
-      "vegan-gf"
+      "vegan-gf",
+      "all",
+      "healthy",
+      "nobake"
     ],
     "soundName": "frosty scoop crunch",
     "badgeChip": "No-Churn • GF",
@@ -3897,7 +5658,8 @@
         "quote": "Turned out bakery-grade on my first try! Ready in 10 mins.",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-53120",
@@ -3926,8 +5688,10 @@
       "tiktok"
     ],
     "categories": [
+      "nobake",
+      "healthy",
       "all",
-      "nobake"
+      "under250"
     ],
     "soundName": "viral street sweet",
     "badgeChip": "Norway Hit",
@@ -4106,7 +5870,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 15 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-53138",
@@ -4516,8 +6281,8 @@
       "pinterest"
     ],
     "categories": [
-      "all",
-      "nobake"
+      "nobake",
+      "all"
     ],
     "soundName": "viral street sweet",
     "badgeChip": "Malaysian Hit",
@@ -5337,7 +7102,9 @@
       "pinterest"
     ],
     "categories": [
+      "healthy",
       "all",
+      "under250",
       "airfryer"
     ],
     "soundName": "golden crust cut",
@@ -5503,7 +7270,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 45 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-53568",
@@ -5810,9 +7578,10 @@
       "facebook"
     ],
     "categories": [
-      "all",
       "nobake",
-      "vegan-gf"
+      "vegan-gf",
+      "all",
+      "healthy"
     ],
     "soundName": "velvet spoon wobble",
     "badgeChip": "Turkish Hit",
@@ -5961,7 +7730,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 15 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-53392",
@@ -5990,8 +7760,9 @@
       "tiktok"
     ],
     "categories": [
+      "vegan-gf",
       "all",
-      "vegan-gf"
+      "healthy"
     ],
     "soundName": "viral street sweet",
     "badgeChip": "Global Hit",
@@ -6120,7 +7891,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 38 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-53406",
@@ -6149,11 +7921,12 @@
       "facebook"
     ],
     "categories": [
-      "all",
-      "nobake",
-      "three-ing",
       "under15",
-      "vegan-gf"
+      "three-ing",
+      "vegan-gf",
+      "all",
+      "healthy",
+      "nobake"
     ],
     "soundName": "viral street sweet",
     "badgeChip": "Global Hit",
@@ -6261,7 +8034,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 8 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-53522",
@@ -6290,8 +8064,8 @@
       "pinterest"
     ],
     "categories": [
-      "all",
-      "nobake"
+      "nobake",
+      "all"
     ],
     "soundName": "viral street sweet",
     "badgeChip": "Global Hit",
@@ -6506,8 +8280,8 @@
       "pinterest"
     ],
     "categories": [
-      "all",
-      "nobake"
+      "nobake",
+      "all"
     ],
     "soundName": "velvet spoon wobble",
     "badgeChip": "Global Hit",
@@ -6858,8 +8632,10 @@
       "tiktok"
     ],
     "categories": [
+      "nobake",
+      "healthy",
       "all",
-      "nobake"
+      "under250"
     ],
     "soundName": "viral street sweet",
     "badgeChip": "Global Hit",
@@ -7037,7 +8813,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 15 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-52767",
@@ -7066,7 +8843,9 @@
       "facebook"
     ],
     "categories": [
+      "healthy",
       "all",
+      "under250",
       "airfryer"
     ],
     "soundName": "golden crust cut",
@@ -7255,7 +9034,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 45 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-53279",
@@ -7552,8 +9332,10 @@
       "pinterest"
     ],
     "categories": [
+      "vegan-gf",
       "all",
-      "vegan-gf"
+      "under250",
+      "healthy"
     ],
     "soundName": "viral street sweet",
     "badgeChip": "Global Hit",
@@ -7664,7 +9446,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 38 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-52855",
@@ -7693,8 +9476,10 @@
       "facebook"
     ],
     "categories": [
+      "nobake",
+      "healthy",
       "all",
-      "nobake"
+      "under250"
     ],
     "soundName": "flaky crunch asmr",
     "badgeChip": "United States Hit",
@@ -7833,7 +9618,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 15 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-52894",
@@ -8408,7 +10194,9 @@
       "pinterest"
     ],
     "categories": [
-      "all"
+      "healthy",
+      "all",
+      "under250"
     ],
     "soundName": "flaky crunch asmr",
     "badgeChip": "Ukrainian Hit",
@@ -8598,7 +10386,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 33 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-53580",
@@ -8627,11 +10416,12 @@
       "pinterest"
     ],
     "categories": [
-      "all",
-      "nobake",
-      "three-ing",
       "under15",
-      "vegan-gf"
+      "three-ing",
+      "vegan-gf",
+      "all",
+      "healthy",
+      "nobake"
     ],
     "soundName": "viral street sweet",
     "badgeChip": "Global Hit",
@@ -8728,7 +10518,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 8 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-52891",
@@ -9582,8 +11373,8 @@
       "pinterest"
     ],
     "categories": [
-      "all",
-      "nobake"
+      "nobake",
+      "all"
     ],
     "soundName": "fudge crackle asmr",
     "badgeChip": "Global Hit",
@@ -9761,7 +11552,9 @@
       "facebook"
     ],
     "categories": [
-      "all"
+      "healthy",
+      "all",
+      "under250"
     ],
     "soundName": "velvet spoon wobble",
     "badgeChip": "British Hit",
@@ -9929,7 +11722,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 45 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-53454",
@@ -9958,8 +11752,10 @@
       "tiktok"
     ],
     "categories": [
+      "nobake",
+      "healthy",
       "all",
-      "nobake"
+      "under250"
     ],
     "soundName": "viral street sweet",
     "badgeChip": "Global Hit",
@@ -10184,7 +11980,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 15 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-52961",
@@ -10392,7 +12189,9 @@
       "pinterest"
     ],
     "categories": [
-      "all"
+      "healthy",
+      "all",
+      "under250"
     ],
     "soundName": "bakery cookie snap",
     "badgeChip": "Global Hit",
@@ -10591,7 +12390,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 33 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-53544",
@@ -10620,8 +12420,8 @@
       "pinterest"
     ],
     "categories": [
-      "all",
-      "nobake"
+      "nobake",
+      "all"
     ],
     "soundName": "frosty scoop crunch",
     "badgeChip": "Global Hit",
@@ -10806,8 +12606,8 @@
       "facebook"
     ],
     "categories": [
-      "all",
       "nobake",
+      "all",
       "under15"
     ],
     "soundName": "flaky crunch asmr",
@@ -10955,7 +12755,9 @@
       "tiktok"
     ],
     "categories": [
+      "healthy",
       "all",
+      "under250",
       "airfryer"
     ],
     "soundName": "golden crust cut",
@@ -11116,7 +12918,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 45 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-53360",
@@ -11145,11 +12948,12 @@
       "facebook"
     ],
     "categories": [
-      "all",
-      "nobake",
-      "three-ing",
       "under15",
-      "vegan-gf"
+      "three-ing",
+      "vegan-gf",
+      "all",
+      "healthy",
+      "nobake"
     ],
     "soundName": "viral street sweet",
     "badgeChip": "Jamaican Hit",
@@ -11236,7 +13040,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 8 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-52897",
@@ -11503,7 +13308,9 @@
       "pinterest"
     ],
     "categories": [
-      "all"
+      "healthy",
+      "all",
+      "under250"
     ],
     "soundName": "bakery cookie snap",
     "badgeChip": "Tunisian Hit",
@@ -11649,7 +13456,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 33 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-53508",
@@ -11678,7 +13486,9 @@
       "facebook"
     ],
     "categories": [
-      "all"
+      "healthy",
+      "all",
+      "under250"
     ],
     "soundName": "frosting swirl aesthetic",
     "badgeChip": "Global Hit",
@@ -11832,7 +13642,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 45 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-52898",
@@ -11861,7 +13672,9 @@
       "tiktok"
     ],
     "categories": [
-      "all"
+      "healthy",
+      "all",
+      "under250"
     ],
     "soundName": "flaky crunch asmr",
     "badgeChip": "British Hit",
@@ -12079,7 +13892,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 33 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-52910",
@@ -12108,9 +13922,10 @@
       "facebook"
     ],
     "categories": [
+      "vegan-gf",
       "all",
-      "airfryer",
-      "vegan-gf"
+      "healthy",
+      "airfryer"
     ],
     "soundName": "golden crust cut",
     "badgeChip": "France Hit",
@@ -12265,7 +14080,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 45 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-52856",
@@ -12791,9 +14607,11 @@
       "facebook"
     ],
     "categories": [
+      "under250",
+      "vegan-gf",
       "all",
-      "nobake",
-      "vegan-gf"
+      "healthy",
+      "nobake"
     ],
     "soundName": "fudge crackle asmr",
     "badgeChip": "British Hit",
@@ -12961,7 +14779,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 15 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-52966",
@@ -12990,10 +14809,10 @@
       "tiktok"
     ],
     "categories": [
-      "all",
       "nobake",
-      "three-ing",
-      "under15"
+      "all",
+      "under15",
+      "three-ing"
     ],
     "soundName": "fudge crackle asmr",
     "badgeChip": "British Hit",
@@ -13149,7 +14968,9 @@
       "facebook"
     ],
     "categories": [
+      "healthy",
       "all",
+      "under250",
       "airfryer"
     ],
     "soundName": "fudge crackle asmr",
@@ -13360,7 +15181,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 45 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-53101",
@@ -14002,7 +15824,9 @@
       "tiktok"
     ],
     "categories": [
-      "all"
+      "healthy",
+      "all",
+      "under250"
     ],
     "soundName": "fudge crackle asmr",
     "badgeChip": "United States Hit",
@@ -14151,7 +15975,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 45 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-52905",
@@ -14180,7 +16005,9 @@
       "facebook"
     ],
     "categories": [
-      "all"
+      "healthy",
+      "all",
+      "under250"
     ],
     "soundName": "fudge crackle asmr",
     "badgeChip": "France Hit",
@@ -14387,7 +16214,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 45 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-53542",
@@ -14416,8 +16244,8 @@
       "pinterest"
     ],
     "categories": [
-      "all",
-      "nobake"
+      "nobake",
+      "all"
     ],
     "soundName": "viral street sweet",
     "badgeChip": "Global Hit",
@@ -15053,8 +16881,8 @@
       "tiktok"
     ],
     "categories": [
-      "all",
-      "nobake"
+      "nobake",
+      "all"
     ],
     "soundName": "velvet spoon wobble",
     "badgeChip": "British Hit",
@@ -15261,8 +17089,10 @@
       "facebook"
     ],
     "categories": [
+      "nobake",
+      "healthy",
       "all",
-      "nobake"
+      "under250"
     ],
     "soundName": "flaky crunch asmr",
     "badgeChip": "Spanish Hit",
@@ -15473,7 +17303,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 15 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-53116",
@@ -15759,7 +17590,9 @@
       "pinterest"
     ],
     "categories": [
-      "all"
+      "healthy",
+      "all",
+      "under250"
     ],
     "soundName": "bakery cookie snap",
     "badgeChip": "Global Hit",
@@ -15907,7 +17740,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 33 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-52988",
@@ -16163,8 +17997,10 @@
       "tiktok"
     ],
     "categories": [
+      "nobake",
+      "healthy",
       "all",
-      "nobake"
+      "under250"
     ],
     "soundName": "viral street sweet",
     "badgeChip": "Global Hit",
@@ -16380,7 +18216,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 15 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-53477",
@@ -16824,10 +18661,12 @@
       "pinterest"
     ],
     "categories": [
-      "all",
-      "nobake",
+      "under250",
+      "under15",
       "three-ing",
-      "under15"
+      "all",
+      "healthy",
+      "nobake"
     ],
     "soundName": "viral street sweet",
     "badgeChip": "Global Hit",
@@ -16945,7 +18784,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 8 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-53148",
@@ -16974,8 +18814,10 @@
       "facebook"
     ],
     "categories": [
+      "nobake",
+      "healthy",
       "all",
-      "nobake"
+      "under250"
     ],
     "soundName": "viral street sweet",
     "badgeChip": "Spanish Hit",
@@ -17162,7 +19004,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 15 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-53338",
@@ -17633,10 +19476,10 @@
       "pinterest"
     ],
     "categories": [
-      "all",
       "nobake",
-      "three-ing",
-      "under15"
+      "all",
+      "under15",
+      "three-ing"
     ],
     "soundName": "viral street sweet",
     "badgeChip": "Argentina Hit",
@@ -17971,7 +19814,9 @@
       "facebook"
     ],
     "categories": [
-      "all"
+      "healthy",
+      "all",
+      "under250"
     ],
     "soundName": "frosting swirl aesthetic",
     "badgeChip": "British Hit",
@@ -18201,7 +20046,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 45 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-53386",
@@ -18437,7 +20283,9 @@
       "facebook"
     ],
     "categories": [
-      "all"
+      "healthy",
+      "all",
+      "under250"
     ],
     "soundName": "flaky crunch asmr",
     "badgeChip": "Global Hit",
@@ -18574,7 +20422,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 26 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-53387",
@@ -19025,7 +20874,9 @@
       "facebook"
     ],
     "categories": [
+      "healthy",
       "all",
+      "under250",
       "airfryer"
     ],
     "soundName": "golden crust cut",
@@ -19295,7 +21146,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 45 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-52888",
@@ -19763,8 +21615,8 @@
       "pinterest"
     ],
     "categories": [
-      "all",
       "nobake",
+      "all",
       "under15"
     ],
     "soundName": "velvet spoon wobble",
@@ -19913,8 +21765,8 @@
       "pinterest"
     ],
     "categories": [
-      "all",
-      "nobake"
+      "nobake",
+      "all"
     ],
     "soundName": "viral street sweet",
     "badgeChip": "Canadian Hit",
@@ -20120,8 +21972,8 @@
       "facebook"
     ],
     "categories": [
-      "all",
-      "nobake"
+      "nobake",
+      "all"
     ],
     "soundName": "viral street sweet",
     "badgeChip": "Global Hit",
@@ -20746,8 +22598,8 @@
       "pinterest"
     ],
     "categories": [
-      "all",
       "nobake",
+      "all",
       "under15"
     ],
     "soundName": "viral street sweet",
@@ -20915,7 +22767,9 @@
       "pinterest"
     ],
     "categories": [
-      "all"
+      "healthy",
+      "all",
+      "under250"
     ],
     "soundName": "frosting swirl aesthetic",
     "badgeChip": "Norway Hit",
@@ -21133,7 +22987,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 45 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-53381",
@@ -21576,10 +23431,10 @@
       "facebook"
     ],
     "categories": [
-      "all",
       "nobake",
-      "three-ing",
-      "under15"
+      "all",
+      "under15",
+      "three-ing"
     ],
     "soundName": "frosty scoop crunch",
     "badgeChip": "Jamaican Hit",
@@ -21900,7 +23755,9 @@
       "pinterest"
     ],
     "categories": [
+      "healthy",
       "all",
+      "under250",
       "three-ing"
     ],
     "soundName": "bakery cookie snap",
@@ -22000,7 +23857,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 26 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-53007",
@@ -22240,8 +24098,8 @@
       "tiktok"
     ],
     "categories": [
-      "all",
       "nobake",
+      "all",
       "under15"
     ],
     "soundName": "fudge crackle asmr",
@@ -22654,7 +24512,9 @@
       "pinterest"
     ],
     "categories": [
-      "all"
+      "healthy",
+      "all",
+      "under250"
     ],
     "soundName": "viral street sweet",
     "badgeChip": "British Hit",
@@ -22812,7 +24672,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 45 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-53351",
@@ -22841,8 +24702,8 @@
       "pinterest"
     ],
     "categories": [
-      "all",
-      "nobake"
+      "nobake",
+      "all"
     ],
     "soundName": "viral street sweet",
     "badgeChip": "Jamaican Hit",
@@ -23038,7 +24899,9 @@
       "facebook"
     ],
     "categories": [
-      "all"
+      "healthy",
+      "all",
+      "under250"
     ],
     "soundName": "flaky crunch asmr",
     "badgeChip": "Jamaican Hit",
@@ -23288,7 +25151,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 33 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-53344",
@@ -23317,7 +25181,9 @@
       "tiktok"
     ],
     "categories": [
-      "all"
+      "healthy",
+      "all",
+      "under250"
     ],
     "soundName": "velvet spoon wobble",
     "badgeChip": "Jamaican Hit",
@@ -23554,7 +25420,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 45 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-52859",
@@ -24257,7 +26124,9 @@
       "facebook"
     ],
     "categories": [
-      "all"
+      "healthy",
+      "all",
+      "under250"
     ],
     "soundName": "bakery cookie snap",
     "badgeChip": "Global Hit",
@@ -24435,7 +26304,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 33 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-53128",
@@ -25119,8 +26989,10 @@
       "pinterest"
     ],
     "categories": [
+      "nobake",
+      "healthy",
       "all",
-      "nobake"
+      "under250"
     ],
     "soundName": "velvet spoon wobble",
     "badgeChip": "Global Hit",
@@ -25315,7 +27187,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 15 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-53519",
@@ -25874,7 +27747,9 @@
       "pinterest"
     ],
     "categories": [
-      "all"
+      "healthy",
+      "all",
+      "under250"
     ],
     "soundName": "bakery cookie snap",
     "badgeChip": "Saudi Arabian Hit",
@@ -26020,7 +27895,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 33 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-53515",
@@ -26049,10 +27925,10 @@
       "pinterest"
     ],
     "categories": [
-      "all",
       "nobake",
-      "three-ing",
-      "under15"
+      "all",
+      "under15",
+      "three-ing"
     ],
     "soundName": "viral street sweet",
     "badgeChip": "Global Hit",
@@ -26615,7 +28491,9 @@
       "facebook"
     ],
     "categories": [
-      "all"
+      "healthy",
+      "all",
+      "under250"
     ],
     "soundName": "flaky crunch asmr",
     "badgeChip": "Polish Hit",
@@ -26783,7 +28661,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 33 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-52924",
@@ -26812,8 +28691,8 @@
       "pinterest"
     ],
     "categories": [
-      "all",
-      "nobake"
+      "nobake",
+      "all"
     ],
     "soundName": "bakery cookie snap",
     "badgeChip": "Canadian Hit",
@@ -27281,8 +29160,8 @@
       "facebook"
     ],
     "categories": [
-      "all",
-      "nobake"
+      "nobake",
+      "all"
     ],
     "soundName": "frosty scoop crunch",
     "badgeChip": "Jamaican Hit",
@@ -27674,8 +29553,8 @@
       "facebook"
     ],
     "categories": [
-      "all",
-      "nobake"
+      "nobake",
+      "all"
     ],
     "soundName": "flaky crunch asmr",
     "badgeChip": "Global Hit",
@@ -27881,7 +29760,9 @@
       "pinterest"
     ],
     "categories": [
-      "all"
+      "healthy",
+      "all",
+      "under250"
     ],
     "soundName": "viral street sweet",
     "badgeChip": "Global Hit",
@@ -28059,7 +29940,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 45 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-52854",
@@ -28463,8 +30345,8 @@
       "tiktok"
     ],
     "categories": [
-      "all",
       "nobake",
+      "all",
       "under15"
     ],
     "soundName": "velvet spoon wobble",
@@ -28639,7 +30521,9 @@
       "facebook"
     ],
     "categories": [
-      "all"
+      "healthy",
+      "all",
+      "under250"
     ],
     "soundName": "viral street sweet",
     "badgeChip": "United States Hit",
@@ -28837,7 +30721,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 45 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-52861",
@@ -28866,8 +30751,8 @@
       "pinterest"
     ],
     "categories": [
-      "all",
-      "nobake"
+      "nobake",
+      "all"
     ],
     "soundName": "creamy slice jiggle",
     "badgeChip": "United States Hit",
@@ -29641,7 +31526,9 @@
       "facebook"
     ],
     "categories": [
-      "all"
+      "healthy",
+      "all",
+      "under250"
     ],
     "soundName": "frosting swirl aesthetic",
     "badgeChip": "Polish Hit",
@@ -29853,7 +31740,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 45 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-53224",
@@ -30645,8 +32533,8 @@
       "tiktok"
     ],
     "categories": [
-      "all",
-      "nobake"
+      "nobake",
+      "all"
     ],
     "soundName": "flaky crunch asmr",
     "badgeChip": "Polish Hit",
@@ -30823,7 +32711,9 @@
       "facebook"
     ],
     "categories": [
+      "healthy",
       "all",
+      "under250",
       "airfryer"
     ],
     "soundName": "golden crust cut",
@@ -31033,7 +32923,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 45 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-53323",
@@ -32001,8 +33892,8 @@
       "facebook"
     ],
     "categories": [
-      "all",
       "nobake",
+      "all",
       "under15"
     ],
     "soundName": "velvet spoon wobble",
@@ -32151,7 +34042,9 @@
       "pinterest"
     ],
     "categories": [
-      "all"
+      "healthy",
+      "all",
+      "under250"
     ],
     "soundName": "frosting swirl aesthetic",
     "badgeChip": "British Hit",
@@ -32310,7 +34203,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 45 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-52786",
@@ -32339,8 +34233,8 @@
       "pinterest"
     ],
     "categories": [
-      "all",
       "nobake",
+      "all",
       "under15"
     ],
     "soundName": "fudge crackle asmr",
@@ -32666,8 +34560,8 @@
       "tiktok"
     ],
     "categories": [
-      "all",
-      "nobake"
+      "nobake",
+      "all"
     ],
     "soundName": "frosting swirl aesthetic",
     "badgeChip": "United States Hit",
@@ -33160,8 +35054,8 @@
       "pinterest"
     ],
     "categories": [
-      "all",
-      "nobake"
+      "nobake",
+      "all"
     ],
     "soundName": "viral street sweet",
     "badgeChip": "Malaysian Hit",
@@ -33797,9 +35691,10 @@
       "tiktok"
     ],
     "categories": [
-      "all",
       "nobake",
-      "vegan-gf"
+      "vegan-gf",
+      "all",
+      "healthy"
     ],
     "soundName": "viral street sweet",
     "badgeChip": "Spanish Hit",
@@ -33946,7 +35841,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 15 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-52886",
@@ -33975,8 +35871,10 @@
       "facebook"
     ],
     "categories": [
+      "nobake",
+      "healthy",
       "all",
-      "nobake"
+      "under250"
     ],
     "soundName": "viral street sweet",
     "badgeChip": "British Hit",
@@ -34161,7 +36059,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 15 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-52883",
@@ -34190,7 +36089,9 @@
       "pinterest"
     ],
     "categories": [
-      "all"
+      "healthy",
+      "all",
+      "under250"
     ],
     "soundName": "velvet spoon wobble",
     "badgeChip": "British Hit",
@@ -34418,7 +36319,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 45 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-52793",
@@ -34723,8 +36625,8 @@
       "facebook"
     ],
     "categories": [
-      "all",
       "nobake",
+      "all",
       "under15"
     ],
     "soundName": "viral street sweet",
@@ -35396,7 +37298,9 @@
       "pinterest"
     ],
     "categories": [
-      "all"
+      "healthy",
+      "all",
+      "under250"
     ],
     "soundName": "golden crust cut",
     "badgeChip": "Canadian Hit",
@@ -35545,7 +37449,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 45 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-53130",
@@ -35574,7 +37479,9 @@
       "pinterest"
     ],
     "categories": [
-      "all"
+      "healthy",
+      "all",
+      "under250"
     ],
     "soundName": "frosting swirl aesthetic",
     "badgeChip": "Norway Hit",
@@ -35763,7 +37670,8 @@
         "quote": "Followed the scaled metric steps—came out flawless in 45 mins!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "mdb-53187",
@@ -35792,8 +37700,8 @@
       "facebook"
     ],
     "categories": [
-      "all",
-      "nobake"
+      "nobake",
+      "all"
     ],
     "soundName": "viral street sweet",
     "badgeChip": "Slovakia Hit",
@@ -35977,8 +37885,8 @@
       "tiktok"
     ],
     "categories": [
-      "all",
       "nobake",
+      "all",
       "under15"
     ],
     "soundName": "velvet spoon wobble",
@@ -36151,8 +38059,8 @@
       "facebook"
     ],
     "categories": [
-      "all",
-      "nobake"
+      "nobake",
+      "all"
     ],
     "soundName": "viral street sweet",
     "badgeChip": "Norway Hit",
@@ -36780,8 +38688,8 @@
       "facebook"
     ],
     "categories": [
-      "all",
-      "nobake"
+      "nobake",
+      "all"
     ],
     "soundName": "viral street sweet",
     "badgeChip": "Canadian Hit",
@@ -37753,10 +39661,12 @@
       "facebook"
     ],
     "categories": [
-      "all",
-      "nobake",
+      "under250",
       "under15",
-      "three-ing"
+      "three-ing",
+      "all",
+      "healthy",
+      "nobake"
     ],
     "soundName": "frosty scoop crunch",
     "badgeChip": "American Hit",
@@ -37844,7 +39754,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-3",
@@ -37873,8 +39784,8 @@
       "youtube"
     ],
     "categories": [
-      "all",
       "nobake",
+      "all",
       "under15",
       "three-ing"
     ],
@@ -38583,10 +40494,12 @@
       "youtube"
     ],
     "categories": [
-      "all",
-      "nobake",
+      "under250",
       "under15",
-      "three-ing"
+      "three-ing",
+      "all",
+      "healthy",
+      "nobake"
     ],
     "soundName": "frosty scoop crunch",
     "badgeChip": "American Hit",
@@ -38674,7 +40587,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-9",
@@ -38703,10 +40617,12 @@
       "instagram"
     ],
     "categories": [
-      "all",
-      "nobake",
+      "under250",
       "under15",
-      "three-ing"
+      "three-ing",
+      "all",
+      "healthy",
+      "nobake"
     ],
     "soundName": "frosty scoop crunch",
     "badgeChip": "American & European Hit",
@@ -38794,7 +40710,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-10",
@@ -39121,10 +41038,12 @@
       "facebook"
     ],
     "categories": [
-      "all",
-      "nobake",
+      "under250",
       "under15",
-      "three-ing"
+      "three-ing",
+      "all",
+      "healthy",
+      "nobake"
     ],
     "soundName": "frosty scoop crunch",
     "badgeChip": "American & European Hit",
@@ -39212,7 +41131,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-13",
@@ -39536,8 +41456,8 @@
       "tiktok"
     ],
     "categories": [
-      "all",
       "nobake",
+      "all",
       "under15",
       "three-ing"
     ],
@@ -39668,8 +41588,8 @@
       "pinterest"
     ],
     "categories": [
-      "all",
       "nobake",
+      "all",
       "under15",
       "three-ing"
     ],
@@ -40509,7 +42429,9 @@
       "facebook"
     ],
     "categories": [
+      "healthy",
       "all",
+      "under250",
       "three-ing"
     ],
     "soundName": "bakery cookie snap",
@@ -40610,7 +42532,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-23",
@@ -40785,10 +42708,12 @@
       "instagram"
     ],
     "categories": [
-      "all",
-      "nobake",
+      "under250",
       "under15",
-      "three-ing"
+      "three-ing",
+      "all",
+      "healthy",
+      "nobake"
     ],
     "soundName": "bakery cookie snap",
     "badgeChip": "American Hit",
@@ -40878,7 +42803,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-25",
@@ -40907,8 +42833,8 @@
       "tiktok"
     ],
     "categories": [
-      "all",
       "nobake",
+      "all",
       "under15",
       "three-ing"
     ],
@@ -41188,7 +43114,9 @@
       "facebook"
     ],
     "categories": [
+      "healthy",
       "all",
+      "under250",
       "three-ing"
     ],
     "soundName": "bakery cookie snap",
@@ -41289,7 +43217,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-28",
@@ -41616,8 +43545,8 @@
       "tiktok"
     ],
     "categories": [
-      "all",
       "nobake",
+      "all",
       "under15",
       "three-ing"
     ],
@@ -42332,11 +44261,13 @@
       "tiktok"
     ],
     "categories": [
-      "all",
-      "nobake",
       "under15",
       "three-ing",
-      "vegan-gf"
+      "under250",
+      "vegan-gf",
+      "all",
+      "healthy",
+      "nobake"
     ],
     "soundName": "frosty scoop crunch",
     "badgeChip": "American Hit",
@@ -42424,7 +44355,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-36",
@@ -42600,7 +44532,9 @@
       "facebook"
     ],
     "categories": [
+      "healthy",
       "all",
+      "under250",
       "three-ing"
     ],
     "soundName": "bakery cookie snap",
@@ -42701,7 +44635,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-38",
@@ -43192,7 +45127,9 @@
       "pinterest"
     ],
     "categories": [
+      "healthy",
       "all",
+      "under250",
       "three-ing"
     ],
     "soundName": "bakery cookie snap",
@@ -43293,7 +45230,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-42",
@@ -43761,10 +45699,12 @@
       "tiktok"
     ],
     "categories": [
-      "all",
-      "nobake",
+      "under250",
       "under15",
-      "three-ing"
+      "three-ing",
+      "all",
+      "healthy",
+      "nobake"
     ],
     "soundName": "frosty scoop crunch",
     "badgeChip": "American & European Hit",
@@ -43852,7 +45792,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-46",
@@ -43881,10 +45822,12 @@
       "pinterest"
     ],
     "categories": [
-      "all",
-      "nobake",
+      "under250",
       "under15",
-      "three-ing"
+      "three-ing",
+      "all",
+      "healthy",
+      "nobake"
     ],
     "soundName": "frosty scoop crunch",
     "badgeChip": "Italian Hit",
@@ -43972,7 +45915,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-47",
@@ -44001,7 +45945,9 @@
       "facebook"
     ],
     "categories": [
+      "healthy",
       "all",
+      "under250",
       "three-ing"
     ],
     "soundName": "bakery cookie snap",
@@ -44102,7 +46048,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-48",
@@ -44131,10 +46078,12 @@
       "youtube"
     ],
     "categories": [
-      "all",
-      "nobake",
+      "under250",
       "under15",
-      "three-ing"
+      "three-ing",
+      "all",
+      "healthy",
+      "nobake"
     ],
     "soundName": "frosty scoop crunch",
     "badgeChip": "American & European Hit",
@@ -44222,7 +46171,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-49",
@@ -44400,10 +46350,12 @@
       "tiktok"
     ],
     "categories": [
-      "all",
-      "nobake",
+      "under250",
       "under15",
-      "three-ing"
+      "three-ing",
+      "all",
+      "healthy",
+      "nobake"
     ],
     "soundName": "frosty scoop crunch",
     "badgeChip": "American & European Hit",
@@ -44491,7 +46443,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-51",
@@ -44964,7 +46917,9 @@
       "instagram"
     ],
     "categories": [
+      "healthy",
       "all",
+      "under250",
       "three-ing"
     ],
     "soundName": "bakery cookie snap",
@@ -45065,7 +47020,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-55",
@@ -45094,10 +47050,12 @@
       "tiktok"
     ],
     "categories": [
-      "all",
-      "nobake",
+      "under250",
       "under15",
-      "three-ing"
+      "three-ing",
+      "all",
+      "healthy",
+      "nobake"
     ],
     "soundName": "frosty scoop crunch",
     "badgeChip": "American & European Hit",
@@ -45185,7 +47143,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-56",
@@ -45214,7 +47173,9 @@
       "pinterest"
     ],
     "categories": [
+      "healthy",
       "all",
+      "under250",
       "three-ing"
     ],
     "soundName": "bakery cookie snap",
@@ -45315,7 +47276,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-57",
@@ -45637,7 +47599,9 @@
       "instagram"
     ],
     "categories": [
+      "healthy",
       "all",
+      "under250",
       "three-ing"
     ],
     "soundName": "bakery cookie snap",
@@ -45738,7 +47702,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-60",
@@ -45767,10 +47732,12 @@
       "tiktok"
     ],
     "categories": [
-      "all",
-      "nobake",
+      "under250",
       "under15",
-      "three-ing"
+      "three-ing",
+      "all",
+      "healthy",
+      "nobake"
     ],
     "soundName": "frosty scoop crunch",
     "badgeChip": "American & European Hit",
@@ -45858,7 +47825,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-61",
@@ -46033,7 +48001,9 @@
       "facebook"
     ],
     "categories": [
+      "healthy",
       "all",
+      "under250",
       "three-ing"
     ],
     "soundName": "bakery cookie snap",
@@ -46134,7 +48104,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-63",
@@ -46309,10 +48280,12 @@
       "instagram"
     ],
     "categories": [
-      "all",
-      "nobake",
+      "under250",
       "under15",
-      "three-ing"
+      "three-ing",
+      "all",
+      "healthy",
+      "nobake"
     ],
     "soundName": "frosty scoop crunch",
     "badgeChip": "American & European Hit",
@@ -46400,7 +48373,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-65",
@@ -48036,10 +50010,12 @@
       "pinterest"
     ],
     "categories": [
-      "all",
-      "nobake",
+      "under250",
       "under15",
-      "three-ing"
+      "three-ing",
+      "all",
+      "healthy",
+      "nobake"
     ],
     "soundName": "frosty scoop crunch",
     "badgeChip": "French Hit",
@@ -48127,7 +50103,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-77",
@@ -48740,7 +50717,9 @@
       "pinterest"
     ],
     "categories": [
+      "healthy",
       "all",
+      "under250",
       "three-ing"
     ],
     "soundName": "bakery cookie snap",
@@ -48841,7 +50820,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-82",
@@ -49016,8 +50996,8 @@
       "youtube"
     ],
     "categories": [
-      "all",
       "nobake",
+      "all",
       "under15",
       "three-ing"
     ],
@@ -49440,7 +51420,9 @@
       "pinterest"
     ],
     "categories": [
+      "healthy",
       "all",
+      "under250",
       "three-ing"
     ],
     "soundName": "bakery cookie snap",
@@ -49541,7 +51523,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-87",
@@ -49716,8 +51699,8 @@
       "youtube"
     ],
     "categories": [
-      "all",
       "nobake",
+      "all",
       "under15",
       "three-ing"
     ],
@@ -50140,10 +52123,12 @@
       "pinterest"
     ],
     "categories": [
-      "all",
-      "nobake",
+      "under250",
       "under15",
-      "three-ing"
+      "three-ing",
+      "all",
+      "healthy",
+      "nobake"
     ],
     "soundName": "frosty scoop crunch",
     "badgeChip": "American & European Hit",
@@ -50231,7 +52216,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-92",
@@ -50994,7 +52980,9 @@
       "facebook"
     ],
     "categories": [
+      "healthy",
       "all",
+      "under250",
       "three-ing"
     ],
     "soundName": "bakery cookie snap",
@@ -51095,7 +53083,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-98",
@@ -51124,7 +53113,9 @@
       "youtube"
     ],
     "categories": [
+      "healthy",
       "all",
+      "under250",
       "three-ing"
     ],
     "soundName": "bakery cookie snap",
@@ -51225,7 +53216,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-99",
@@ -51254,8 +53246,8 @@
       "instagram"
     ],
     "categories": [
-      "all",
       "nobake",
+      "all",
       "under15",
       "three-ing"
     ],
@@ -51678,8 +53670,8 @@
       "facebook"
     ],
     "categories": [
-      "all",
       "nobake",
+      "all",
       "under15",
       "three-ing"
     ],
@@ -52251,10 +54243,12 @@
       "pinterest"
     ],
     "categories": [
-      "all",
-      "nobake",
+      "under250",
       "under15",
-      "three-ing"
+      "three-ing",
+      "all",
+      "healthy",
+      "nobake"
     ],
     "soundName": "frosty scoop crunch",
     "badgeChip": "Italian Hit",
@@ -52342,7 +54336,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-107",
@@ -53101,10 +55096,12 @@
       "facebook"
     ],
     "categories": [
-      "all",
-      "nobake",
+      "under250",
       "under15",
-      "three-ing"
+      "three-ing",
+      "all",
+      "healthy",
+      "nobake"
     ],
     "soundName": "frosty scoop crunch",
     "badgeChip": "Italian Hit",
@@ -53192,7 +55189,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-113",
@@ -53367,8 +55365,8 @@
       "instagram"
     ],
     "categories": [
-      "all",
       "nobake",
+      "all",
       "under15",
       "three-ing"
     ],
@@ -53645,8 +55643,8 @@
       "pinterest"
     ],
     "categories": [
-      "all",
       "nobake",
+      "all",
       "under15",
       "three-ing"
     ],
@@ -53923,7 +55921,9 @@
       "youtube"
     ],
     "categories": [
+      "healthy",
       "all",
+      "under250",
       "three-ing"
     ],
     "soundName": "bakery cookie snap",
@@ -54024,7 +56024,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-119",
@@ -54642,8 +56643,8 @@
       "youtube"
     ],
     "categories": [
-      "all",
       "nobake",
+      "all",
       "under15",
       "three-ing"
     ],
@@ -54922,7 +56923,9 @@
       "tiktok"
     ],
     "categories": [
+      "healthy",
       "all",
+      "under250",
       "three-ing"
     ],
     "soundName": "bakery cookie snap",
@@ -55023,7 +57026,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-126",
@@ -55783,7 +57787,9 @@
       "pinterest"
     ],
     "categories": [
+      "healthy",
       "all",
+      "under250",
       "three-ing"
     ],
     "soundName": "bakery cookie snap",
@@ -55884,7 +57890,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-132",
@@ -56643,7 +58650,9 @@
       "facebook"
     ],
     "categories": [
+      "healthy",
       "all",
+      "under250",
       "three-ing"
     ],
     "soundName": "bakery cookie snap",
@@ -56744,7 +58753,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-138",
@@ -57360,7 +59370,9 @@
       "facebook"
     ],
     "categories": [
+      "healthy",
       "all",
+      "under250",
       "three-ing"
     ],
     "soundName": "bakery cookie snap",
@@ -57461,7 +59473,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-143",
@@ -58074,10 +60087,12 @@
       "facebook"
     ],
     "categories": [
-      "all",
-      "nobake",
+      "under250",
       "under15",
-      "three-ing"
+      "three-ing",
+      "all",
+      "healthy",
+      "nobake"
     ],
     "soundName": "frosty scoop crunch",
     "badgeChip": "German Hit",
@@ -58165,7 +60180,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-148",
@@ -58489,7 +60505,9 @@
       "tiktok"
     ],
     "categories": [
+      "healthy",
       "all",
+      "under250",
       "three-ing"
     ],
     "soundName": "bakery cookie snap",
@@ -58590,7 +60608,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-151",
@@ -59203,8 +61222,8 @@
       "tiktok"
     ],
     "categories": [
-      "all",
       "nobake",
+      "all",
       "under15",
       "three-ing"
     ],
@@ -59627,10 +61646,12 @@
       "youtube"
     ],
     "categories": [
-      "all",
-      "nobake",
+      "under250",
       "under15",
-      "three-ing"
+      "three-ing",
+      "all",
+      "healthy",
+      "nobake"
     ],
     "soundName": "frosty scoop crunch",
     "badgeChip": "Dutch & Belgian Hit",
@@ -59718,7 +61739,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-159",
@@ -59747,10 +61769,12 @@
       "instagram"
     ],
     "categories": [
-      "all",
-      "nobake",
+      "under250",
       "under15",
-      "three-ing"
+      "three-ing",
+      "all",
+      "healthy",
+      "nobake"
     ],
     "soundName": "frosty scoop crunch",
     "badgeChip": "French Hit",
@@ -59838,7 +61862,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-160",
@@ -61338,8 +63363,8 @@
       "tiktok"
     ],
     "categories": [
-      "all",
       "nobake",
+      "all",
       "under15",
       "three-ing"
     ],
@@ -61470,7 +63495,9 @@
       "pinterest"
     ],
     "categories": [
+      "healthy",
       "all",
+      "under250",
       "three-ing"
     ],
     "soundName": "bakery cookie snap",
@@ -61571,7 +63598,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-172",
@@ -61892,7 +63920,9 @@
       "instagram"
     ],
     "categories": [
+      "healthy",
       "all",
+      "under250",
       "three-ing"
     ],
     "soundName": "bakery cookie snap",
@@ -61993,7 +64023,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-175",
@@ -62022,7 +64053,9 @@
       "tiktok"
     ],
     "categories": [
+      "healthy",
       "all",
+      "under250",
       "three-ing"
     ],
     "soundName": "bakery cookie snap",
@@ -62123,7 +64156,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-176",
@@ -62590,10 +64624,12 @@
       "instagram"
     ],
     "categories": [
-      "all",
-      "nobake",
+      "under250",
       "under15",
-      "three-ing"
+      "three-ing",
+      "all",
+      "healthy",
+      "nobake"
     ],
     "soundName": "frosty scoop crunch",
     "badgeChip": "Spanish Hit",
@@ -62681,7 +64717,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-180",
@@ -63443,10 +65480,12 @@
       "tiktok"
     ],
     "categories": [
-      "all",
-      "nobake",
+      "under250",
       "under15",
-      "three-ing"
+      "three-ing",
+      "all",
+      "healthy",
+      "nobake"
     ],
     "soundName": "frosty scoop crunch",
     "badgeChip": "American & European Hit",
@@ -63534,7 +65573,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-186",
@@ -63563,8 +65603,8 @@
       "pinterest"
     ],
     "categories": [
-      "all",
       "nobake",
+      "all",
       "under15",
       "three-ing"
     ],
@@ -63844,8 +65884,8 @@
       "youtube"
     ],
     "categories": [
-      "all",
       "nobake",
+      "all",
       "under15",
       "three-ing"
     ],
@@ -63976,10 +66016,12 @@
       "instagram"
     ],
     "categories": [
-      "all",
-      "nobake",
+      "under250",
       "under15",
-      "three-ing"
+      "three-ing",
+      "all",
+      "healthy",
+      "nobake"
     ],
     "soundName": "frosty scoop crunch",
     "badgeChip": "French Hit",
@@ -64067,7 +66109,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-190",
@@ -64096,8 +66139,8 @@
       "tiktok"
     ],
     "categories": [
-      "all",
       "nobake",
+      "all",
       "under15",
       "three-ing"
     ],
@@ -64948,8 +66991,8 @@
       "pinterest"
     ],
     "categories": [
-      "all",
       "nobake",
+      "all",
       "under15",
       "three-ing"
     ],
@@ -65360,7 +67403,9 @@
       "instagram"
     ],
     "categories": [
+      "healthy",
       "all",
+      "under250",
       "three-ing"
     ],
     "soundName": "bakery cookie snap",
@@ -65461,7 +67506,8 @@
         "quote": "Zero-fluff steps + Cook Mode timer nailed it on the first batch!",
         "rating": 5
       }
-    ]
+    ],
+    "isHealthy": true
   },
   {
     "id": "useu-200",

@@ -13,6 +13,7 @@ export const DESSERT_CATEGORIES: Array<{
   emoji: string;
 }> = [
   { id: 'all', label: 'All Desserts', emoji: '✨' },
+  { id: 'healthy-light', label: 'Healthy & Zero-Sugar', emoji: '🌿' },
   { id: 'chocolate-brownies', label: 'Chocolate & Brownies', emoji: '🍫' },
   { id: 'cookies-bars', label: 'Cookies & Bars', emoji: '🍪' },
   { id: 'cakes-cupcakes', label: 'Cakes & Mug Cakes', emoji: '🎂' },

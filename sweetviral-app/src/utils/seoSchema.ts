@@ -49,8 +49,8 @@ export function updateRecipeMetadata(
   if (typeof document === 'undefined') return;
 
   if (!recipe) {
-    const homeTitle = `Crave — ${RECIPES.length}+ Viral Dessert Recipes (Zero Fluff, Instant Cook Mode)`;
-    const homeDesc = `Explore ${RECIPES.length}+ trending American, European & global viral dessert recipes from TikTok, Instagram Reels, Pinterest & YouTube. Zero sign-up, instant US/Metric scaling & Cook Mode.`;
+    const homeTitle = `Crave — ${RECIPES.length}+ Healthy & Viral Dessert Recipes (Zero Refined Sugar Swaps)`;
+    const homeDesc = `Explore ${RECIPES.length}+ healthy & viral dessert recipes with zero-refined-sugar swaps, under-250-cal treats, high-protein bakes & hands-free Cook Mode.`;
     const homeImg = `${SITE_ORIGIN}/ai-images/dubai-brownie-hero.jpg`;
 
     document.title = homeTitle;

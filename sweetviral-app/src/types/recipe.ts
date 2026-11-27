@@ -2,6 +2,10 @@ export type SocialPlatform = 'tiktok' | 'instagram' | 'pinterest' | 'youtube' | 
 
 export type CategoryTag =
   | 'all'
+  | 'healthy'
+  | 'zero-sugar'
+  | 'high-protein'
+  | 'under250'
   | 'under15'
   | 'nobake'
   | 'three-ing'
@@ -10,6 +14,7 @@ export type CategoryTag =
 
 export type DessertCategory =
   | 'all'
+  | 'healthy-light'
   | 'chocolate-brownies'
   | 'cookies-bars'
   | 'cakes-cupcakes'
@@ -81,6 +86,8 @@ export interface Recipe {
   baseServings: number;
   kcal: number;
   zeroMixer: boolean;
+  isHealthy?: boolean;
+  zeroRefinedSugar?: boolean;
   cuisine: string;
   dessertCategory: Exclude<DessertCategory, 'all'>;
   primaryPlatform: SocialPlatform;
