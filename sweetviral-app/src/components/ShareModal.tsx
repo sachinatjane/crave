@@ -6,6 +6,7 @@ import {
   generateShareCardDataUrl
 } from '../utils/shareEngine';
 import { triggerHaptic } from '../utils/audioHaptics';
+import { EbookPromoCard } from './EbookPromoCard';
 
 interface ShareModalProps {
   recipe: Recipe | null;
@@ -310,6 +311,8 @@ export const ShareModal: React.FC<ShareModalProps> = ({
             Copy Tags
           </span>
         </button>
+
+        <EbookPromoCard variant="compact" />
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { DESSERT_CATEGORIES, RECIPES } from '../data/recipes';
 import { CategoryTag, DessertCategory, Recipe, SocialPlatform } from '../types/recipe';
 import { getSiteRootPath } from '../utils/assetUrl';
+import { EBOOK_URL, EbookPromoCard } from './EbookPromoCard';
 import { SafeImage } from './SafeImage';
 import { triggerHaptic } from '../utils/audioHaptics';
 
@@ -326,6 +327,11 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
         </div>
       </section>
 
+      {/* Inline eBook Promo Strip */}
+      <section className="px-gutter w-full mt-space-sm">
+        <EbookPromoCard variant="inline" />
+      </section>
+
       {/* Full Dessert Category Shelf */}
       <section className="w-full mt-space-md">
         <div className="px-gutter flex items-center justify-between mb-1.5">
@@ -583,7 +589,12 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
         )}
       </section>
 
-      {/* Interactive Viral Bake Roulette (Spins across all 200 desserts!) */}
+      {/* Full eBook Showcase Banner */}
+      <section className="px-gutter w-full mt-space-md">
+        <EbookPromoCard variant="banner" />
+      </section>
+
+      {/* Interactive Viral Bake Roulette (Spins across all 400 desserts!) */}
       <section className="px-gutter w-full mt-space-md">
         <div className="relative w-full p-space-md rounded-lg bg-gradient-to-br from-surface-container-high to-surface-container shadow-[0_8px_24px_rgba(30,19,14,0.06)] overflow-hidden">
           <div className="absolute -right-8 -bottom-8 w-36 h-36 rounded-full bg-primary/10 blur-2xl pointer-events-none" />
@@ -710,6 +721,14 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
             ))}
           </div>
           <div className="flex flex-wrap gap-x-3 gap-y-1 pt-1 border-t border-outline-variant/40">
+            <a
+              href={EBOOK_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-body-sm text-body-sm text-pistachio-dark font-extrabold underline"
+            >
+              📖 Also See My eBook: Guilt-Free Cravings (120 Zero-Sugar Recipes)
+            </a>
             {RECIPES.slice(0, 8).map((r) => (
               <a
                 key={r.id}

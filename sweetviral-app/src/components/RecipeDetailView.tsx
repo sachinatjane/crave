@@ -9,6 +9,7 @@ import {
 } from '../utils/scaler';
 import { buildDeepRecipeUrl } from '../utils/shareEngine';
 import { triggerHaptic } from '../utils/audioHaptics';
+import { EbookPromoCard } from './EbookPromoCard';
 import { SafeImage } from './SafeImage';
 
 interface RecipeDetailViewProps {
@@ -303,6 +304,12 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
             </span>
           </div>
         </div>
+
+        {/* Inline Healthy eBook Cross-Link */}
+        <EbookPromoCard
+          variant="inline"
+          contextLabel="Want Zero Refined Sugar & <250 Cal Swaps?"
+        />
 
         {/* Servings Stepper + Unit System */}
         <div className="p-space-md bg-surface-container-lowest rounded-lg shadow-sm flex flex-col gap-3">
@@ -605,6 +612,11 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
             <span>{isMade ? 'Share My Remake Card Again!' : 'I Made This! Unlock Story Card'}</span>
           </button>
         </div>
+      </div>
+
+      {/* eBook Banner inside Recipe Page */}
+      <div className="px-gutter mt-space-md">
+        <EbookPromoCard variant="banner" />
       </div>
 
       {/* Community Remakes Carousel */}

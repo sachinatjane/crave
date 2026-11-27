@@ -1,6 +1,7 @@
 import React from 'react';
 import { RECIPES } from '../data/recipes';
 import { Recipe } from '../types/recipe';
+import { EbookPromoCard } from './EbookPromoCard';
 import { SafeImage } from './SafeImage';
 
 interface SavedViewProps {
@@ -41,6 +42,8 @@ export const SavedView: React.FC<SavedViewProps> = ({
           </p>
         </div>
       </div>
+
+      <EbookPromoCard variant="compact" />
 
       {savedRecipes.length === 0 ? (
         <div className="p-8 rounded-lg bg-surface-container-lowest shadow-sm text-center flex flex-col items-center gap-3">

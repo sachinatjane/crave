@@ -1,5 +1,6 @@
 import React from 'react';
 import { InAppBrowserInfo } from '../utils/shareEngine';
+import { EBOOK_URL } from './EbookPromoCard';
 
 interface BrandHeaderProps {
   mode: 'tab' | 'stack';
@@ -92,7 +93,21 @@ export const BrandHeader: React.FC<BrandHeaderProps> = ({
         {/* Zero-Login Action Cluster */}
         <div className="flex items-center gap-1.5 shrink-0">
           {mode === 'tab' && (
-            <div className="hidden xs:inline-flex items-center gap-1 bg-surface-container-high px-2.5 py-1 rounded-full shadow-[0_2px_8px_rgba(39,24,17,0.05)]">
+            <a
+              href={EBOOK_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 bg-[#e8f8f2] text-pistachio-dark px-2.5 py-1.5 rounded-full shadow-sm active:scale-95 transition-transform"
+            >
+              <span className="material-symbols-outlined text-[15px]">menu_book</span>
+              <span className="font-label-sm text-label-sm font-extrabold uppercase tracking-wider">
+                eBook
+              </span>
+            </a>
+          )}
+
+          {mode === 'tab' && (
+            <div className="hidden sm:inline-flex items-center gap-1 bg-surface-container-high px-2.5 py-1 rounded-full shadow-[0_2px_8px_rgba(39,24,17,0.05)]">
               <span className="text-xs leading-none">🔥</span>
               <span className="font-label-sm text-label-sm text-primary font-extrabold uppercase tracking-wider">
                 3.2K Baking

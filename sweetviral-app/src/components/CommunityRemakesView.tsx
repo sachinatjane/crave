@@ -1,8 +1,9 @@
 import React, { useMemo, useState } from 'react';
 import { COMMUNITY_STITCHES, RECIPES } from '../data/recipes';
 import { Recipe } from '../types/recipe';
-import { SafeImage } from './SafeImage';
 import { triggerHaptic } from '../utils/audioHaptics';
+import { EbookPromoCard } from './EbookPromoCard';
+import { SafeImage } from './SafeImage';
 
 interface CommunityRemakesViewProps {
   likedIds: string[];
@@ -328,7 +329,16 @@ export const CommunityRemakesView: React.FC<CommunityRemakesViewProps> = ({
         })}
       </div>
 
+      {/* Inline eBook Promo */}
+      <div className="px-gutter pt-space-sm">
+        <EbookPromoCard variant="inline" />
+      </div>
+
       {/* Zero-Login Add To Home Screen / Weekly Radar Reminder */}
+      <div className="px-gutter pt-space-md">
+        <EbookPromoCard variant="banner" />
+      </div>
+
       <div className="px-gutter pt-space-lg">
         <div className="relative overflow-hidden bg-inverse-surface text-inverse-on-surface rounded-lg p-space-md flex flex-col gap-space-sm shadow-md">
           <div className="absolute -right-8 -bottom-8 w-32 h-32 rounded-full bg-primary-container/30 blur-2xl pointer-events-none" />

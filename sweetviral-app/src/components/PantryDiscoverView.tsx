@@ -1,8 +1,9 @@
 import React, { useMemo, useState } from 'react';
 import { PANTRY_INGREDIENTS, RECIPES } from '../data/recipes';
 import { Recipe, SocialPlatform } from '../types/recipe';
-import { SafeImage } from './SafeImage';
 import { triggerHaptic } from '../utils/audioHaptics';
+import { EbookPromoCard } from './EbookPromoCard';
+import { SafeImage } from './SafeImage';
 
 interface PantryDiscoverViewProps {
   onOpenRecipe: (recipe: Recipe) => void;
@@ -103,6 +104,8 @@ export const PantryDiscoverView: React.FC<PantryDiscoverViewProps> = ({
           />
         </div>
       </section>
+
+      <EbookPromoCard variant="banner" />
 
       <section className="flex flex-col gap-space-sm">
         <div className="flex items-center justify-between">
