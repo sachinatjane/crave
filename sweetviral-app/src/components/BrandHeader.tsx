@@ -85,7 +85,7 @@ export const BrandHeader: React.FC<BrandHeaderProps> = ({
               <circle cx="18" cy="20.2" r="2.2" fill="#ffb95f" />
             </svg>
             <span className="font-headline-sm text-headline-sm text-on-surface tracking-tight truncate font-extrabold">
-              {mode === 'stack' && title ? title : 'Crave'}
+              {mode === 'stack' && title ? title : 'Crave Recipes'}
             </span>
           </button>
         </div>

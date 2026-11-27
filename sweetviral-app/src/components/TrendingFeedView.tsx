@@ -791,7 +791,7 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
         <div className="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-3">
           <div className="flex items-center justify-between flex-wrap gap-2">
             <span className="font-title-md text-title-md text-on-surface font-extrabold">
-              Crave — {RECIPES.length}+ Viral Dessert Recipes
+              Crave Recipes — {RECIPES.length}+ Viral Dessert Recipes
             </span>
             <span className="font-label-sm text-label-sm text-primary uppercase">
               Zero Login • Mobile First

@@ -49,7 +49,7 @@ export function updateRecipeMetadata(
   if (typeof document === 'undefined') return;
 
   if (!recipe) {
-    const homeTitle = `Crave — ${RECIPES.length}+ Healthy & Viral Dessert Recipes (Zero Refined Sugar Swaps)`;
+    const homeTitle = `Crave Recipes — ${RECIPES.length}+ Healthy & Viral Dessert Recipes (Zero Refined Sugar Swaps)`;
     const homeDesc = `Explore ${RECIPES.length}+ healthy & viral dessert recipes with zero-refined-sugar swaps, under-250-cal treats, high-protein bakes & hands-free Cook Mode.`;
     const homeImg = `${SITE_ORIGIN}/ai-images/dubai-brownie-hero.jpg`;
 
@@ -70,7 +70,7 @@ export function updateRecipeMetadata(
       '@graph': [
         {
           '@type': 'WebSite',
-          name: 'Crave',
+          name: 'Crave Recipes',
           url: `${SITE_ORIGIN}/`,
           description: homeDesc,
           potentialAction: {
@@ -81,7 +81,7 @@ export function updateRecipeMetadata(
         },
         {
           '@type': 'ItemList',
-          name: 'Top Viral Dessert Recipes on Crave',
+          name: 'Top Viral Dessert Recipes on Crave Recipes',
           numberOfItems: 12,
           itemListElement: RECIPES.slice(0, 12).map((r, i) => ({
             '@type': 'ListItem',
@@ -98,7 +98,7 @@ export function updateRecipeMetadata(
   const activeServings = servings || recipe.baseServings;
   const canonicalUrl = `${SITE_ORIGIN}/recipes/${recipe.slug}/`;
   const absImg = toAbsoluteUrl(recipe.heroImage);
-  const pageTitle = `${recipe.title} Recipe (${recipe.totalMin} Mins) — Easy ${recipe.cuisine} Dessert | Crave`;
+  const pageTitle = `${recipe.title} Recipe (${recipe.totalMin} Mins) — Easy ${recipe.cuisine} Dessert | Crave Recipes`;
   const metaDesc = `${recipe.hookLine} Ready in ${recipe.totalMin} mins (${activeServings} servings). ${recipe.rating.toFixed(1)}★ rated with US/Metric scaling & hands-free Cook Mode.`;
   const catLabel =
     DESSERT_CATEGORIES.find((c) => c.id === recipe.dessertCategory)?.label || 'Dessert';
@@ -108,7 +108,7 @@ export function updateRecipeMetadata(
   upsertMeta('name', 'description', metaDesc);
   upsertMeta('property', 'og:type', 'article');
   upsertMeta('property', 'og:url', canonicalUrl);
-  upsertMeta('property', 'og:title', `${recipe.title} — Crave`);
+  upsertMeta('property', 'og:title', `${recipe.title} — Crave Recipes`);
   upsertMeta('property', 'og:description', metaDesc);
   upsertMeta('property', 'og:image', absImg);
   upsertMeta('name', 'twitter:title', pageTitle);
@@ -140,7 +140,7 @@ export function updateRecipeMetadata(
         },
         publisher: {
           '@type': 'Organization',
-          name: 'Crave',
+          name: 'Crave Recipes',
           url: `${SITE_ORIGIN}/`
         },
         description: metaDesc,

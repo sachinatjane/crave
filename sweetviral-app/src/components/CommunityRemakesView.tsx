@@ -361,7 +361,7 @@ export const CommunityRemakesView: React.FC<CommunityRemakesViewProps> = ({
                 Zero-Signup Trend Radar
               </span>
               <h2 className="font-headline-sm text-headline-sm font-bold leading-snug">
-                Keep Crave 1 Tap Away
+                Keep Crave Recipes 1 Tap Away
               </h2>
             </div>
           </div>

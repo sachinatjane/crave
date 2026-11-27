@@ -128,7 +128,7 @@ const homeJsonLd = {
   '@graph': [
     {
       '@type': 'WebSite',
-      name: 'Crave',
+      name: 'Crave Recipes',
       url: `${SITE_ORIGIN}/`,
       description: `Explore ${ALL_RECIPES.length}+ trending American, European & global viral dessert recipes with instant scaling and Cook Mode.`,
       potentialAction: {
@@ -139,7 +139,7 @@ const homeJsonLd = {
     },
     {
       '@type': 'ItemList',
-      name: 'Top Viral Dessert Recipes on Crave',
+      name: 'Top Viral Dessert Recipes on Crave Recipes',
       numberOfItems: 12,
       itemListElement: ALL_RECIPES.slice(0, 12).map((r, i) => ({
         '@type': 'ListItem',
@@ -151,14 +151,14 @@ const homeJsonLd = {
   ]
 };
 
-const homeFallback = `<main style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><h1>Crave — ${ALL_RECIPES.length}+ Viral Dessert Recipes</h1><nav>${CATEGORIES.map(
+const homeFallback = `<main style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><h1>Crave Recipes — ${ALL_RECIPES.length}+ Viral Dessert Recipes</h1><nav>${CATEGORIES.map(
   (c) => `<a href="./category/${c.id}/">${escapeHtml(c.label)}</a>`
 ).join(' ')}</nav><ul>${ALL_RECIPES.slice(0, 40)
   .map((r) => `<li><a href="./recipes/${r.slug}/">${escapeHtml(r.title)}</a></li>`)
   .join('')}</ul></main>`;
 
 const enrichedHome = injectHeadTags(baseHtml, {
-  title: `Crave — ${ALL_RECIPES.length}+ Healthy & Viral Dessert Recipes (Zero Refined Sugar Swaps)`,
+  title: `Crave Recipes — ${ALL_RECIPES.length}+ Healthy & Viral Dessert Recipes (Zero Refined Sugar Swaps)`,
   desc: `Explore ${ALL_RECIPES.length}+ healthy & viral dessert recipes with zero-refined-sugar swaps, under-250-cal treats, US/Metric scaling & Cook Mode.`,
   canonical: `${SITE_ORIGIN}/`,
   ogType: 'website',
@@ -174,7 +174,7 @@ fs.writeFileSync(path.join(DIST, '404.html'), enrichedHome, 'utf8');
 for (const cat of CATEGORIES) {
   const catRecipes = ALL_RECIPES.filter((r) => r.dessertCategory === cat.id);
   const catUrl = `${SITE_ORIGIN}/category/${cat.id}/`;
-  const catTitle = `${cat.label} Recipes (${catRecipes.length} Viral Desserts) | Crave`;
+  const catTitle = `${cat.label} Recipes (${catRecipes.length} Viral Desserts) | Crave Recipes`;
   const catDesc = `Make ${catRecipes.length} trending ${cat.label.toLowerCase()} recipes with instant US/Metric scaling, Cook Mode timers & 1-tap story sharing. No login required.`;
   const catImg = toAbsoluteUrl(catRecipes[0]?.heroImage);
 
@@ -223,7 +223,7 @@ for (const recipe of ALL_RECIPES) {
   const absImg = toAbsoluteUrl(recipe.heroImage);
   const catLabel =
     CATEGORIES.find((c) => c.id === recipe.dessertCategory)?.label || 'Dessert';
-  const title = `${recipe.title} Recipe (${recipe.totalMin} Mins) — Easy ${recipe.cuisine} Dessert | Crave`;
+  const title = `${recipe.title} Recipe (${recipe.totalMin} Mins) — Easy ${recipe.cuisine} Dessert | Crave Recipes`;
   const desc = `${recipe.hookLine} Ready in ${recipe.totalMin} mins (${recipe.baseServings} servings). ${recipe.rating.toFixed(1)}★ rated with US/Metric scaling & hands-free Cook Mode.`;
 
   const ingredients = (recipe.ingredientGroups || []).flatMap((g) =>
@@ -247,7 +247,7 @@ for (const recipe of ALL_RECIPES) {
         name: recipe.title,
         image: [absImg, toAbsoluteUrl(recipe.pinterestImage)],
         author: { '@type': 'Person', name: recipe.creatorHandle || '@crave_kitchen' },
-        publisher: { '@type': 'Organization', name: 'Crave', url: `${SITE_ORIGIN}/` },
+        publisher: { '@type': 'Organization', name: 'Crave Recipes', url: `${SITE_ORIGIN}/` },
         description: desc,
         prepTime: `PT${recipe.prepMin}M`,
         cookTime: `PT${recipe.bakeMin}M`,
