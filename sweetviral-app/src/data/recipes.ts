@@ -29,12 +29,9 @@ const FLAGSHIP_RECIPES: Recipe[] = [
     badgeChip: 'TikTok #1 Viral',
     creatorHandle: '@sweetcraver',
     hookLine: 'Crispy toasted kataifi, emerald pistachio cream & molten dark chocolate fudge.',
-    heroImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAJRSF2e5hmQNTCvCua_1CrE49uJ-gkImRnuFE59UBp-TISob1NZIavsQyF1UgmUmwwcVM7DAtp5wlU3ehAev1Rh1QuVaaMaEwbPO1bCIzCPEyeUqLm18yhzdSJxJ7c7P0huuLyOiKuAeSgBkPX3hE0mbUXwqm1zPKF6xJ_kMQ9ZyOo7OCDFN-Nhcg15vZWGX2HhDD5AF5-5XcJEO8vcPhbutLIvVsbPzb-Dg_N0C8',
-    thumbImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuD7WyAkkAw-nBgBGDjPPFUHh-PmT2EY8ZXisDaENZfwkW4EIqmKg-57dkxIjv9EGMgMLygwQEtwxYRXYdUr2mhpVdcBb78HvGlO1acAR9Twbrfzf4hkmqiOEj2UxwjP5sjNX_42tQAHcjLezUrqhEcXM0caiPR4PhTGdJm33uCgjQZt_OBF2U5LhzvFStrEJps4bYhj3oMNcMLF04bmWwrtutCRiVuZzeUVCvwF210',
-    pinterestImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuD7WyAkkAw-nBgBGDjPPFUHh-PmT2EY8ZXisDaENZfwkW4EIqmKg-57dkxIjv9EGMgMLygwQEtwxYRXYdUr2mhpVdcBb78HvGlO1acAR9Twbrfzf4hkmqiOEj2UxwjP5sjNX_42tQAHcjLezUrqhEcXM0caiPR4PhTGdJm33uCgjQZt_OBF2U5LhzvFStrEJps4bYhj3oMNcMLF04bmWwrtutCRiVuZzeUVCvwF210',
+    heroImage: './ai-images/dubai-brownie-hero.jpg',
+    thumbImage: './ai-images/dubai-brownie-hero.jpg',
+    pinterestImage: './ai-images/dubai-brownie-hero.jpg',
     hashtags: ['#DubaiChocolate', '#DubaiBrownieRemake', '#SweetViralMadeMeDoIt', '#ViralDessert'],
     pantryCore: ['chocolate', 'pistachio', 'butter', 'eggs', 'sugar'],
     ingredientGroups: [
