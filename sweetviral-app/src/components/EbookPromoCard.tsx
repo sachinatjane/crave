@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const EBOOK_URL = 'https://craveable.click/healthy-cravings.html';
+export const EBOOK_URL = 'https://crave.thewellnessherb.com/healthy-cravings.html';
 
 interface EbookPromoCardProps {
   variant?: 'banner' | 'inline' | 'compact';
