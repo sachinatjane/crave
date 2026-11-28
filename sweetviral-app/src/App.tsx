@@ -1,3 +1,5 @@
+'use client';
+
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { BrandHeader } from './components/BrandHeader';
 import { BottomNav } from './components/BottomNav';
@@ -38,67 +40,92 @@ type ScreenState =
   | { type: 'recipe'; recipeId: string }
   | { type: 'cook'; recipeId: string; stepIndex: number };
 
-export function App() {
-  const [savedIds, setSavedIds] = useState<string[]>(() =>
-    readStorage<string[]>('crave_saved', readStorage<string[]>('sweetviral_saved', ['dubai-brownies']))
-  );
-  const [madeIds, setMadeIds] = useState<string[]>(() =>
-    readStorage<string[]>('crave_made', readStorage<string[]>('sweetviral_made', []))
-  );
-  const [likedStitches, setLikedStitches] = useState<string[]>(() =>
-    readStorage<string[]>('crave_likes', readStorage<string[]>('sweetviral_likes', ['cs1', 'cs3']))
-  );
+interface AppProps {
+  initialRecipeSlug?: string;
+  initialCategorySlug?: DessertCategory;
+}
+
+export function App({ initialRecipeSlug, initialCategorySlug }: AppProps = {}) {
+  const [savedIds, setSavedIds] = useState<string[]>(['dubai-brownies']);
+  const [madeIds, setMadeIds] = useState<string[]>([]);
+  const [likedStitches, setLikedStitches] = useState<string[]>(['cs1', 'cs3']);
   const [checkedByRecipe, setCheckedByRecipe] = useState<
     Record<string, Record<string, boolean>>
-  >(() =>
-    readStorage<Record<string, Record<string, boolean>>>(
-      'crave_checked',
-      readStorage<Record<string, Record<string, boolean>>>('sweetviral_checked', {})
-    )
-  );
-  const [unit, setUnit] = useState<UnitSystem>(() =>
-    readStorage<UnitSystem>('crave_unit', readStorage<UnitSystem>('sweetviral_unit', 'us'))
-  );
+  >({});
+  const [unit, setUnit] = useState<UnitSystem>('us');
   const [servingsByRecipe, setServingsByRecipe] = useState<Record<string, number>>({});
+  const [storageHydrated, setStorageHydrated] = useState(false);
 
   const [initialCategory, setInitialCategory] = useState<DessertCategory>(() => {
-    const m = window.location.pathname.match(/\/category\/([a-z0-9-]+)\/?$/i);
-    if (m) {
-      const foundCat = DESSERT_CATEGORIES.find((c) => c.id === m[1]);
-      if (foundCat) return foundCat.id;
+    if (initialCategorySlug) return initialCategorySlug;
+    if (typeof window !== 'undefined') {
+      const m = window.location.pathname.match(/\/category\/([a-z0-9-]+)\/?$/i);
+      if (m) {
+        const foundCat = DESSERT_CATEGORIES.find((c) => c.id === m[1]);
+        if (foundCat) return foundCat.id;
+      }
     }
     return 'all';
   });
 
-  // Hydrate initial route from /recipes/<slug>/ OR URL query params (?r=slug&s=8&u=metric&mode=cook)
+  // Hydrate initial route from Next.js props, /recipes/<slug>/, OR URL query params
   const [screen, setScreen] = useState<ScreenState>(() => {
-    const params = new URLSearchParams(window.location.search);
-    const pathMatch = window.location.pathname.match(/\/recipes\/([a-z0-9-]+)\/?$/i);
-    const slug = pathMatch?.[1] || params.get('r');
-    const mode = params.get('mode');
-    if (slug) {
-      const found = RECIPES.find((r) => r.slug === slug || r.id === slug);
-      if (found) {
-        if (mode === 'cook') {
-          return { type: 'cook', recipeId: found.id, stepIndex: 0 };
+    const slugFromProp = initialRecipeSlug;
+    if (slugFromProp) {
+      const found = RECIPES.find((r) => r.slug === slugFromProp || r.id === slugFromProp);
+      if (found) return { type: 'recipe', recipeId: found.id };
+    }
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const pathMatch = window.location.pathname.match(/\/recipes\/([a-z0-9-]+)\/?$/i);
+      const slug = pathMatch?.[1] || params.get('r');
+      const mode = params.get('mode');
+      if (slug) {
+        const found = RECIPES.find((r) => r.slug === slug || r.id === slug);
+        if (found) {
+          if (mode === 'cook') {
+            return { type: 'cook', recipeId: found.id, stepIndex: 0 };
+          }
+          return { type: 'recipe', recipeId: found.id };
         }
-        return { type: 'recipe', recipeId: found.id };
       }
     }
     return { type: 'tab', tab: 'trending' };
   });
 
-  // Hydrate deep-linked servings & unit from URL
+  // Hydrate localStorage & deep-linked servings/unit on client mount (prevents SSR mismatch)
   useEffect(() => {
+    setSavedIds(
+      readStorage<string[]>('crave_saved', readStorage<string[]>('sweetviral_saved', ['dubai-brownies']))
+    );
+    setMadeIds(readStorage<string[]>('crave_made', readStorage<string[]>('sweetviral_made', [])));
+    setLikedStitches(
+      readStorage<string[]>('crave_likes', readStorage<string[]>('sweetviral_likes', ['cs1', 'cs3']))
+    );
+    setCheckedByRecipe(
+      readStorage<Record<string, Record<string, boolean>>>(
+        'crave_checked',
+        readStorage<Record<string, Record<string, boolean>>>('sweetviral_checked', {})
+      )
+    );
+    setUnit(readStorage<UnitSystem>('crave_unit', readStorage<UnitSystem>('sweetviral_unit', 'us')));
+    setStorageHydrated(true);
+
     const params = new URLSearchParams(window.location.search);
     const pathMatch = window.location.pathname.match(/\/recipes\/([a-z0-9-]+)\/?$/i);
-    const slug = pathMatch?.[1] || params.get('r');
+    const slug = initialRecipeSlug || pathMatch?.[1] || params.get('r');
     const sParam = Number(params.get('s'));
     const uParam = params.get('u');
+    const mode = params.get('mode');
     if (slug) {
       const found = RECIPES.find((r) => r.slug === slug || r.id === slug);
-      if (found && sParam >= 1 && sParam <= 24) {
-        setServingsByRecipe((prev) => ({ ...prev, [found.id]: sParam }));
+      if (found) {
+        if (mode === 'cook') {
+          setScreen({ type: 'cook', recipeId: found.id, stepIndex: 0 });
+        }
+        if (sParam >= 1 && sParam <= 24) {
+          setServingsByRecipe((prev) => ({ ...prev, [found.id]: sParam }));
+        }
       }
     }
     if (uParam === 'metric' || uParam === 'us') {
@@ -107,7 +134,7 @@ export function App() {
     if (params.get('q')) {
       setSearchOpen(true);
     }
-  }, []);
+  }, [initialRecipeSlug]);
 
   const [searchOpen, setSearchOpen] = useState(false);
   const [shareState, setShareState] = useState<{
@@ -130,12 +157,22 @@ export function App() {
     return () => window.clearTimeout(id);
   }, [toast]);
 
-  // Persist zero-login local preferences
-  useEffect(() => writeStorage('crave_saved', savedIds), [savedIds]);
-  useEffect(() => writeStorage('crave_made', madeIds), [madeIds]);
-  useEffect(() => writeStorage('crave_likes', likedStitches), [likedStitches]);
-  useEffect(() => writeStorage('crave_checked', checkedByRecipe), [checkedByRecipe]);
-  useEffect(() => writeStorage('crave_unit', unit), [unit]);
+  // Persist zero-login local preferences after initial hydration
+  useEffect(() => {
+    if (storageHydrated) writeStorage('crave_saved', savedIds);
+  }, [savedIds, storageHydrated]);
+  useEffect(() => {
+    if (storageHydrated) writeStorage('crave_made', madeIds);
+  }, [madeIds, storageHydrated]);
+  useEffect(() => {
+    if (storageHydrated) writeStorage('crave_likes', likedStitches);
+  }, [likedStitches, storageHydrated]);
+  useEffect(() => {
+    if (storageHydrated) writeStorage('crave_checked', checkedByRecipe);
+  }, [checkedByRecipe, storageHydrated]);
+  useEffect(() => {
+    if (storageHydrated) writeStorage('crave_unit', unit);
+  }, [unit, storageHydrated]);
 
   const activeRecipe = useMemo(() => {
     if (screen.type === 'recipe' || screen.type === 'cook') {

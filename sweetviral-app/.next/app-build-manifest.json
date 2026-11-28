@@ -1,0 +1,57 @@
+{
+  "pages": {
+    "/_not-found/page": [
+      "static/chunks/webpack-dd1434069c0c44cc.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-0e5ac6cd71b0e266.js",
+      "static/chunks/main-app-e906c1c526949e05.js",
+      "static/chunks/app/_not-found/page-a10cd0dff6941682.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-dd1434069c0c44cc.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-0e5ac6cd71b0e266.js",
+      "static/chunks/main-app-e906c1c526949e05.js",
+      "static/css/7fcb454d06a517ad.css",
+      "static/chunks/app/layout-c1ec7e75f6d560e6.js"
+    ],
+    "/robots.txt/route": [
+      "static/chunks/webpack-dd1434069c0c44cc.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-0e5ac6cd71b0e266.js",
+      "static/chunks/main-app-e906c1c526949e05.js",
+      "static/chunks/app/robots.txt/route-068ba3586843ea10.js"
+    ],
+    "/sitemap.xml/route": [
+      "static/chunks/webpack-dd1434069c0c44cc.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-0e5ac6cd71b0e266.js",
+      "static/chunks/main-app-e906c1c526949e05.js",
+      "static/chunks/app/sitemap.xml/route-068ba3586843ea10.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-dd1434069c0c44cc.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-0e5ac6cd71b0e266.js",
+      "static/chunks/main-app-e906c1c526949e05.js",
+      "static/chunks/882-23bd5690b5086ff1.js",
+      "static/chunks/app/page-dfe8e71a5c9fcbde.js"
+    ],
+    "/category/[slug]/page": [
+      "static/chunks/webpack-dd1434069c0c44cc.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-0e5ac6cd71b0e266.js",
+      "static/chunks/main-app-e906c1c526949e05.js",
+      "static/chunks/882-23bd5690b5086ff1.js",
+      "static/chunks/app/category/[slug]/page-cba64a4d3ccc24f9.js"
+    ],
+    "/recipes/[slug]/page": [
+      "static/chunks/webpack-dd1434069c0c44cc.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-0e5ac6cd71b0e266.js",
+      "static/chunks/main-app-e906c1c526949e05.js",
+      "static/chunks/882-23bd5690b5086ff1.js",
+      "static/chunks/app/recipes/[slug]/page-ff1ba417b1c5ec11.js"
+    ]
+  }
+}

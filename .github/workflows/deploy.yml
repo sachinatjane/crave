@@ -34,7 +34,7 @@ jobs:
 
       - name: Build production bundle
         working-directory: sweetviral-app
-        run: npm run build && cp dist/index.html dist/404.html
+        run: npm run build
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
@@ -42,7 +42,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'sweetviral-app/dist'
+          path: 'sweetviral-app/out'
 
   deploy:
     environment:

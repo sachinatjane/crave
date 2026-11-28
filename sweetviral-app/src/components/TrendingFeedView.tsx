@@ -85,7 +85,7 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
   onOpenShare,
   onOpenRemakes
 }) => {
-  const [shuffledRecipes, setShuffledRecipes] = useState<Recipe[]>(() => shuffleRecipes(RECIPES));
+  const [shuffledRecipes, setShuffledRecipes] = useState<Recipe[]>(RECIPES);
   const [activeCategory, setActiveCategory] = useState<DessertCategory>(initialCategory);
   const [activeFilter, setActiveFilter] = useState<CategoryTag>('all');
   const [activePlatform, setActivePlatform] = useState<'all' | SocialPlatform>('all');
@@ -93,10 +93,14 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
   const [sortBy, setSortBy] = useState<SortOption>('shuffled');
   const [heroMode, setHeroMode] = useState<'healthy' | 'classic'>('healthy');
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
-  const [rouletteIndex, setRouletteIndex] = useState(() =>
-    Math.floor(Math.random() * RECIPES.length)
-  );
+  const [rouletteIndex, setRouletteIndex] = useState(0);
   const [isSpinning, setIsSpinning] = useState(false);
+
+  // Auto-shuffle homepage recipes on every client mount/refresh (SSR-hydration safe)
+  useEffect(() => {
+    setShuffledRecipes(shuffleRecipes(RECIPES));
+    setRouletteIndex(Math.floor(Math.random() * RECIPES.length));
+  }, []);
   const [legalTab, setLegalTab] = useState<LegalTab | null>(null);
 
   const handleManualShuffle = () => {
