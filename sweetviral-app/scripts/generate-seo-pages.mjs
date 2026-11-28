@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const DIST = path.join(ROOT, 'dist');
-const SITE_ORIGIN = 'https://sachinatjane.github.io/crave';
+const SITE_ORIGIN = 'https://crave.devyy.com';
 const TODAY = new Date().toISOString().slice(0, 10);
 
 const CATEGORIES = [

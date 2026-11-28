@@ -4,6 +4,7 @@ import { CategoryTag, DessertCategory, Recipe, SocialPlatform } from '../types/r
 import { getSiteRootPath } from '../utils/assetUrl';
 import { AdUnit } from './AdUnit';
 import { EBOOK_URL, EbookPromoCard } from './EbookPromoCard';
+import { LegalTab, LegalTrustModal } from './LegalTrustModal';
 import { SafeImage } from './SafeImage';
 import { triggerHaptic } from '../utils/audioHaptics';
 
@@ -96,6 +97,7 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
     Math.floor(Math.random() * RECIPES.length)
   );
   const [isSpinning, setIsSpinning] = useState(false);
+  const [legalTab, setLegalTab] = useState<LegalTab | null>(null);
 
   const handleManualShuffle = () => {
     triggerHaptic(20);
@@ -839,8 +841,38 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
               </a>
             ))}
           </div>
+          <div className="flex flex-wrap items-center gap-3 pt-2 border-t border-outline-variant/40 text-xs text-secondary">
+            <button
+              type="button"
+              onClick={() => setLegalTab('privacy')}
+              className="hover:text-primary underline font-semibold"
+            >
+              Privacy Policy
+            </button>
+            <button
+              type="button"
+              onClick={() => setLegalTab('about')}
+              className="hover:text-primary underline font-semibold"
+            >
+              About Crave Recipes
+            </button>
+            <button
+              type="button"
+              onClick={() => setLegalTab('contact')}
+              className="hover:text-primary underline font-semibold"
+            >
+              Contact
+            </button>
+            <span>© {new Date().getFullYear()} Crave Recipes • crave.devyy.com</span>
+          </div>
         </div>
       </footer>
+
+      <LegalTrustModal
+        tab={legalTab}
+        onChangeTab={setLegalTab}
+        onClose={() => setLegalTab(null)}
+      />
     </div>
   );
 };

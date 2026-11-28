@@ -2,7 +2,7 @@ import { DESSERT_CATEGORIES, RECIPES } from '../data/recipes';
 import { Recipe, UnitSystem } from '../types/recipe';
 import { formatScaledIngredient, renderStepInstruction } from './scaler';
 
-const SITE_ORIGIN = 'https://sachinatjane.github.io/crave';
+const SITE_ORIGIN = 'https://crave.devyy.com';
 
 function upsertMeta(attr: 'name' | 'property', key: string, content: string) {
   let el = document.head.querySelector(`meta[${attr}="${key}"]`) as HTMLMetaElement | null;
