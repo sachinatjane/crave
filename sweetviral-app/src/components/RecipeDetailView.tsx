@@ -51,8 +51,6 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
   onOpenRecipe,
   onToast
 }) => {
-  const [showDemoModal, setShowDemoModal] = useState(false);
-  const [demoSlide, setDemoSlide] = useState(0);
   const [showConfetti, setShowConfetti] = useState(false);
   const [healthyMode, setHealthyMode] = useState(Boolean(recipe.zeroRefinedSugar));
   const ingredientsRef = useRef<HTMLDivElement>(null);
@@ -69,14 +67,6 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
       ).slice(0, 4),
     [recipe.id, recipe.dessertCategory]
   );
-
-  useEffect(() => {
-    if (!showDemoModal) return;
-    const id = window.setInterval(() => {
-      setDemoSlide((prev) => (prev + 1) % recipe.steps.length);
-    }, 3200);
-    return () => window.clearInterval(id);
-  }, [showDemoModal, recipe.steps.length]);
 
   const handleCopyShoppingList = async () => {
     triggerHaptic(20);
@@ -201,30 +191,6 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
               ({recipe.ratingCount})
             </span>
           </div>
-        </div>
-
-        {/* Watch Video Demo Overlay Trigger */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <button
-            type="button"
-            onClick={() => {
-              setDemoSlide(0);
-              setShowDemoModal(true);
-            }}
-            className="pointer-events-auto group flex items-center gap-2.5 px-5 py-3 rounded-full bg-inverse-surface/90 text-inverse-on-surface backdrop-blur-xl shadow-xl transition-all duration-200 active:scale-95 hover:bg-inverse-surface"
-          >
-            <span className="w-7 h-7 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container shadow-sm group-hover:scale-105 transition-transform">
-              <span
-                className="material-symbols-outlined text-[18px]"
-                style={{ fontVariationSettings: "'FILL' 1" }}
-              >
-                play_arrow
-              </span>
-            </span>
-            <span className="font-label-lg text-label-lg tracking-wide">
-              Watch 20s Visual Demo
-            </span>
-          </button>
         </div>
 
         {/* Bottom Scrim Title */}
@@ -897,102 +863,6 @@ export const RecipeDetailView: React.FC<RecipeDetailViewProps> = ({
           <span className="material-symbols-outlined text-[22px] text-primary">send</span>
         </button>
       </div>
-
-      {/* Interactive 20s Visual Demo Reel Modal */}
-      {showDemoModal && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-label="20 second visual recipe demo"
-          className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4"
-          onClick={(e) => {
-            if (e.target === e.currentTarget) setShowDemoModal(false);
-          }}
-        >
-          <div className="relative w-full max-w-sm aspect-[9/16] max-h-[85dvh] rounded-xl overflow-hidden bg-inverse-surface shadow-2xl flex flex-col justify-between p-4">
-            <SafeImage
-              src={recipe.steps[demoSlide]?.image || recipe.heroImage}
-              alt={recipe.steps[demoSlide]?.title || recipe.title}
-              className="absolute inset-0 w-full h-full object-cover"
-              eager
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/85" />
-
-            {/* Reel Progress Bars */}
-            <div className="relative z-10 flex flex-col gap-2">
-              <div className="flex gap-1">
-                {recipe.steps.map((s, idx) => (
-                  <button
-                    key={s.stepNumber}
-                    type="button"
-                    aria-label={`Slide ${idx + 1}`}
-                    onClick={() => setDemoSlide(idx)}
-                    className="flex-1 h-1.5 rounded-full bg-white/30 overflow-hidden"
-                  >
-                    <div
-                      className={`h-full transition-all duration-300 ${
-                        idx <= demoSlide ? 'bg-white w-full' : 'w-0'
-                      }`}
-                    />
-                  </button>
-                ))}
-              </div>
-              <div className="flex items-center justify-between text-white">
-                <span className="font-label-sm text-label-sm uppercase tracking-wider bg-primary-container px-2.5 py-1 rounded-full">
-                  Step {demoSlide + 1}/{recipe.steps.length} • {recipe.soundName}
-                </span>
-                <button
-                  type="button"
-                  onClick={() => setShowDemoModal(false)}
-                  aria-label="Close demo"
-                  className="w-9 h-9 rounded-full bg-black/50 flex items-center justify-center"
-                >
-                  <span className="material-symbols-outlined text-[20px]">close</span>
-                </button>
-              </div>
-            </div>
-
-            {/* Bottom Step Caption + Launch Cook Mode */}
-            <div className="relative z-10 flex flex-col gap-3 text-white">
-              <div>
-                <h4 className="font-headline-sm text-headline-sm font-extrabold">
-                  {recipe.steps[demoSlide]?.title}
-                </h4>
-                <p className="font-body-sm text-body-sm text-white/90 mt-1 line-clamp-3">
-                  {renderStepInstruction(
-                    recipe.steps[demoSlide]?.instructionTemplate || '',
-                    recipe,
-                    servings,
-                    unit
-                  )}
-                </p>
-              </div>
-              <div className="flex gap-2">
-                <button
-                  type="button"
-                  onClick={() =>
-                    setDemoSlide((prev) => (prev + 1) % recipe.steps.length)
-                  }
-                  className="px-4 h-11 rounded-full bg-white/20 backdrop-blur-md font-label-md text-label-md"
-                >
-                  Next Clip →
-                </button>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setShowDemoModal(false);
-                    onStartCookMode(demoSlide);
-                  }}
-                  className="flex-1 h-11 rounded-full bg-primary-container font-label-md text-label-md font-extrabold flex items-center justify-center gap-1"
-                >
-                  <span className="material-symbols-outlined text-[16px]">bolt</span>
-                  <span>Cook This Step</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </article>
   );
 };
