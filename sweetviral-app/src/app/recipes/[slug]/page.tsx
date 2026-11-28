@@ -205,7 +205,7 @@ export default async function RecipePage({
           )}
         </article>
       </noscript>
-      <App initialRecipeSlug={recipe.slug} />
+      <App initialRecipeSlug={recipe.slug} initialRecipe={recipe} />
     </>
   );
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { RECIPES } from '../data/recipes';
+import { RECIPE_SUMMARIES as RECIPES } from '../data/catalog';
 import { Recipe } from '../types/recipe';
 import { EbookPromoCard } from './EbookPromoCard';
 import { SafeImage } from './SafeImage';

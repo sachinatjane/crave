@@ -1,12 +1,18 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { DESSERT_CATEGORIES, RECIPES } from '../data/recipes';
+import dynamic from 'next/dynamic';
+import { DESSERT_CATEGORIES, RECIPE_SUMMARIES as RECIPES } from '../data/catalog';
 import { CategoryTag, DessertCategory, Recipe, SocialPlatform } from '../types/recipe';
 import { getSiteRootPath } from '../utils/assetUrl';
 import { AdUnit } from './AdUnit';
 import { EBOOK_URL, EbookPromoCard } from './EbookPromoCard';
-import { LegalTab, LegalTrustModal } from './LegalTrustModal';
+import type { LegalTab } from './LegalTrustModal';
 import { SafeImage } from './SafeImage';
 import { triggerHaptic } from '../utils/audioHaptics';
+
+const LegalTrustModal = dynamic(
+  () => import('./LegalTrustModal').then((m) => m.LegalTrustModal),
+  { ssr: false }
+);
 
 interface TrendingFeedViewProps {
   savedIds: string[];
@@ -73,7 +79,7 @@ const EUROPEAN_CUISINES = new Set([
   'American & European'
 ]);
 
-const PAGE_SIZE = 24;
+const PAGE_SIZE = 12;
 
 export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
   savedIds,

@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { PANTRY_INGREDIENTS, RECIPES } from '../data/recipes';
+import { PANTRY_INGREDIENTS, RECIPE_SUMMARIES as RECIPES } from '../data/catalog';
 import { Recipe } from '../types/recipe';
 import { SafeImage } from './SafeImage';
 
@@ -35,9 +35,7 @@ export const SearchPantryModal: React.FC<SearchPantryModalProps> = ({
         recipe.shortTag.toLowerCase().includes(q) ||
         recipe.cuisine.toLowerCase().includes(q) ||
         recipe.pantryCore.some((p) => p.includes(q)) ||
-        recipe.ingredientGroups.some((g) =>
-          g.items.some((i) => i.name.toLowerCase().includes(q))
-        ) ||
+        recipe.pantryCore.some((k) => k.toLowerCase().includes(q)) ||
         recipe.hashtags.some((h) => h.toLowerCase().includes(q));
       return { recipe, matchCount, textMatch };
     })

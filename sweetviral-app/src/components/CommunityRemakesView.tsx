@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { COMMUNITY_STITCHES, RECIPES } from '../data/recipes';
+import { COMMUNITY_STITCHES, RECIPE_SUMMARIES as RECIPES } from '../data/catalog';
 import { Recipe } from '../types/recipe';
 import { triggerHaptic } from '../utils/audioHaptics';
 import { copyTextToClipboard } from '../utils/shareEngine';

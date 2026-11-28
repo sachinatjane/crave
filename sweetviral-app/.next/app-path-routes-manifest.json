@@ -3,6 +3,6 @@
   "/robots.txt/route": "/robots.txt",
   "/sitemap.xml/route": "/sitemap.xml",
   "/page": "/",
-  "/recipes/[slug]/page": "/recipes/[slug]",
-  "/category/[slug]/page": "/category/[slug]"
+  "/category/[slug]/page": "/category/[slug]",
+  "/recipes/[slug]/page": "/recipes/[slug]"
 }

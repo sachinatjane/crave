@@ -1,4 +1,4 @@
-import { DESSERT_CATEGORIES, RECIPES } from '../data/recipes';
+import { DESSERT_CATEGORIES, RECIPE_SUMMARIES as RECIPES } from '../data/catalog';
 import { Recipe, UnitSystem } from '../types/recipe';
 import { formatScaledIngredient, renderStepInstruction } from './scaler';
 

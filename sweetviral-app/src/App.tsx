@@ -1,22 +1,47 @@
 'use client';
 
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import dynamic from 'next/dynamic';
 import { BrandHeader } from './components/BrandHeader';
 import { BottomNav } from './components/BottomNav';
-import { CommunityRemakesView } from './components/CommunityRemakesView';
-import { CookModeView } from './components/CookModeView';
-import { PantryDiscoverView } from './components/PantryDiscoverView';
 import { RecipeDetailView } from './components/RecipeDetailView';
-import { SavedView } from './components/SavedView';
-import { SearchPantryModal } from './components/SearchPantryModal';
-import { ShareModal } from './components/ShareModal';
 import { TrendingFeedView } from './components/TrendingFeedView';
-import { RECIPES, DESSERT_CATEGORIES } from './data/recipes';
+import {
+  DESSERT_CATEGORIES,
+  RECIPE_SUMMARIES as RECIPES,
+  fetchFullRecipe,
+  primeRecipeCache
+} from './data/catalog';
 import { AppTab, DessertCategory, Recipe, UnitSystem } from './types/recipe';
 import { getSiteRootPath } from './utils/assetUrl';
 import { detectInAppBrowser } from './utils/shareEngine';
 import { updateRecipeMetadata } from './utils/seoSchema';
 import { triggerHaptic } from './utils/audioHaptics';
+
+const CommunityRemakesView = dynamic(
+  () => import('./components/CommunityRemakesView').then((m) => m.CommunityRemakesView),
+  { ssr: false }
+);
+const CookModeView = dynamic(
+  () => import('./components/CookModeView').then((m) => m.CookModeView),
+  { ssr: false }
+);
+const PantryDiscoverView = dynamic(
+  () => import('./components/PantryDiscoverView').then((m) => m.PantryDiscoverView),
+  { ssr: false }
+);
+const SavedView = dynamic(
+  () => import('./components/SavedView').then((m) => m.SavedView),
+  { ssr: false }
+);
+const SearchPantryModal = dynamic(
+  () => import('./components/SearchPantryModal').then((m) => m.SearchPantryModal),
+  { ssr: false }
+);
+const ShareModal = dynamic(
+  () => import('./components/ShareModal').then((m) => m.ShareModal),
+  { ssr: false }
+);
 
 function readStorage<T>(key: string, fallback: T): T {
   try {
@@ -43,9 +68,17 @@ type ScreenState =
 interface AppProps {
   initialRecipeSlug?: string;
   initialCategorySlug?: DessertCategory;
+  initialRecipe?: Recipe;
 }
 
-export function App({ initialRecipeSlug, initialCategorySlug }: AppProps = {}) {
+export function App({ initialRecipeSlug, initialCategorySlug, initialRecipe }: AppProps = {}) {
+  const [fullRecipesById, setFullRecipesById] = useState<Record<string, Recipe>>(() => {
+    if (initialRecipe) {
+      primeRecipeCache(initialRecipe);
+      return { [initialRecipe.id]: initialRecipe };
+    }
+    return {};
+  });
   const [savedIds, setSavedIds] = useState<string[]>(['dubai-brownies']);
   const [madeIds, setMadeIds] = useState<string[]>([]);
   const [likedStitches, setLikedStitches] = useState<string[]>(['cs1', 'cs3']);
@@ -176,10 +209,30 @@ export function App({ initialRecipeSlug, initialCategorySlug }: AppProps = {}) {
 
   const activeRecipe = useMemo(() => {
     if (screen.type === 'recipe' || screen.type === 'cook') {
-      return RECIPES.find((r) => r.id === screen.recipeId) || RECIPES[0];
+      const full = fullRecipesById[screen.recipeId];
+      if (full) return full;
+      if (initialRecipe && initialRecipe.id === screen.recipeId) return initialRecipe;
+      return null;
     }
     return null;
-  }, [screen]);
+  }, [screen, fullRecipesById, initialRecipe]);
+
+  // Fetch ~4KB full recipe JSON on-demand when navigating to a recipe or Cook Mode
+  useEffect(() => {
+    if (screen.type !== 'recipe' && screen.type !== 'cook') return;
+    if (fullRecipesById[screen.recipeId]) return;
+    const summary = RECIPES.find((r) => r.id === screen.recipeId);
+    if (!summary) return;
+    let cancelled = false;
+    fetchFullRecipe(summary.slug).then((loaded) => {
+      if (!cancelled && loaded) {
+        setFullRecipesById((prev) => ({ ...prev, [loaded.id]: loaded }));
+      }
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [screen, fullRecipesById]);
 
   const lastTabRef = useRef<AppTab>('trending');
   const isPopStateRef = useRef(false);
@@ -282,11 +335,21 @@ export function App({ initialRecipeSlug, initialCategorySlug }: AppProps = {}) {
   ]);
 
   const navigateToRecipe = (recipe: Recipe) => {
+    if (!fullRecipesById[recipe.id]) {
+      fetchFullRecipe(recipe.slug).then((loaded) => {
+        if (loaded) setFullRecipesById((prev) => ({ ...prev, [loaded.id]: loaded }));
+      });
+    }
     setScreen({ type: 'recipe', recipeId: recipe.id });
   };
 
   const navigateToCookMode = (recipe: Recipe, stepIndex = 0) => {
     triggerHaptic(30);
+    if (!fullRecipesById[recipe.id]) {
+      fetchFullRecipe(recipe.slug).then((loaded) => {
+        if (loaded) setFullRecipesById((prev) => ({ ...prev, [loaded.id]: loaded }));
+      });
+    }
     setScreen({ type: 'cook', recipeId: recipe.id, stepIndex });
   };
 

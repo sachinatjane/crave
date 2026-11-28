@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { PANTRY_INGREDIENTS, RECIPES } from '../data/recipes';
+import { PANTRY_INGREDIENTS, RECIPE_SUMMARIES as RECIPES } from '../data/catalog';
 import { Recipe, SocialPlatform } from '../types/recipe';
 import { triggerHaptic } from '../utils/audioHaptics';
 import { AdUnit } from './AdUnit';

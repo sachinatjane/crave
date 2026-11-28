@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { DESSERT_CATEGORIES, RECIPES } from '../data/recipes';
+import { DESSERT_CATEGORIES, RECIPE_SUMMARIES as RECIPES } from '../data/catalog';
 import { DessertCategory, Recipe, UnitSystem } from '../types/recipe';
 import { getSiteRootPath } from '../utils/assetUrl';
 import {
