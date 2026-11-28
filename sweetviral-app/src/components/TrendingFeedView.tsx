@@ -242,7 +242,6 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
                     src={recipe.thumbImage}
                     alt={recipe.title}
                     className="w-full h-full object-cover rounded-full"
-                    eager
                   />
                 </div>
               </div>
@@ -280,11 +279,10 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
                     e.stopPropagation();
                     setHeroMode('healthy');
                   }}
-                  className={`px-2.5 py-1 rounded-full font-label-sm text-label-sm font-extrabold uppercase transition-colors ${
-                    heroMode === 'healthy'
-                      ? 'bg-pistachio text-white'
-                      : 'text-on-surface-variant'
-                  }`}
+                  className={`px-2.5 py-1 rounded-full font-label-sm text-label-sm font-extrabold uppercase transition-colors ${heroMode === 'healthy'
+                    ? 'bg-pistachio text-white'
+                    : 'text-on-surface-variant'
+                    }`}
                 >
                   🌿 Healthy #1
                 </button>
@@ -294,11 +292,10 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
                     e.stopPropagation();
                     setHeroMode('classic');
                   }}
-                  className={`px-2.5 py-1 rounded-full font-label-sm text-label-sm font-extrabold uppercase transition-colors ${
-                    heroMode === 'classic'
-                      ? 'bg-primary text-white'
-                      : 'text-on-surface-variant'
-                  }`}
+                  className={`px-2.5 py-1 rounded-full font-label-sm text-label-sm font-extrabold uppercase transition-colors ${heroMode === 'classic'
+                    ? 'bg-primary text-white'
+                    : 'text-on-surface-variant'
+                    }`}
                 >
                   🔥 Viral #1
                 </button>
@@ -431,18 +428,16 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
                   triggerHaptic(15);
                   selectCategory(cat.id);
                 }}
-                className={`shrink-0 px-3.5 py-2 rounded-full font-label-md text-label-md flex items-center gap-1.5 transition-all active:scale-95 ${
-                  active
-                    ? 'bg-inverse-surface text-inverse-on-surface shadow-sm font-bold'
-                    : 'bg-surface-container-lowest text-on-surface shadow-sm'
-                }`}
+                className={`shrink-0 px-3.5 py-2 rounded-full font-label-md text-label-md flex items-center gap-1.5 transition-all active:scale-95 ${active
+                  ? 'bg-inverse-surface text-inverse-on-surface shadow-sm font-bold'
+                  : 'bg-surface-container-lowest text-on-surface shadow-sm'
+                  }`}
               >
                 <span>{cat.emoji}</span>
                 <span>{cat.label}</span>
                 <span
-                  className={`text-[10px] px-1.5 py-0.5 rounded-full ${
-                    active ? 'bg-white/20 text-white' : 'bg-surface-container text-primary'
-                  }`}
+                  className={`text-[10px] px-1.5 py-0.5 rounded-full ${active ? 'bg-white/20 text-white' : 'bg-surface-container text-primary'
+                    }`}
                 >
                   {count}
                 </span>
@@ -466,11 +461,10 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
                   setActiveFilter(pill.id);
                   setVisibleCount(PAGE_SIZE);
                 }}
-                className={`shrink-0 px-space-md py-2 rounded-full font-label-md text-label-md transition-all active:scale-95 ${
-                  active
-                    ? 'bg-primary text-on-primary font-bold shadow-sm'
-                    : 'bg-surface-container-high text-on-surface font-semibold'
-                }`}
+                className={`shrink-0 px-space-md py-2 rounded-full font-label-md text-label-md transition-all active:scale-95 ${active
+                  ? 'bg-primary text-on-primary font-bold shadow-sm'
+                  : 'bg-surface-container-high text-on-surface font-semibold'
+                  }`}
               >
                 {pill.label}
               </button>
@@ -493,11 +487,10 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
                     setActivePlatform(plat.id);
                     setVisibleCount(PAGE_SIZE);
                   }}
-                  className={`shrink-0 px-2.5 py-1 rounded-full font-label-sm text-label-sm transition-colors ${
-                    active
-                      ? 'bg-inverse-surface text-inverse-on-surface'
-                      : 'bg-surface-container-low text-on-surface-variant'
-                  }`}
+                  className={`shrink-0 px-2.5 py-1 rounded-full font-label-sm text-label-sm transition-colors ${active
+                    ? 'bg-inverse-surface text-inverse-on-surface'
+                    : 'bg-surface-container-low text-on-surface-variant'
+                    }`}
                 >
                   {plat.label}
                 </button>
@@ -607,11 +600,10 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
                         </div>
 
                         <div
-                          className={`absolute bottom-2 left-2 flex items-center gap-1 backdrop-blur-md px-2 py-0.5 rounded-full shadow-sm max-w-[78%] ${
-                            recipe.zeroRefinedSugar
-                              ? 'bg-[#e8f8f2]/95 text-pistachio-dark'
-                              : 'bg-surface-container-lowest/90 text-on-surface'
-                          }`}
+                          className={`absolute bottom-2 left-2 flex items-center gap-1 backdrop-blur-md px-2 py-0.5 rounded-full shadow-sm max-w-[78%] ${recipe.zeroRefinedSugar
+                            ? 'bg-[#e8f8f2]/95 text-pistachio-dark'
+                            : 'bg-surface-container-lowest/90 text-on-surface'
+                            }`}
                         >
                           <span className="material-symbols-outlined text-[13px] shrink-0">
                             {recipe.zeroRefinedSugar ? 'eco' : 'local_fire_department'}
@@ -628,11 +620,10 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
                             e.stopPropagation();
                             onToggleSave(recipe);
                           }}
-                          className={`absolute top-2 right-2 w-8 h-8 rounded-full backdrop-blur-sm flex items-center justify-center active:scale-90 transition-transform ${
-                            isSaved
-                              ? 'bg-primary text-on-primary'
-                              : 'bg-surface-container-lowest/85 text-on-surface'
-                          }`}
+                          className={`absolute top-2 right-2 w-8 h-8 rounded-full backdrop-blur-sm flex items-center justify-center active:scale-90 transition-transform ${isSaved
+                            ? 'bg-primary text-on-primary'
+                            : 'bg-surface-container-lowest/85 text-on-surface'
+                            }`}
                         >
                           <span
                             className="material-symbols-outlined text-[18px]"
@@ -706,9 +697,8 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
           <div className="relative z-10 flex flex-col items-center text-center">
             <div className="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center mb-space-xs shadow-md">
               <span
-                className={`material-symbols-outlined text-[24px] ${
-                  isSpinning ? 'animate-spin' : ''
-                }`}
+                className={`material-symbols-outlined text-[24px] ${isSpinning ? 'animate-spin' : ''
+                  }`}
               >
                 casino
               </span>
@@ -755,13 +745,12 @@ export const TrendingFeedView: React.FC<TrendingFeedViewProps> = ({
               {['E', 'S', 'D'].map((letter, idx) => (
                 <div
                   key={letter}
-                  className={`inline-flex h-8 w-8 rounded-full ring-2 ring-surface-container-lowest items-center justify-center font-label-md text-label-md font-extrabold ${
-                    idx === 0
-                      ? 'bg-primary-fixed text-on-primary-fixed'
-                      : idx === 1
+                  className={`inline-flex h-8 w-8 rounded-full ring-2 ring-surface-container-lowest items-center justify-center font-label-md text-label-md font-extrabold ${idx === 0
+                    ? 'bg-primary-fixed text-on-primary-fixed'
+                    : idx === 1
                       ? 'bg-tertiary-fixed text-on-tertiary-fixed'
                       : 'bg-secondary-fixed text-on-secondary-fixed'
-                  }`}
+                    }`}
                 >
                   {letter}
                 </div>

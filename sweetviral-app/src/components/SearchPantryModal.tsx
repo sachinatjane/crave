@@ -105,11 +105,10 @@ export const SearchPantryModal: React.FC<SearchPantryModalProps> = ({
                   key={item.key}
                   type="button"
                   onClick={() => togglePantry(item.key)}
-                  className={`px-3 py-1 rounded-full font-label-sm text-label-sm transition-all active:scale-95 ${
-                    active
-                      ? 'bg-primary text-on-primary shadow-sm'
-                      : 'bg-surface-container-high text-on-surface'
-                  }`}
+                  className={`px-3 py-1 rounded-full font-label-sm text-label-sm transition-all active:scale-95 ${active
+                    ? 'bg-primary text-on-primary shadow-sm'
+                    : 'bg-surface-container-high text-on-surface'
+                    }`}
                 >
                   {item.label}
                 </button>

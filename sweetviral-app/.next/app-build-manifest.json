@@ -34,7 +34,7 @@
       "static/chunks/4bd1b696-c023c6e3521b1417.js",
       "static/chunks/255-0e5ac6cd71b0e266.js",
       "static/chunks/main-app-e906c1c526949e05.js",
-      "static/chunks/882-1f946193f4b7d675.js",
+      "static/chunks/882-f89df0c62cad8266.js",
       "static/chunks/app/page-dfe8e71a5c9fcbde.js"
     ],
     "/category/[slug]/page": [
@@ -42,7 +42,7 @@
       "static/chunks/4bd1b696-c023c6e3521b1417.js",
       "static/chunks/255-0e5ac6cd71b0e266.js",
       "static/chunks/main-app-e906c1c526949e05.js",
-      "static/chunks/882-1f946193f4b7d675.js",
+      "static/chunks/882-f89df0c62cad8266.js",
       "static/chunks/app/category/[slug]/page-cba64a4d3ccc24f9.js"
     ],
     "/recipes/[slug]/page": [
@@ -50,7 +50,7 @@
       "static/chunks/4bd1b696-c023c6e3521b1417.js",
       "static/chunks/255-0e5ac6cd71b0e266.js",
       "static/chunks/main-app-e906c1c526949e05.js",
-      "static/chunks/882-1f946193f4b7d675.js",
+      "static/chunks/882-f89df0c62cad8266.js",
       "static/chunks/app/recipes/[slug]/page-ff1ba417b1c5ec11.js"
     ]
   }
